@@ -92,7 +92,7 @@ article {
     padding-top: 1%;
     margin: 0 auto;
     width: 100%;
-    opacity: .9;
+    /* opacity: .9; */
     color: whitesmoke;
     font-weight: 1000;
     font-size: bold;
@@ -149,7 +149,7 @@ article.description-txt {
     justify-content: center;
 }
 .topic {
-    opacity: .9;
+    /* opacity: .9; */
     margin: 1.5% 0;
     background-color: whitesmoke;
     flex-basis: 15%;

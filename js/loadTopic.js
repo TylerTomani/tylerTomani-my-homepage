@@ -9,7 +9,7 @@ topics.forEach(topic => {
         let key = e.keyCode
         if(key === 13){
             let a = topic.querySelector('a')
-            open(a.href,'_self')
+            window.location(a.href,'_self')
             
         }
     })
