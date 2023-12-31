@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+:root {
+    --maxImgHeight: 200px;
+}
+body > header {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+body > header > #homeLink {
+    border: 1px solid black;
+    padding: 1% 2.5%;
+    margin: 1% 2.5%;
+    display: inline-block;
+    height: 10%;
+}
+body > header > h1 {
+    margin: 1% 0;   
+}
+body > header > img {
+    width: 50%;
+    max-height: 120px;
+    max-width: 200px;
+}
+.shortcut-txt {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1%;
+    justify-content: center;
+    flex-basis: 100%;
+}
+.shortcut-txt > p {
+    font-size: 120%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    margin: 0 1%;
+}
+.resources-container {
+    margin-top: 1%;
+    padding-left: 1%;
+    display: flex;
+    gap: 1.5rem;
+}
+.resource {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    min-width: 400px;
+    max-width: 420px;
+    max-height: var(--maxImgHeight);
+    height: 95%;
+}
+.resource  {
+    padding-left: 2.5%;
+    padding-bottom: 2%;
+    margin-left: 0;
+    max-height: var(--maxImgHeight);
+    display: flex ;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid black;
+}
+.resource  > h3 {
+    display: inline-block;
+}
+.resource  >img {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 90%;
+    max-height: 100px;
+    /* min-width: 120px;
+    min-height: 59px;
+    max-height: 70px; */
+    /* justify-self: flex-end; */
+    /* border: 1px solid black; */
+}
+
+ 
+.resource:active,.resource:focus,
+a:active,a:focus,
+button:active,button:focus{
+    box-shadow: 0 0 4px 4px yellow;
+    border: 2px solid blue;
+    transform: scale(1.02);
+    margin-left: .75%;
+    position: relative;
+    transition: all 250ms;
+}
+.hide {
+    display: none !important;
+}
+.show {
+    display: inline-block;
+}
+
+
+@media screen and (max-width:650px){
+    .resources-container {
+        flex-direction: column;
+    }
+    .shortcut-txt{
+        display: none;
+    }
+}

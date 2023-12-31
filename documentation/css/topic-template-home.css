@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+:root {
+    --maxImgHeight: 200px;
+}
+body > header {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+body > header > #homeLink {
+    border: 1px solid black;
+    padding: 1% 2.5%;
+    margin: 1% 2.5%;
+    display: inline-block;
+    height: 10%;
+}
+body > header > h1 {
+    margin: 1% 0;   
+}
+body > header > img {
+    width: 50%;
+    max-height: 120px;
+    max-width: 200px;
+}
+.shortcut-txt {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1%;
+    justify-content: center;
+    flex-basis: 100%;
+}
+.shortcut-txt > p {
+    font-size: 120%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    margin: 0 1%;
+}
+.resources-container {
+    margin-top: 1%;
+    padding-left: 1%;
+    display: flex;
+    gap: 1.5rem;
+}
+.resource {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    min-width: 400px;
+    max-width: 420px;
+    max-height: var(--maxImgHeight);
+    height: 95%;
+}
+.resource > header {
+    padding-left: 2.5%;
+    padding-bottom: 2%;
+    margin-left: 0;
+    max-height: var(--maxImgHeight);
+    display: flex ;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid black;
+}
+.resource > header > h3 {
+    display: inline-block;
+}
+.resource > header >img {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 90%;
+    max-height: 100px;
+    /* min-width: 120px;
+    min-height: 59px;
+    max-height: 70px; */
+    /* justify-self: flex-end; */
+    /* border: 1px solid black; */
+}
+.resource>.topics-container {
+     display: flex;
+     flex-wrap: wrap;
+     margin: 1% 2.5%;
+     margin-left: 2.5%;
+     gap: 2rem;
+     max-height: 140px;
+ }
+.topics-container > .topic {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    padding: 0 2%;
+    min-height: 30px;
+    min-width: 120px;
+    flex-basis: 20%;
+}
+.topics-container > .topic > h4 > a{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+.topic:active,.topic:focus{
+    box-shadow: 0 0 4px 4px yellow;
+    border: 2px solid blue;
+    transform: scale(1.22);
+    margin-left: 5%;
+    margin-top: -1.75%;
+    background-color: white;
+    position: relative;
+    bottom: 10%;
+    z-index: 20;
+    transition: all 250ms;
+}
+.resource>header:active,.resource>header:focus,
+a:active,a:focus,
+button:active,button:focus{
+    box-shadow: 0 0 4px 4px yellow;
+    border: 2px solid blue;
+    transform: scale(1.02);
+    margin-left: .75%;
+    position: relative;
+    transition: all 250ms;
+}
+.hide {
+    display: none !important;
+}
+.show {
+    display: inline-block;
+}
+.data-analysis-container {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Social_Network_Analysis_Visualization.png/375px-Social_Network_Analysis_Visualization.png');
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+}
+.data-analysis-container > h4 > a {
+    white-space: nowrap;
+
+}
+
+@media screen and (max-width:650px){
+    .resources-container {
+        flex-direction: column;
+    }
+    .shortcut-txt{
+        display: none;
+    }
+}
