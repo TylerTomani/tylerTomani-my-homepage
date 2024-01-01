@@ -4,6 +4,10 @@
     box-sizing: border-box;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+:root{
+    --topic-min-height: 90px;
+    /* --img-min-width: 190px !important; */
+}
 header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: white;
@@ -160,15 +164,7 @@ article.description-txt {
     padding-top: 3%;
     display: flex;
     flex-direction: column-reverse;
-}
-.topic > img {
-    /* max-height: 100px; */
-    justify-self: center;
-    align-self: center;
-    min-width: 80px;
-    max-width: 90px;
-    /* min-width: 80px; */
-    max-height: 60px;
+    min-height: var(--topic-min-height);
 }
 .topic > h3 {
     align-self: center;
@@ -187,6 +183,43 @@ article.description-txt {
 }
 .personal-projects-container {
     background-color: white;
+}
+.topic>img {
+    /* max-height: 100px; */
+    justify-self: center;
+    align-self: center;
+    min-width: 80px;
+    max-width: 90px;
+    /* min-width: 80px; */
+    max-height: 60px;
+}
+#flask {
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    min-height: 90px;
+}
+#flask img {
+    margin-top: 15%;
+    min-width: 120px;
+    /* margin-bottom: 10%; */
+}
+#react {
+    display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 90px;
+}
+#react > img {
+    /* min-width: 120%; */
+    /* height: 120% !important; */
+    width: 200px !important;
+    height: 100%;
+}
+
+#sql>img {
+    width: 100%;
+    margin-bottom: 25%;
 }
 #linkedinCourses > img {
     width: 55%;
@@ -207,11 +240,6 @@ article.description-txt {
 }
 #sql {
     display: flex;
-
-}
-#sql > img{
-    width: 100%;
-    margin-bottom: 25%;
 }
 .selectedPage{
     opacity: .5;
@@ -226,6 +254,7 @@ footer{
     justify-content: center;
     align-items: center;
 }
+
 @media screen and (max-width: 850px) {
     #websitesAndAppsHome {
         white-space: nowrap;

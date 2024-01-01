@@ -1,0 +1,99 @@
+* {
+    margin:0; 
+    padding:0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+main {
+    margin: 0 2.5%;
+    padding: 0 2.5%;
+    padding-left: 0;
+}
+.resources-container {
+    margin-top: 1.5%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+}
+.resources-container > .resource-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.resources-container > .resource-container> header {
+    padding-left: 1.5%;
+    display: flex;
+    border: 2px solid blue;
+    align-items: center;
+}
+.resources-container >  .resource-container> header > img {
+    /* border: 4px solid red; */
+    width: 10%;
+    align-self: flex-end;
+}
+.resources-container > .sub-resources-container{
+    border: 2px solid black;   
+    border-top: 0;
+    border-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.sub-resource{
+    flex-basis: 20%;
+    margin: 1% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 1% 0; */
+}
+.sub-resource > h2{
+    align-self: center;
+    justify-self: flex-start;
+    /* padding-bottom: 2.5%; */
+    /* padding-left: 2.5%; */
+}
+.sub-resource > img{
+    width: 60%;
+    max-width: 200px;
+    max-height: 124px;
+    margin: 2.5%;
+}
+.sub-resource > .tutorials-container {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.sub-resource{
+    display: flex;
+    white-space: none;
+    padding:0 2.5%;
+    border: 1px solid black;
+}
+
+
+
+.sub-resource:active,.sub-resource:focus,
+.session:active,.session:focus,
+.project:active,.project:focus,.project:hover,
+.playlist-container:active,.playlist-container:focus,
+.resource:active,.resource:focus,
+.sub-resource:active,.sub-resource:focus{
+    /* border: 3px solid blue; */
+    /* box-shadow: 0px 0px 4px 3px blue; */
+        box-shadow: 3px 0 4px 3px yellow;
+        border: 2px solid blue;
+        /* margin-left: .5%; */
+        /* margin-top: -1.75%; */
+        background-color: white;
+        position: relative;
+        bottom: 10%;
+        z-index: 20;
+        transition: all 250ms;
+}
+/* Sessions */
+.hide {
+    display: none !important;
+}
+.show {
+    display: inline-flex ;
+}

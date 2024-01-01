@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coreySchafer-01-flask</title>
+    <link rel="stylesheet" href="../css/flex-questions.css"/>
+    <link rel="stylesheet" href="../css/imgVid.css"/>
+    <link rel="stylesheet" href="../css/tutorial.css"/>
+    <link rel="stylesheet" href="../../../../css/colors.css">
+    <link rel="stylesheet" href="../../../../css/copy-code.css">
+    <script module src="../../../../../../js/home-link-focus.js" defer></script>
+    <script module src="../js/letterFocus.js" defer></script>
+    <script module src="../js/stepFocusEnlargeImg.js" defer></script>
+    <script module src="../js/playEnlargeVid.js" defer></script>
+    <script module src="../js/dropPartFocus.js" defer></script>
+    <script module src="../../../../js/copy-code.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="home-link">
+            <a tabindex="1" href="../../flask-index.htm">home&nbsp;-&nbsp;flask</a>
+        </div>
+        <div class="page-title">
+            <h1>coreyShafer</h1>
+            <h2>Flask </h2>
+            <div class="page-logo">
+                <img class="img-logo" src="../flask.png" alt="">
+                <a tabindex="1"  target="_blank" href="https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH
+                ">tutorial</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    <!-- Part 1 - Create venv & install flask  -->
+        <div class="part">
+            <a id="part01" tabindex="1" href="#" class="dropPart
+            "><h2>Part 1 - Create venv & Install flask </h2></a>
+            <div class="steps-container ">
+                <!-- 00 python -m venv venv -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h3>00</h3>
+                        <p>
+                            Create a directory, create a venv in that directory, install flask
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+python -m venv venv</pre>	
+                        </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/00a.png" >
+                    </div>
+                </div>
+                <!-- 01 pip install flask-->
+                <div class="step">
+                    <div tabindex="1"  class="step-txt step-vid playVid-click">
+                        <h3>01</h3>
+                        <p>
+                            install flask in <code>venv</code> with pip
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+pip install flask</pre>	
+                        </div>
+                    </div>
+                    <div class="step-vid">
+                        <video src="imagesVideos/01-pipInstallFlask.mp4" alt="">
+                    </div>
+                </div>
+                <!-- 02 python ,then run, import flask -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt step-vid playVid-click">
+                        <h3>02</h3>
+                        <p>
+                            Run 
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+python</pre>
+                        </div>
+                        <p>
+                            Then run, 
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+import flask</pre>	
+                        </div>
+                        <p>
+                            if no error show, flask is installed correctly
+                        </p>
+                    </div>
+                    <div class="fi step-vid">
+                        <video src="imagesVideos/02-pythonImportFlask.mp4"></video>
+                    </div>
+                </div>
+                <!-- 03 mkdir python-scripts/flask_blog -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h3>03</h3>
+                        <p>
+                            Create a new directory called flask_blog within the python-scripts folder on 
+                            the Desktop.
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+mkdir python-scripts/flask_blog</pre>
+                        </div>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/01.png"></img>
+                    </div>
+                </div>
+                <!-- 04 create flask_blog.py -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h3>04</h3>
+                        <p>
+                            Open the directory is <code>vscode</code>
+                            and make a script called 
+                            <br><code>flaskblog.py</code>
+                        </p>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/02.png"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Part 2 - Visit Flask website & copy code  -->
+        <div class="part">
+            <a id="part02" tabindex="1" href="#" class="dropPart
+            "><h2>Part 2 - Visit the Flask website & copy code </h2></a>
+            <div class="steps-container show">
+                <!-- 00 -->
+                <div class="step-col">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            Go to the <a target="_blank" href="https://flask.palletsprojects.com/en/2.3.x/quickstart/#a-minimal-application">flask.com</a> 
+                            website copy and paste the simple app into the script 
+                        </p>  
+                        <p>
+                            <span class="r">**Remember</span> you can skip the following process by adding
+                        </p>
+                        <code>if __name__ == '__main__':
+                        <br>&emsp;app.run(debug=True)
+                        </code>
+                    </div>
+                    
+                </div>
+                <!-- 01 Go to the flask.com -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h3>01</h3> 
+                        <div class="code-container">
+                            <pre class="copy-code">
+from flask import Flask
+
+app = Flask(<span class="m">__name__</span>)
+
+<span class="b">@app.route("/")</span>
+def hello_world():
+    return "&lt;p>Hello, World!&lt;/p>"</pre>
+                        </div>
+
+                        <p>
+                            The <code><span class="m">__name__</span></code> is the same as <code>__main__</code> which contains the static
+                            variables relating to flask.
+                        </p>
+                        <p>
+                            <code><span class="b">@app.route("/")</span></code> is a decorator that allows the function below to run 
+                            on a website, it's complicated ('go back and learn later'),
+                            the <code class="b">/</code> is the root page of the site
+                        </p>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/02-00.png"></img>
+                    </div>
+                </div> 
+                <!-- 01b -->
+                <div class="step-col">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            &emsp;Go to the Command Prompt and change to the directory of the project.
+                            Before we run 
+                            the <code>flask.py</code> script module, we need to set an enviorment variable to the file 
+                            that we want as the flask applicaiton
+                        </p>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos" >
+                    </div>
+                </div>
+                <!-- 01  -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h3>01</h3>
+             
+                        <h4>On <span class="o">Windows</span></h4>
+                        <div class="code-container">
+                            <pre class="copy-code">
+<span class="o">export</span> FLASK_APP=flaskblog.py</pre>	
+                        </div>
+                        <h4>On MAC</h4>
+                        <div class="code-container">
+                            <pre class="copy-code">
+set FLASK_APP=flaskblog.py</pre>
+                        </div>
+
+                        <p class="r"> 
+                            This will not work unless you install flask into a <code> venv</code> 
+                            within the project directory,do the following
+                        </p>
+                        <p>
+                            Change to the directory
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+cd Desktop\flask_blog</pre>	
+                        </div>
+                        <div class="code-container">
+                            <pre class="copy-code">
+python -m venv venv</pre>	
+                        </div>
+                        <div class="code-container">
+                            <pre class="copy-code">
+.\venv\Script\activate</pre>	
+                        </div>
+                        <div class="code-container">
+                            <pre class="copy-code">
+pip install flask</pre>	
+                        </div>
+                        <h4>(on <span class="o">Windows</span>)</h4>
+                        <div class="code-container">
+                            <pre class="copy-code">
+<span class="o">export</span> FLASK_APP=flaskblog.py</pre>	
+                        </div>
+                        <div class="code-container">
+                            <pre class="copy-code">
+flask run</pre>	
+                        </div>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/04.png"></img>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+Copy and paste the url from above into a browser and you will see the return value in the flaskblog.py script                        </p>
+                        
+                        <div class="code-container">
+                            <pre class="copy-code">
+http://127.0.0.1:5000</pre>
+                        </div>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/05.png"></img>
+                    </div>
+                </div>
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            We can replace the <code class="m">http://127.0.0.1:5000</code>
+with <code class="m">localhost</code>                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+http://localhost:5000</pre>
+                        </div>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos//06.png"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Part 3 - Change HTML  -->
+        <div class="topic-container">
+            <header>
+                <div class="title-container">
+                    <h2><a  tabindex="1" href="#" class="drop-topic title">Part 2 - Change HTML
+                        </a>
+                    </h2>
+                </div>
+                <div class="fi step-img">
+                    <img src="imagesVideos/07.png" alt="">
+                </div>
+            </header>
+            <div class="steps-container">
+                <div class="step">
+                    <h3>00</h3>
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            Whenever changing the HTML like <code class="m">h1</code>
+                            you must stop the server in command prompt, then repeat the command
+                            <br>
+                            <code>flask run</code>
+                            <br>
+                            Then reload the page in the web browser
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "&lt;<span class="m">h1</span>>Hello, World!&lt;/<span class="m">h1</span>>\n&lt;p>Somehitng sdj&lt;/p>"</pre>	
+                        </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/07.png" alt="">
+                    </div>
+                </div>
+                <div class="fc step">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            the above is a huge pain in the ass , so do the following so you don't have to shut down the server and
+                            restart
+                        </p>
+                        <p>
+                            Quit the server and set a new enviorment variable <q>Debug</q>
+                        </p>
+                        <h4>Windows</h4>
+                        <div class="code-container">
+                            <pre class="copy-code">
+set FLASK_DEBUG=1</pre>
+                        </div>
+                        <p>
+                            Then re-run the <code>flask run</code> command
+                        </p>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/08.png"></img>
+                    </div>
+                </div>
+                <div class="fc step">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            To avoid setting up the enviorment variables, we can just run the script from the command by 
+                            making the following changes at the bottom of the script
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "&lt;h1>Home Page&lt;/h1>"
+
+if __name__ == '__main__':
+    app.run(debug=True)</pre>
+                        </div>
+                        <p>
+                            now we can run the script with the <code>python</code>
+                            command in the command prompt and get the same result
+                        </p>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/09.png"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Part 4 - add another routh  -->
+        <div class="topic-container">
+            <header>
+                <div class="title-container">
+                    <h2><a  tabindex="1" href="#" class="drop-topic title">Part 3 - add another route <q>About</q>
+                        </a>
+                    </h2>
+                </div>
+                <div class="fi step-img">
+                    <img src="imagesVideos//10.png" alt="">
+                </div>
+            </header>
+            <div class="steps-container   ">
+                <div class="step">
+                    <h3>00</h3>
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            Add another decorator and function below for <code class="m">/about</code>.
+                            Then in The url change the URL at the end by adding <code class="m">/about</code>
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return '&lt;h1>Home Page&lt;/h1>'
+<span class="m">@app.route('/about')</span>
+def about():
+    return '&lt;h1>About&lt;/h1>'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</pre>
+                        </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/11.png" alt="">
+                    </div>
+                </div>
+                <div class="fc step">
+                    <div tabindex="1" class="step-txt">
+                        <p>
+                            We can add multiple <span class="m">decorators</span> for the same page
+                        </p>
+                        <div class="code-container">
+                            <pre class="copy-code">
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+<span class="m">@app.route('/home')</span>
+def home():
+    return '&lt;h1>Home&lt;/h1>'
+@app.route('/about')
+def about():
+    return '&lt;h1>About&lt;/h1>'
+if __name__ == '__main__':
+    app.run(debug=True)</pre>
+                        </div>
+                    </div>
+                    <div class="fi step-img">
+                        <img src="imagesVideos/12.png"></img>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
