@@ -122,12 +122,13 @@ article > p {
     display: flex;
     flex-direction: column;
 }
-
 .page > h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 
+    color: blue;
     background-color: white;
-    /* margin-left: 2.5%; */
     border-radius: 10px;
-    /* padding: .25% 2.5%; */
+    padding: .25% 2.5%;
     display: inline-block;
 }
 .topics-container {
@@ -232,20 +233,21 @@ footer{
         margin-left: 5%;
     }
     header>nav>ul>li {
-        font-size: 80%;
-        flex-basis: 15%;
         flex-direction: column;
         margin: 0 1.8%;
     }
     body>header>nav>ul>li>a {
-        font-size: .65rem;
+        font-size: .6rem;
         text-shadow: none;
         padding: 2.5%;
     }
+    #websitesAndAppsHome {
+        font-size: .55rem;
+    }
     #home {
-        padding-left: 5%;
-        padding-right: 25%;
-        padding-bottom: 15%;
+        /* padding-left: 2.5%; */
+        /* padding-right: 25%; */
+        /* padding-bottom: 15%; */
     }
     header>h1 {
         display: none;
@@ -262,14 +264,15 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding-bottom: 1%;
-        margin-bottom: 1%;
+        /* padding-bottom: 1%;
+        margin-bottom: 1%; */
     }
     .description-txt > p{
         font-size: 150%;
     }
     .description-txt > ul {
-        margin-bottom: -8%;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
     .specialty-txt {
         margin-top: 0;
@@ -292,13 +295,18 @@ footer{
     .flex-2-2 {
         flex-direction: column;
     }
-    .page {
+    #websitesAndApps{
         padding-top: 0;
         margin-top: 2.5%;
         margin-left: 1.5%;
     }
+    .pages-container {
+        margin-top: 2.5%;
+        margin-left: 3.5%;
+    }
 
     .page > h2{
+
         font-size: 1.25rem;
         padding: .5% 1%
     }
