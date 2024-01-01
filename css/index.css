@@ -79,7 +79,7 @@ main {
     background-position-y: 30%;
     background-repeat: no-repeat;
     background-position-x: center;
-    transition: background-image 1900s ease-in-out;
+    transition: background-image 1500ms ease-in-out;
     height: 100vh;
     padding-top: 1%;
 }
