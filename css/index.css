@@ -289,7 +289,7 @@ footer{
         height: 18px;
         background-color: white ;
         margin-bottom: 0;
-        padding-bottom: 0;
+        height: 5vh;
     }
     h1 {
         opacity: 0;
@@ -311,8 +311,11 @@ footer{
         display: none;
     }
     main {
-        padding-top: 5%;
+        /* padding-top: 5%; */
         margin-top: 0;
+    }
+    .description-txt>p{
+        color: black
     }
     .page {
         padding-top: 0;
