@@ -337,13 +337,13 @@ footer{
     .specialty-txt>.shortcuts-ul{
         flex-wrap: wrap;
     }
-    /* #websitesAndApps,
+    #websitesAndApps,
     #websitesAndApps > .topics-container{
         padding:0;
         margin: 0;
         margin-bottom: 2%;
         order:3;
-    } */
+    }
     #websitesAndAppsHome {
         white-space: nowrap !important;
     }
