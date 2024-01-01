@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
         slideshowContainer.style.backgroundImage = 'url(' + images[currentIndex] + ')';
         setTimeout(function () {
             slideshowContainer.style.opacity = 1;
-        }, 200);
+        }, 250);
     }
 
-    setInterval(updateBackground, 5000); // Change image every 5 seconds
+    setInterval(updateBackground, 1900); // Change image every 5 seconds
 });

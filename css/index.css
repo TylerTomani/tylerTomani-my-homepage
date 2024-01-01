@@ -79,7 +79,7 @@ main {
     background-position-y: 30%;
     background-repeat: no-repeat;
     background-position-x: center;
-    transition: background-image 5000s ease-in-out;
+    transition: background-image 1900s ease-in-out;
     height: 100vh;
     padding-top: 1%;
 }
@@ -126,19 +126,21 @@ article > p {
 .pages-container {
     display: flex;
     flex-direction: column;
+    margin-left: 5%;
+    gap: 1rem;
 }
 .page > h2 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: black;
-    background-color: white;
-    border-radius: 6px;
-    /* padding: .25% 2.5%; */
-    /* width: 50%; */
     display: inline-block;
+    font-family: sans-serif  'Arial Narrow', Arial, sans-serif;
+    background-color: lightgray;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 1px whitesmoke;
+    opacity: .95;
 }
 .topics-container {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
+    margin-top: 2.5%;
     gap: 1rem;
     /* align-items: center; */
 }
