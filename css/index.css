@@ -129,18 +129,18 @@ article > p {
 }
 .page > h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: inline-block;
     color: black;
     background-color: white;
-    border-radius: 10px;
-    padding: .25% 2.5%;
+    border-radius: 6px;
+    /* padding: .25% 2.5%; */
+    /* width: 50%; */
     display: inline-block;
 }
 .topics-container {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 1rem;
-    align-items: center;
+    /* align-items: center; */
 }
 .topics-container > h3{
     font-size: .9rem;
@@ -324,23 +324,21 @@ footer{
         margin-top: 2.5%;
         margin-left: 4%;
     }
+    .page {
+        /* display: flex; */
+        /* flex-direction: column; */
+    }
     
     .page > h2{
-        display: inline-flex;
+        display: inline-block;
         box-shadow: 0 0 2px 1px lightgray;
         font-size: 1.25rem;
-        padding: .45% 2.5%;
-
-        
-    }
-    .page {
-        display: flex;
-        flex-direction: column;
+        padding: .45% 2.5%;       
     }
     .page > .topics-container {
-        width: 90%;
-        margin: 2% 0;
-        margin-left: 2.5%;
+        /* width: 90%; */
+        /* margin: 2% 0; */
+        /* margin-left: 2.5%; */
     }
     
     footer {
