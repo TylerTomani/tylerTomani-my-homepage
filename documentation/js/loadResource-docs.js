@@ -1,1 +1,1 @@
-const resources = document.querySelectorAll('.resource > header')
+const resources = document.querySelectorAll('.resource ')
