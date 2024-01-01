@@ -237,16 +237,18 @@ footer{
         font-size: 96%;
     }
     body > header {
-        padding-top: 4%;
+        padding-top: 1%;
         justify-content: flex-end;
         background-color: white;
         position: sticky;
         top: 0;
-        height: 2vh;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        /* height: 2vh; */
     }       
     header>nav {
         background-color: white;
-        justify-content: flex-end;
+        /* justify-content: flex-start; */
         flex-basis: 100%;
         border-top: none;
     }
@@ -266,6 +268,7 @@ footer{
         font-size: .6rem;
         text-shadow: none;
         padding: 2.5%;
+        padding-bottom:0;
     }
     #websitesAndAppsHome {
         font-size: .55rem;
@@ -280,7 +283,7 @@ footer{
         display: none;
     }
     main {
-        padding-top: 15%;
+        padding-top: 20%;
         margin-top: 2.5%;
     }
     .description-txt {
