@@ -254,11 +254,32 @@ footer{
         display: none;
     }
     main {
-        padding-top: 5%;
+        /* padding-top: 5%; */
         margin-top: 0;
     }
+    .article-container {
+        margin-bottom: -7%;
+    }
     .description-txt>p{
-        color: white !important;
+        /* color: white !important; */
+    }
+    .description-txt > p{
+        font-size: 150%;
+        /* color: black; */
+    }
+    .specialty-txt{
+        margin-top: 0;
+        font-size: 80%;
+    }
+    #websitesAndApps,
+    #websitesAndApps > .topics-container{
+        padding:0;
+        margin: 0;
+        margin-bottom: 0%;
+        order:3;
+    }
+    #websitesAndAppsHome {
+        white-space: nowrap !important;
     }
     .page {
         padding-top: 0;
@@ -281,24 +302,9 @@ footer{
     }
     .flex-2-2 {
         flex-direction: column;
+        margin-bottom: 10%;
     }
-    .description-txt > p{
-        font-size: 150%;
-        color: black;
-    }
-    .specialty-txt{
-        font-size: 80%;
-    }
-    #websitesAndApps,
-    #websitesAndApps > .topics-container{
-        padding:0;
-        margin: 0;
-        margin-bottom: 2%;
-        order:3;
-    }
-    #websitesAndAppsHome {
-        white-space: nowrap !important;
-    }
+    
     
     footer {
         background-image: url('/images/DimLitMoutainSun.jpg');
