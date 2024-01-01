@@ -68,25 +68,34 @@ main {
     white-space: none;
     padding:0 2.5%;
     border: 1px solid black;
+    /* background: blue; */
+}
+.sub-resource > a{
+
 }
 
 
 
-.sub-resource:active,.sub-resource:focus,
+.sub-resource:active,.sub-resource:focus{
+    box-shadow: 0px 0px 4px 3px yellow;
+    background-color: lightblue;
+    border: 2px solid blue;
+    background-color: white;
+    position: relative;
+    bottom: 2%;
+    z-index: 20;
+    transition: all 250ms;
+}
 .session:active,.session:focus,
 .project:active,.project:focus,.project:hover,
 .playlist-container:active,.playlist-container:focus,
-.resource:active,.resource:focus,
-.sub-resource:active,.sub-resource:focus{
-    /* border: 3px solid blue; */
-    /* box-shadow: 0px 0px 4px 3px blue; */
-        box-shadow: 3px 0 4px 3px yellow;
+.resource:active,.resource:focus{
+        box-shadow: 2px 3px 3px 5px lightblue;
+        background-color: lightblue;
         border: 2px solid blue;
-        /* margin-left: .5%; */
-        /* margin-top: -1.75%; */
         background-color: white;
         position: relative;
-        bottom: 10%;
+        bottom: 2%;
         z-index: 20;
         transition: all 250ms;
 }

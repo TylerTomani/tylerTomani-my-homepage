@@ -2,12 +2,19 @@ const resources = document.querySelectorAll('.resource')
 const subResourcesContainers = document.querySelectorAll('.sub-resources-container')
 
 subResourcesContainers.forEach(subResourcesContainer => {
-    subResourcesContainer.classList.add('hide')
+    if(!subResourcesContainer.classList.contains('show')){
+
+        subResourcesContainer.classList.add('hide')
+    }
 })
 
 resources.forEach(resource => {
     resource.addEventListener('click', e => {
         console.log('kljd')
+        let resourceContainer = getResourceContainer(e.target.parentElement)
+        console.log(resourceContainer)
+        const subResourcesContainer = resourceContainer.querySelector('.sub-resources-container')            
+        toggleSubResourcesContainer(subResourcesContainer)
     })
     resource.addEventListener('keydown', e => {
         let key = e.keyCode 
@@ -15,7 +22,6 @@ resources.forEach(resource => {
             let resourceContainer = getResourceContainer(e.target.parentElement)
             console.log(resourceContainer)
             const subResourcesContainer = resourceContainer.querySelector('.sub-resources-container')            
-
             toggleSubResourcesContainer(subResourcesContainer)
         }
         
