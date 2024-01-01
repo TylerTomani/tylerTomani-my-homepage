@@ -232,16 +232,22 @@ footer{
     header >h1{display: none;}   
     body > header > nav {
         border: none;
+        margin-right: 25%;
+        padding-right: 25%;
     }
     body > header > nav > ul {
         font-size: 50%;
         list-style: none;
         margin-left: 50%;
-        justify-content:flex-start;
-        margin-right: 25%;
+        padding-left: 25%;
+        justify-content:space-around;
+        /* margin-right: 25%; */
     }
     body > header > nav > ul > li{
-        margin:0 10% ;
+        /* margin:0 100% ; */
+        flex-direction: row;
+        margin-left: 20%;
+
     }
     body > header > nav > ul > li > a{
         width: 110%;
