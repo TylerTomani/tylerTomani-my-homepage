@@ -6,6 +6,7 @@
 }
 :root{
     --topic-min-height: 50px;
+    --topic-max-img: 50px;
 }
 header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -131,8 +132,7 @@ article.description-txt {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 .topics-container > h3{
     font-size: .9rem;
@@ -142,6 +142,7 @@ article.description-txt {
 }
 a.topic {
     display: flex;
+    justify-content: center;
     flex-direction: column-reverse;
     border-radius: 20px;
     text-decoration: none;
@@ -151,7 +152,6 @@ a.topic {
     background-color: whitesmoke;
     flex-basis: 15%;
     /* border: 1px solid blue; */
-    padding: 0 2.5%;
     border-radius: 5px;
     min-height: var(--topic-min-height);
 }
@@ -159,8 +159,8 @@ a.topic {
     justify-self: center;
     align-self: center;
     min-width: 80px;
-    max-width: 90px;
-    max-height: 60px;
+    max-width: var(--topic-max-img);
+    max-height: var(--topic-max-img);
     margin: 0 2%;
 }
 .topic:active,.topic:focus {
@@ -281,10 +281,7 @@ footer{
         margin: 0;
 
     }
-    .topic{
-        margin: 0;
-        padding: 0;
-    }
+    
     .topic > img{
         height: 50% !important;
     }
@@ -318,7 +315,7 @@ footer{
         height: 100vmax;
         margin-top: 0;
     }
-        a.topic {
+        /* a.topic {
             min-height: 50px !important;
-        }
+        } */
 }
