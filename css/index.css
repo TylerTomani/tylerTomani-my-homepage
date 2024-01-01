@@ -5,8 +5,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 :root{
-    --topic-min-height: 90px;
-    /* --img-min-width: 190px !important; */
+    --topic-min-height: 50px;
 }
 header {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -133,7 +132,7 @@ article.description-txt {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 .topics-container > h3{
     font-size: .9rem;
@@ -154,7 +153,7 @@ a.topic {
     /* border: 1px solid blue; */
     padding: 0 2.5%;
     border-radius: 5px;
-    /* min-height: var(--topic-min-height); */
+    min-height: var(--topic-min-height);
 }
 .topic>img {
     justify-self: center;
@@ -169,41 +168,6 @@ a.topic {
     transform: scale(1.12);
     transition: all 250ms;
     border: 2px solid blue;
-}
-.personal-projects-container {
-    background-color: white;
-}
-
-#flask {
-    /* display: flex; */
-    /* justify-content:flex-end; */
-    /* align-items: center; */
-    /* min-height: 90px; */
-}
-#flask img {
-    /* margin-top: 15%; */
-    /* min-width: 120px; */
-    /* margin-bottom: 10%; */
-}
-#react {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    /* align-items: center; */
-    /* min-height: 90px; */
-}
-#react > img {
-    /* min-width: 120%; */
-    /* height: 120% !important; */
-    /* width: 200px !important; */
-    /* height: 100%; */
-}
-
-#sql>img {
-    /* width: 100%; */
-    /* margin-bottom: 25%; */
-}
-#linkedinCourses > img {
-    /* width: 55%; */
 }
 #websitesAndApps > .topics-container{
     flex-wrap: nowrap;
@@ -254,8 +218,8 @@ footer{
         font-size: 60%;
         list-style: none
     }
-    #contactDetails{
-        justify-content: flex-start;
+    .specialty-txt>.shortcuts-ul {
+        flex-wrap: wrap;
     }
     main {
         margin:0;
@@ -334,9 +298,6 @@ footer{
     .specialty-txt{
         font-size: 80%;
     }
-    .specialty-txt>.shortcuts-ul{
-        flex-wrap: wrap;
-    }
     #websitesAndApps,
     #websitesAndApps > .topics-container{
         padding:0;
@@ -357,5 +318,7 @@ footer{
         height: 100vmax;
         margin-top: 0;
     }
-    
+        a.topic {
+            min-height: 50px !important;
+        }
 }
