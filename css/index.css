@@ -72,7 +72,7 @@ main {
     /* margin-top: .5%; */
     /* border-top: 2px solid blue; */
     padding-top: 1%;
-    background-image: url('/images/airplanSpaceSun.jpg');
+    background-image: url('../images/airplanSpaceSun.jpg');
     background-size: 95%;
     background-position-y: 30%;
     background-repeat: no-repeat;
