@@ -4,12 +4,19 @@
     box-sizing: border-box;    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+#scrollPhotos,
+#photoScroll {
+    margin: 0 5%
+}
+#scrollPhotos > article > p {
+    font-size: .85rem;
+}
 :root{
     --topic-min-height: 50px;
-    --topic-max-img: 50px;
+    --topic-maxW-img: 50px;
+    --topic-maxH-img: 40px;
 }
-body >header {
-    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+header {
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -23,17 +30,15 @@ header>h1 {
     padding-left: 2.5%;
     flex-basis: 20%;
 }
-body>header>nav {
-    /* border-top: 1px solid blue; */
+header>nav {
     flex-basis: 80%;
 }
-body>header>nav>ul {
+header>nav>ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
-body>header>nav>ul>li {
+header>nav>ul>li {
     flex-basis: 15%;
     font-size: 1rem;
     font-style: bold;
@@ -42,7 +47,7 @@ body>header>nav>ul>li {
     align-items: center;
     flex-direction: column;   
 }
-body>header>nav>ul>li>a{
+header>nav>ul>li>a{
     text-shadow: 0 0 2px  orange ;
     text-decoration: none;
     color: blue;
@@ -95,7 +100,6 @@ main article,
 main > article {
     border-radius: 10px;
     padding: 0 2.5%;
-    width: 100%;
     color: whitesmoke;
     font-weight: 1000;
     font-size: bold;
@@ -104,8 +108,7 @@ article > p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 article.description-txt {
-    width: 100%;
-    margin-bottom: 2.5%;
+
 }
 .specialty-txt {
     flex-basis: 100% !important;
@@ -124,15 +127,14 @@ article.description-txt {
     flex-direction: column;
 }
 .page {
-    margin-top: 1%;
+    /* margin-top: 1%; */
 }
 .page > h2 {
     background-color: white;
-    margin-left: 2.5%;
+    /* margin-left: 2.5%; */
     border-radius: 10px;
-    padding: .25% 2.5%;
+    /* padding: .25% 2.5%; */
     display: inline-block;
-    margin-bottom: 1%;
 }
 .topics-container {
     display: flex;
@@ -162,8 +164,8 @@ a.topic {
     justify-self: center;
     align-self: center;
     min-width: 80px;
-    max-width: var(--topic-max-img);
-    max-height: var(--topic-max-img);
+    max-width: var(--topic-maxW-img);
+    max-height: var(--topic-maxH-img);
     margin: 0 2%;
 }
 .topic:active,.topic:focus {
@@ -257,7 +259,7 @@ footer{
         /* margin: 0; */
     }
     body>header>nav>ul>li>a {
-        /* font-size: 2rem !important; */
+        text-shadow: none;
         padding: 2.5%;
     }
     #home {
