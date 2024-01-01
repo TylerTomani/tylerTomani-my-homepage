@@ -30,12 +30,15 @@ main {
     width: 10%;
     align-self: flex-end;
 }
-.resources-container > .sub-resources-container{
+.resource-container > .sub-resources-container{
     border: 2px solid black;   
     border-top: 0;
     border-right: 0;
     display: flex;
     flex-wrap: wrap;
+    padding-left: 1.5%;
+    padding-top: .25%;
+    /* background-color: yellow; */
 }
 .sub-resource{
     flex-basis: 20%;
