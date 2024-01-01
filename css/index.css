@@ -74,10 +74,6 @@ header>nav>ul>li>a:focus {
 
 main {
     margin: 0 2.5%;
-    /* padding: 0 2.5%; */
-    /* padding-top: 1%; */
-    /* border: 5px dashed orange; */
-    /* background-color: orange; */
     background-image: url('../images/airplanSpaceSun.jpg');
     background-size: 95%;
     background-position-y: 30%;
@@ -85,6 +81,7 @@ main {
     background-position-x: center;
     transition: background-image 5000s ease-in-out;
     height: 100vh;
+    padding-top: 1%;
 }
 article>ul{
     margin-top: 2%;
@@ -93,14 +90,12 @@ article>ul>li {
     margin: 1% 0;
     margin-left: 7.5%;
 }
+main article,
 .flex-2-2 > article,
-article {
+main > article {
     border-radius: 10px;
     padding: 0 2.5%;
-    padding-top: 1%;
-    margin: 0 auto;
     width: 100%;
-    /* opacity: .9; */
     color: whitesmoke;
     font-weight: 1000;
     font-size: bold;
@@ -274,9 +269,11 @@ footer{
         display: none;
 
     }
-
     body>header>nav>ul>li sup {
         display: none;
+    }
+    main {
+        padding-top: 5%;
     }
     
     .description-txt > p{
