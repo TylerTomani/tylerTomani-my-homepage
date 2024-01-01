@@ -305,7 +305,8 @@ footer{
         margin-left: .5%;
     }
     body > header > nav > ul > li > a{
-        padding: 5%;
+        /* padding: 5%; */
+        padding: 2.5% 10%;
     }
     body>header>nav>ul>li sup {
         display: none;
