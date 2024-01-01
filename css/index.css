@@ -22,34 +22,38 @@ header>h1 {
     font-size: 1.2rem;
     padding-left: 2.5%;
     flex-basis: 20%;
-    /* border: 1px solid orange; */
 }
 body>header>nav {
-    border-top: 1px solid blue;
+    /* border-top: 1px solid blue; */
     flex-basis: 80%;
 }
 body>header>nav>ul {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
-    /* border: 1px dashed blue; */
+    align-items: center;
 }
 
 body>header>nav>ul>li {
     flex-basis: 15%;
+    font-size: 1rem;
+    font-style: bold;
+    font-weight: 1000;
     display: flex; 
     align-items: center;
     flex-direction: column;   
-    /* margin: 0 8%; */
 }
 body>header>nav>ul>li>a{
+    text-shadow: 0 0 2px  orange ;
     text-decoration: none;
     color: blue;
     text-shadow: 20 orangered; ;
     display: inline-block;    
-    padding: 1% 12.5%;
+    padding: 1% 15%;
     margin: 0 2.5%;
     padding-bottom: 5%;
+}
+a.home{
+    padding: 0 105%
 }
 .selectedPage {
     opacity: .4;
@@ -196,9 +200,11 @@ a.topic {
 }
 
 footer{
-    margin-top: 5%;
+    background-image: url('../images/DimLitMoutainSun.jpg');
 }
 #contactDetails {
+    margin-top: 25%;
+    padding-top: 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,39 +212,81 @@ footer{
 }
 
 @media screen and (max-width: 850px) {
-    body> header > h1 {
-        /* display:  */
-    }
+    #websitesAndApps {
+            white-space: wrap;
+        }
+    body>header>nav>ul {
+            justify-content: space-around;
+            align-items: center;
+            margin-left: 5%;
+        }
+    
+        body>header>nav>ul>li {
+            font-size: .8rem;
+            flex-basis: 15%;
+            flex-direction: column;
+            margin: 0 1.8%;
+            /* margin: 0; */
+        }
+    
+        body>header>nav>ul>li>a {
+            padding: 2.5%;
+        }
+    
 }
-@media screen and (max-width: 600px){
-    
-    header >h1{display: none;}   
-    
+@media screen and (max-width: 620px){
+    body>header {
+        justify-content: flex-end;
+    }       
+    body>header>nav {
+        height: 1vh;
+        justify-content: flex-end;
+        flex-basis: 100%;
+        border-top: none;
+        position: sticky;
+        top: 0;
+    }
+    #websitesAndApps {
+        white-space: wrap;
+    }
+    body>header>nav>ul {
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 5%;
+    }
+    body>header>nav>ul>li {
+        font-size: 80%;
+        flex-basis: 15%;
+        flex-direction: column;
+        margin: 0 1.8%;
+        /* margin: 0; */
+    }
+    body>header>nav>ul>li>a {
+        /* font-size: 2rem !important; */
+        padding: 2.5%;
+    }
+    #home {
+        padding-left: 5%;
+        padding-right: 25%;
+        padding-bottom: 15%;
+    }
+    header>h1 {
+        display: none;
+
+    }
+
     body>header>nav>ul>li sup {
         display: none;
     }
-    main {
-        margin-top: 0;
-    }
-    .article-container {
-        margin-bottom: -7%;
-    }
-    .description-txt>p{
-        /* color: white !important; */
-    }
+    
     .description-txt > p{
         font-size: 150%;
-        /* color: black; */
     }
-    .specialty-txt{
+    .specialty-txt > .shortcuts-ul{
         margin-top: 0;
-        font-size: 80%;
+        flex-wrap: wrap;
     }
-    #websitesAndApps,
-    #websitesAndApps > .topics-container{
-        padding:0;
-        margin: 0;
-        margin-bottom: 0%;
+    #websitesAndApps{    
         order:3;
     }
     
@@ -252,23 +300,17 @@ footer{
         font-size: 90%;
     }
     .topics-container {
-        justify-content: flex-start;
-        gap: 1rem;
-        margin: 0;
-
+        /* justify-content: flex-start; */
     }
     
     .topic > img{
-        height: 50% !important;
     }
     .flex-2-2 {
         flex-direction: column;
-        margin-bottom: 10%;
     }
-    
-    
     footer {
         background-image: url('/images/DimLitMoutainSun.jpg');
+        
         background-size: 95%;
         background-position-y: 30%;
         background-repeat: no-repeat;
@@ -276,18 +318,5 @@ footer{
         height: 100vmax;
         margin-top: 0;
     }
-        /* a.topic {
-            min-height: 50px !important;
-        } */
-                body>header>nav {
-                    flex-basis: 100%;
-                }
-        
-                body>header>nav>ul>li {
-                    font-size: 60%;
-                    flex-basis: 15%;
-                    display: inline-block flex;
-                    flex-direction: column;
-                    /* margin: 0 8%; */
-                }
+    
 }
