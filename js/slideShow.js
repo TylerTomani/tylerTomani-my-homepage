@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slideshowContainer = document.querySelector('main');
     const images = ['../images/airplanSpaceSun.jpg',
-    '../images/CityCloud.jpg',
+    // '../images/CityCloud.jpg',
     '../images/DimLitMoutainSun.jpg',
-    '../images/Automn_landscape.jpg',
-    '../images/lakeSunset.jpg'
+    '../images/Automn_landscape.jpg'
+    // '../images/lakeSunset.jpg'
     ];
                 let currentIndex = 0;
     slideshowContainer.style.opacity = 1
