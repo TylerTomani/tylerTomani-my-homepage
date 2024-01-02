@@ -19,7 +19,6 @@
     --topic-maxW-img: 50px;
     --topic-maxH-img: 40px;
 }
-
 header {
     background-color: white;
     display: flex;
@@ -29,24 +28,20 @@ header {
     top: 0;
     padding: .5% 0;
 }
-
 header>h1 {
     font-size: 1.2rem;
     padding-left: 2.5%;
     flex-basis: 20%;
     white-space: nowrap;
 }
-
 header>nav {
     flex-basis: 80%;
 }
-
 header>nav>ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
 header>nav>ul>li {
     flex-basis: 15%;
     font-style: bold;
@@ -54,59 +49,37 @@ header>nav>ul>li {
     display: flex;
     align-items: center;
     flex-direction: column;
-    */
 }
-
-header>nav>ul>li>a {
-    /* font-size: 5rem;
-    text-shadow: 0 0 2px  orange ;
-    text-decoration: none;
-    color: blue;
-    text-shadow: 20 orangered; ;
-    display: inline-block;    
-    padding: 1% 15%;
-    margin: 0 2.5%;
-    padding-bottom: 5%; */
-}
-
 .selectedPage {
     opacity: .4;
 }
-
 #websitesAndAppsHome {
-    /* white-space: nowrap; */
+    white-space: nowrap;
 }
-
 body>header>nav>ul>li>a:active,
 header>nav>ul>li>a:focus {
     box-shadow: 0 0 2px 2px blue !important;
 }
-
 main {
-    margin: 0 3.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10%;
+    margin-top: 2.5%;
     background-image: url('../images/airplanSpaceSun.jpg');
-    background-size: 75%;
+    background-size: 100%;
     background-position-y: 0%;
     background-repeat: no-repeat;
     background-position-x: center;
+    background-position-y: center;
     transition: background-image 1500ms ease-in-out;
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: 1%;
 }
-
-article>ul {
-    margin-top: 2%;
+.flex-2-2 {
+    width: 100%;
+    display: flex;
 }
-
-article>ul>li {
-    margin: 1% 0;
-    margin-left: 7.5%;
-}
-
-.flex-2-2 * {
-    flex-basis: 50%;
-}
-
 main article,
 .flex-2-2>article,
 main>article {
@@ -121,15 +94,30 @@ article>p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.description-txt {
+    border: 2px solid orange;
+}
 .specialty-txt {
     margin-top: 2%;
     padding-top: 2%;
-    /* padding-bottom: 2%; */
     margin-bottom: 2%;
     flex-basis: 100% !important;
     display: flex;
     flex-direction: column;
 }
+article>ul {
+    margin-top: 2%;
+}
+
+article>ul>li {
+    margin: 1% 0;
+    margin-left: 7.5%;
+}
+
+.flex-2-2 * {
+    flex-basis: 50%;
+}
+
 
 .specialty-txt>.shortcuts-ul {
     width: 100%;
@@ -244,7 +232,15 @@ footer {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 909px) {
+    main {
+        margin: 0 2.5;
+        background-position-y: 0;
+    }
+    .description-txt {
+        flex-basis: 100% !important;
+        width: 100% !important;
+    }
     header>h1 {
         display: none;
     }
@@ -278,15 +274,12 @@ footer {
     #websitesAndAppsHome {
         font-size: .85rem;
     }
-
     #websitesAndApps {
         white-space: wrap;
     }
-
     body>header>h1 {
         display: none;
     }
-
     body>header {
         justify-content: flex-end;
         padding-top: 1%;
@@ -295,17 +288,14 @@ footer {
         position: sticky;
         top: 0;
     }
-
     header>nav>ul {
         display: flex;
         justify-content: space-evenly;
         align-items: flex-start;
     }
-
     header>nav>ul>li {
         display: block;
     }
-
     body>header>nav>ul>li>a {
         font-size: .95rem;
         display: block;
@@ -315,14 +305,11 @@ footer {
         padding: 2.5%;
         padding-bottom: 0;
     }
-
     body>header>nav>ul>li sup {
         display: none;
     }
-
     main {
         margin: 0 2.5%;
-        width: 85%;
         border: 2px solid orange;
     }
 
@@ -405,4 +392,7 @@ footer {
         height: 100vmax;
         margin-top: 0;
     }
+        #websitesAndAppsHome {
+            white-space: wrap;
+        }
 }
