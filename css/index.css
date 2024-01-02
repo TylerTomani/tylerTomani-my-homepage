@@ -140,13 +140,19 @@ body>header>nav>ul>li>sup {
     margin-left: 5%;
     gap: 1rem;
 }
-.page>h2 {
+.page > h2 {
     display: inline-block;
     font-family: sans-serif 'Arial Narrow', Arial, sans-serif;
-    background-color: lightgray;
+    /* background-color: lightgray; */
     border-radius: 8px;
-    box-shadow: 0 0 3px 1px whitesmoke;
     opacity: .95;
+    text-shadow: 0 0 4px orange;
+    color: white;
+}
+.page > h2 > a{
+    color: white;
+
+    text-decoration: none;
 }
 .topics-container {
     display: flex;
@@ -159,6 +165,10 @@ body>header>nav>ul>li>sup {
     font-size: .9rem;
     flex-basis: 12%;
     background-color: whitesmoke;
+}
+#websitesAndApps>h2 {
+    flex-basis: 50%;
+    white-space: nowrap;
 }
 a.topic {
     display: flex;
@@ -189,15 +199,8 @@ a.topic {
     border: 2px solid blue;
 }
 
-#websitesAndApps>h2 {
-    flex-basis: 50%;
-    white-space: nowrap;
-}
 
-#websitesAndApps>.topics-container {
-    flex-wrap: nowrap;
-    /* margin-top: 5%; */
-}
+
 
 #templates {
     /* display: flex; */
@@ -415,7 +418,10 @@ footer {
 }
 
 @media screen and (max-width:440px){
-    #websitesAndAppsHome,
+    #websitesAndAppsHome{
+        font-size: 38% !important;
+
+    }
     body > header > nav > ul > li > a{
         font-size: 50% !important;
     }
