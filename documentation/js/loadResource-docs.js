@@ -1,1 +1,1 @@
-const resources = document.querySelectorAll('.resource ')
+// const resources = document.querySelectorAll('.resource ')

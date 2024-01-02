@@ -11,6 +11,7 @@ subResourcesContainers.forEach(subResourcesContainer => {
 resources.forEach(resource => {
     resource.addEventListener('click', e => {
         console.log('kljd')
+        e.preventDefault()
         let resourceContainer = getResourceContainer(e.target.parentElement)
         console.log(resourceContainer)
         const subResourcesContainer = resourceContainer.querySelector('.sub-resources-container')            
@@ -32,7 +33,7 @@ function getResourceContainer(parent){
     if(parent.classList.contains('resource-container')){
         return parent
     } else if (parent.parentElement){
-        return ResgetResourceContainer(parent.parentElement)
+        return getResourceContainer(parent.parentElement)
     } else {
         return null
     }

@@ -19,7 +19,7 @@ function hideTopics(){
 }
 hideTopics()
 
-addEventListener('DOMConresourceFocus = truetentLoaded', e => {
+addEventListener('DOMContentLoaded', e => {
     resourceFocus = true
     topicFocus = false
 })
@@ -53,12 +53,10 @@ resourceHeaders.forEach(resourceheader => {
     })
 })
 function toggleTopicsContainer(container){
-    
-    hideTopics()
     if(!container.classList.contains('hide')){
         container.classList.add('hide')
     } else if(container.classList.contains('hide')){
-        // container.classList.add('show')
+        hideTopics()
         container.classList.remove('hide')
     }
 }

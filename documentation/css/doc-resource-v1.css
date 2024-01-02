@@ -42,67 +42,69 @@ main {
     padding-top: 1%;
     margin: 0 1%;
 }
-.resource>.topics-container {
+.resources-container {
+    border: 1px solid black;
+    margin-top: 1%;
+    padding-left: 1%;
     display: flex;
-    flex-wrap: wrap;
-    margin: 1% 2.5%;
-    margin-left: 2.5%;
-    gap: 2rem;
-    max-height: 140px;
+    gap: 1.5rem;
+}
+.resource {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    min-width: 400px;
+    max-width: 420px;
+    max-height: var(--maxImgHeight);
+    height: 95%;
+}
+.resource > header {
+    padding-left: 2.5%;
+    padding-bottom: 2%;
+    margin-left: 0;
+    max-height: var(--maxImgHeight);
+    display: flex ;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid black;
+}
+.resource > header > h3 {
+    display: inline-block;
+}
+.resource > header >img {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 90%;
+    max-height: 100px;
+    /* min-width: 120px;
+    min-height: 59px;
+    max-height: 70px; */
+    /* justify-self: flex-end; */
+    /* border: 1px solid black; */
 }
 
-.topic-container>h4 {
-    /* border: 1px solid black; */
-    height: 100%;
-    width: 100%;
-}
-.topic-container>h4>.topic {
-    font-size: 1.2rem;
-    display: inline-block;
-    min-height: 30px;
-    width: 100%;
-    /* border: 1px solid black; */
-    min-width: 120px;
-    padding: 1% 2.5%;
-    display: inline;
-    text-decoration: none;
-    border: 2px solid green;
-    white-space: nowrap;
-}
-.topic:active,
-.topic:focus {
+.resource>header:active,.resource>header:focus,
+a:active,a:focus,
+button:active,button:focus{
     box-shadow: 0 0 4px 4px yellow;
-    /* border: 2px solid blue; */
-    transform: scale(2.2);
-    padding: 2% 0
-    margin-left: 5%;
-    margin-top: -5%;
-    background-color: white;
+    border: 2px solid blue;
+    transform: scale(1.02);
+    margin-left: .75%;
     position: relative;
-    bottom: 25%;
-    z-index: 20;
     transition: all 250ms;
 }
-.data-analysis {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Social_Network_Analysis_Visualization.png/375px-Social_Network_Analysis_Visualization.png');
-    background-size: 100%;
-    background-position-x: center;
-    /* background-position-y: 40%; */
-    background-repeat: no-repeat;
-}
-
-
-
 .hide {
     display: none !important;
 }
 .show {
     display: inline-block;
 }
+
+
 @media screen and (max-width:650px){
-    .resources-container {
-        flex-direction: column;
-    }
+
     .shortcut-txt{
         display: none;
     }
