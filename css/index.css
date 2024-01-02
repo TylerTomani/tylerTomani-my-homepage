@@ -12,69 +12,8 @@
     --txt-shadow-color:blue ;
     --color-second-txt: white;
 }
-main article,
-.flex-2-2>article{
-    border-radius: 10px;
-    color: whitesmoke;
-    font-weight: 1000;
-    font-size: bold;
-}
-article>p {
-    padding: 0 2.5%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-article>ul {
-    margin-top: 2%;
-}
-article>ul>li {
-    margin: 1% 0;
-    margin-left: 7.5%;
-}
-body>header>nav>ul>li>sup {
-    font-size: 110%;
-}
-.specialty-txt {
-    margin-top: 2%;
-    padding-top: 2%;
-    margin-bottom: 2%;
-    flex-basis: 100% !important;
-    display: flex;
-    flex-direction: column;
-}
-.specialty-txt>.shortcuts-ul{
-    margin-left: 0;
-    padding-left: 0;
-    display: flex;
-    flex-direction: row;
-    padding-right: 5%;
-    align-self: flex-start;
-    justify-self: flex-start;
-}
-/* Header  */
-body>header>nav>ul>li>sup{
-    color: blue;
-    text-shadow: 0 0 var(--txt-shadow-size) var(--txt-shadow-color);        
-    background-color: whitesmoke;
-    text-shadow: 0 0 10px lightgreen;        
-}
-.shortcuts-ul>li {
-    font-size: 1rem;
-    flex-basis: 45%;
-    white-space: nowrap;
-}
-.specialty-txt>.shortcuts-ul>li {
-    color: var(--color-second-txt);
-    text-shadow: 0 0 var(--txt-shadow-size) var(--txt-shadow-color);        
-}
-#scrollPhotos,
-#photoScroll {
-    margin: 0 5%
-}
 
-#scrollPhotos>article>p {
-    font-size: .85rem;
-}
-
+/* ///////////////////////////// Body Header */
 header {
     background-color: white;
     display: flex;
@@ -116,6 +55,13 @@ body>header>nav>ul>li>a:active,
 header>nav>ul>li>a:focus {
     box-shadow: 0 0 2px 2px blue !important;
 }
+body>header>nav>ul>li>sup{
+    color: blue;
+    text-shadow: 0 0 var(--txt-shadow-size) var(--txt-shadow-color);        
+    background-color: whitesmoke;
+    text-shadow: 0 0 10px lightgreen;        
+}
+/* ////////////////////////////////////// Main */
 main {
     display: flex;
     flex-direction: column;
@@ -136,22 +82,64 @@ main {
     width: 100%;
     display: flex;
 }
-
-
 .flex-2-2 * {
     flex-basis: 50%;
 }
+main article,
+.flex-2-2>article {
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: 1000;
+    font-size: bold;
+}
+article>p {
+    padding: 0 2.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+article>ul {
+    margin-top: 2%;
+}
+article>ul>li {
+    margin: 1% 0;
+    margin-left: 7.5%;
+}
+body>header>nav>ul>li>sup {
+    font-size: 110%;
+}
+.specialty-txt {
+    margin-top: 2%;
+    padding-top: 2%;
+    margin-bottom: 2%;
+    flex-basis: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+.specialty-txt>.shortcuts-ul {
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    padding-right: 5%;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+.shortcuts-ul>li {
+    font-size: 1rem;
+    flex-basis: 45%;
+    white-space: nowrap;
+}
+.specialty-txt>.shortcuts-ul>li {
+    color: var(--color-second-txt);
+    text-shadow: 0 0 var(--txt-shadow-size) var(--txt-shadow-color);        
+}
 
-
-
-
+/*///////////////////////////// Pages */
 .pages-container {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
     gap: 1rem;
 }
-
 .page>h2 {
     display: inline-block;
     font-family: sans-serif 'Arial Narrow', Arial, sans-serif;
@@ -160,7 +148,6 @@ main {
     box-shadow: 0 0 3px 1px whitesmoke;
     opacity: .95;
 }
-
 .topics-container {
     display: flex;
     flex-wrap: wrap;
@@ -168,13 +155,11 @@ main {
     gap: 1rem;
     /* align-items: center; */
 }
-
 .topics-container>h3 {
     font-size: .9rem;
     flex-basis: 12%;
     background-color: whitesmoke;
 }
-
 a.topic {
     display: flex;
     justify-content: center;
@@ -188,7 +173,6 @@ a.topic {
     border-radius: 5px;
     min-height: var(--topic-min-height);
 }
-
 .topic>img {
     justify-self: center;
     align-self: center;
@@ -197,7 +181,6 @@ a.topic {
     max-height: var(--topic-maxH-img);
     margin: 0 2%;
 }
-
 .topic:active,
 .topic:focus {
     box-shadow: 0 0 6px 6px yellow;
