@@ -265,6 +265,9 @@ footer {
         text-shadow: none;
         padding: 2.5%;
     }
+    body>header>nav>ul>li>sup{
+        display: none;
+    }
 
     .specialty-txt>.shortcuts-ul {
         font-size: .8rem;
