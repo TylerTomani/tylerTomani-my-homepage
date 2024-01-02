@@ -190,7 +190,7 @@ a.topic {
     flex-direction: column-reverse;
     border-radius: 20px;
     text-decoration: none;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     background-color: whitesmoke;
     flex-basis: 15%;
@@ -200,7 +200,9 @@ a.topic {
 .topic>img {
     justify-self: center;
     align-self: center;
-    min-width: 80px;
+    min-width: 120px;
+    min-height: 110px;
+
     max-width: var(--topic-maxW-img);
     max-height: var(--topic-maxH-img);
     margin: 0 2%;
@@ -249,6 +251,11 @@ footer {
 }
 
 @media screen and (max-width: 909px) {
+    .topic>img {
+        min-width: 80px;
+        max-width: 80px;
+        min-height: 100px;
+    }
     #websitesAndApps {
             order: 3;
             margin-left: 2.5%;
