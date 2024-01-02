@@ -395,4 +395,8 @@ footer {
     body > header > nav > ul > li > a{
         font-size: 50% !important;
     }
+    .topic > img {
+        max-width: 100px !important;
+        max-height: 100px !important;
+    }
 }
