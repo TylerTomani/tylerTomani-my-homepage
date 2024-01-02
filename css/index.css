@@ -389,13 +389,14 @@ footer {
         height: 100vmax;
         margin-top: 0;
     }
-        #websitesAndAppsHome {
-            white-space: wrap;
-        }
+    #websitesAndAppsHome {
+        white-space: wrap;
+    }
 }
 
 @media screen and (max-width:440px){
+    #websitesAndAppsHome,
     body > header > nav > ul > li > a{
-        font-size: 50%;
+        font-size: 50% !important;
     }
 }
