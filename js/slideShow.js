@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slideshowContainer = document.querySelector('main');
     const images = ['../images/airplanSpaceSun.jpg',
-    '../images/CityCloud.jpg',
+    // '../images/CityCloud.jpg',
     '../images/Automn_landscape.jpg',
-    // '../images/DimLitMoutainSun.jpg',
+    '../images/DimLitMoutainSun.jpg',
     // '../images/CoundyMountainPeak.heic',
     '../images/lakeSunset.jpg'
     // '../images/DangBeautyMountains.heic'
