@@ -1,21 +1,25 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 #scrollPhotos,
 #photoScroll {
     margin: 0 5%
 }
-#scrollPhotos > article > p {
+
+#scrollPhotos>article>p {
     font-size: .85rem;
 }
-:root{
+
+:root {
     --topic-min-height: 50px;
     --topic-maxW-img: 50px;
     --topic-maxH-img: 40px;
 }
+
 header {
     background-color: white;
     display: flex;
@@ -23,32 +27,38 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    padding-top: .5%;
+    padding: .5% 0;
 }
+
 header>h1 {
     font-size: 1.2rem;
     padding-left: 2.5%;
     flex-basis: 20%;
     white-space: nowrap;
 }
+
 header>nav {
     flex-basis: 80%;
 }
+
 header>nav>ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
 header>nav>ul>li {
     flex-basis: 15%;
-    font-size: 1rem;
     font-style: bold;
     font-weight: 1000;
-    display: flex; 
+    display: flex;
     align-items: center;
-    flex-direction: column;   
+    flex-direction: column;
+    */
 }
-header>nav>ul>li>a{
+
+header>nav>ul>li>a {
+    /* font-size: 5rem;
     text-shadow: 0 0 2px  orange ;
     text-decoration: none;
     color: blue;
@@ -56,57 +66,61 @@ header>nav>ul>li>a{
     display: inline-block;    
     padding: 1% 15%;
     margin: 0 2.5%;
-    padding-bottom: 5%;
+    padding-bottom: 5%; */
 }
-a.home{
-    padding: 0 105%
-}
+
 .selectedPage {
     opacity: .4;
 }
+
 #websitesAndAppsHome {
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
+
 body>header>nav>ul>li>a:active,
 header>nav>ul>li>a:focus {
     box-shadow: 0 0 2px 2px blue !important;
 }
 
 main {
-    margin: 0 2.5%;
+    margin: 0 3.5%;
     background-image: url('../images/airplanSpaceSun.jpg');
-    background-size: 95%;
-    background-position-y: 30%;
+    background-size: 75%;
+    background-position-y: 0%;
     background-repeat: no-repeat;
     background-position-x: center;
     transition: background-image 1500ms ease-in-out;
     height: 100vh;
     padding-top: 1%;
 }
-article>ul{
+
+article>ul {
     margin-top: 2%;
 }
+
 article>ul>li {
     margin: 1% 0;
     margin-left: 7.5%;
 }
 
-.flex-2-2 *{
+.flex-2-2 * {
     flex-basis: 50%;
 }
 
 main article,
-.flex-2-2 > article,
-main > article {
+.flex-2-2>article,
+main>article {
     border-radius: 10px;
     padding: 0 2.5%;
     color: whitesmoke;
     font-weight: 1000;
     font-size: bold;
 }
-article > p {
+
+article>p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .specialty-txt {
     margin-top: 2%;
     padding-top: 2%;
@@ -116,27 +130,32 @@ article > p {
     display: flex;
     flex-direction: column;
 }
-.specialty-txt > .shortcuts-ul {
+
+.specialty-txt>.shortcuts-ul {
     width: 100%;
     display: flex;
 }
-.shortcuts-ul > li{
+
+.shortcuts-ul>li {
     white-space: nowrap;
 }
+
 .pages-container {
     display: flex;
     flex-direction: column;
     margin-left: 5%;
     gap: 1rem;
 }
-.page > h2 {
+
+.page>h2 {
     display: inline-block;
-    font-family: sans-serif  'Arial Narrow', Arial, sans-serif;
+    font-family: sans-serif 'Arial Narrow', Arial, sans-serif;
     background-color: lightgray;
     border-radius: 8px;
     box-shadow: 0 0 3px 1px whitesmoke;
     opacity: .95;
 }
+
 .topics-container {
     display: flex;
     flex-wrap: wrap;
@@ -144,11 +163,13 @@ article > p {
     gap: 1rem;
     /* align-items: center; */
 }
-.topics-container > h3{
+
+.topics-container>h3 {
     font-size: .9rem;
     flex-basis: 12%;
     background-color: whitesmoke;
 }
+
 a.topic {
     display: flex;
     justify-content: center;
@@ -162,6 +183,7 @@ a.topic {
     border-radius: 5px;
     min-height: var(--topic-min-height);
 }
+
 .topic>img {
     justify-self: center;
     align-self: center;
@@ -170,38 +192,46 @@ a.topic {
     max-height: var(--topic-maxH-img);
     margin: 0 2%;
 }
-.topic:active,.topic:focus {
+
+.topic:active,
+.topic:focus {
     box-shadow: 0 0 6px 6px yellow;
     transform: scale(1.12);
     transition: all 250ms;
     border: 2px solid blue;
 }
 
-#websitesAndApps > h2{
+#websitesAndApps>h2 {
     flex-basis: 50%;
     white-space: nowrap;
 }
-#websitesAndApps > .topics-container{
+
+#websitesAndApps>.topics-container {
     flex-wrap: nowrap;
     /* margin-top: 5%; */
 }
+
 #templates {
     /* display: flex; */
 }
-#templates > h2{
+
+#templates>h2 {
     display: inline-block;
     max-height: 40px;
 }
-#templates > .topics-container {
+
+#templates>.topics-container {
     justify-self: flex-start;
 }
+
 #sql {
     display: flex;
 }
 
-footer{
+footer {
     background-image: url('../images/DimLitMoutainSun.jpg');
 }
+
 #contactDetails {
     margin-top: 25%;
     padding-top: 25%;
@@ -214,141 +244,160 @@ footer{
 }
 
 
-@media screen and (max-width: 800px){
-    body>header>nav>ul>li>a {
-            font-size: .8rem;
-            text-shadow: none;
-            padding: 2.5%;
-        }
-        .specialty-txt>.shortcuts-ul {
-            font-size: .8rem;
-            margin: 1%;
-            flex-wrap: wrap;
-        }
-        .specialty-txt>.shortcuts-ul > li{
-            flex-basis: 10%;
-        }
-        #websitesAndApps>h2 {
-            font-size: 1.2rem
-        }
-}
-@media screen and (max-width: 680px){
-    #websitesAndAppsHome{
-        font-size: 96%;
-    }
-    body > header {
-        padding-top: 1%;
-        justify-content: flex-end;
-        background-color: white;
-        position: sticky;
-        top: 0;
-        margin-bottom: 0;
-        padding-bottom: 0;
-        /* height: 2vh; */
-    }       
-    header>nav {
-        background-color: white;
-        /* justify-content: flex-start; */
-        flex-basis: 100%;
-        border-top: none;
-    }
-    #websitesAndApps {
-        white-space: wrap;
-    }
-    header>nav>ul {
-        justify-content: space-around;
-        align-items: center;
-        margin-left: 5%;
-    }
-    header>nav>ul>li {
-        flex-direction: column;
-        margin: 0 1.8%;
-    }
-    body>header>nav>ul>li>a {
-        font-size: .6rem;
-        text-shadow: none;
-        padding: 2.5%;
-        padding-bottom:0;
-    }
-    #websitesAndAppsHome {
-        font-size: .55rem;
-    }
-    #home {
-    }
+@media screen and (max-width: 800px) {
     header>h1 {
         display: none;
+    }
 
+    body>header>nav {
+        flex-basis: 100%;
     }
-    body>header>nav>ul>li sup {
-        display: none;
-    }
-    main {
-        padding-top: 20%;
-        margin-top: 2.5%;
-        margin-bottom: 5%;
-    }
-    .description-txt {
-        padding-top: 2%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-    .description-txt > p{
-        font-size: 150%;
-    }
-    .description-txt > ul {
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    .specialty-txt {
-        margin-top: 0;
-        padding-top: 0;
-        padding-bottom: 2%;
-        margin-bottom: 2%;
-    }
-    .specialty-txt > p{
+
+    body>header>nav>ul>li>a {
         font-size: .8rem;
-        padding-bottom: 1%;
+        text-shadow: none;
+        padding: 2.5%;
     }
-    .specialty-txt > .shortcuts-ul{
+
+    .specialty-txt>.shortcuts-ul {
         font-size: .8rem;
         margin: 1%;
         flex-wrap: wrap;
     }
-    #websitesAndApps{    
-        order:3;
+
+    .specialty-txt>.shortcuts-ul>li {
+        flex-basis: 10%;
     }
-    .flex-2-2 {
-        flex-direction: column;
+
+    #websitesAndApps>h2 {
+        font-size: 1.2rem
     }
-    #websitesAndApps{
-        margin-top: -5%;
-        margin-top: -.5%;
-        margin-left: 1.5%;
+}
+
+@media screen and (max-width: 680px) {
+    #websitesAndAppsHome {
+        font-size: .85rem;
     }
-    .pages-container {
-        margin-top: 2.5%;
-        margin-left: 4%;
+
+    #websitesAndApps {
+        white-space: wrap;
     }
-    .page {
-        /* display: flex; */
-        /* flex-direction: column; */
+
+    body>header>h1 {
+        display: none;
     }
-    
-    .page > h2{
-        display: inline-block;
-        box-shadow: 0 0 2px 1px lightgray;
-        font-size: 1.25rem;
-        padding: .45% 2.5%;       
+
+    body>header {
+        justify-content: flex-end;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        background-color: white;
+        position: sticky;
+        top: 0;
     }
-    .page > .topics-container {
+
+    header>nav>ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    header>nav>ul>li {
+        display: block;
+    }
+
+    body>header>nav>ul>li>a {
+        font-size: .95rem;
+        display: block;
+        height: 100%;
+        width: 100%;
+        text-shadow: none;
+        padding: 2.5%;
+        padding-bottom: 0;
+    }
+
+    body>header>nav>ul>li sup {
+        display: none;
+    }
+
+    main {
+        margin: 0 2.5%;
+        width: 85%;
+        border: 2px solid orange;
+    }
+
+    /* .description-txt { */
+    /* padding-top: 2%; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-end; */
+    /* } */
+    /*  */
+    /* .description-txt>p { */
+    /* font-size: 150%; */
+    /* } */
+    /*  */
+    /* .description-txt>ul { */
+    /* margin-bottom: 0; */
+    /* padding-bottom: 0; */
+    /* } */
+    /*  */
+    /* .specialty-txt { */
+    /* margin-top: 0; */
+    /* padding-top: 0; */
+    /* padding-bottom: 2%; */
+    /* margin-bottom: 2%; */
+    /* } */
+    /*  */
+    /* .specialty-txt>p { */
+    /* font-size: .8rem; */
+    /* padding-bottom: 1%; */
+    /* } */
+    /*  */
+    /* .specialty-txt>.shortcuts-ul { */
+    /* font-size: .8rem; */
+    /* margin: 1%; */
+    /* flex-wrap: wrap; */
+    /* } */
+    /*  */
+    /* #websitesAndApps { */
+    /* order: 3; */
+    /* } */
+    /*  */
+    /* .flex-2-2 { */
+    /* flex-direction: column; */
+    /* } */
+    /*  */
+    /* #websitesAndApps { */
+    /* margin-top: -5%; */
+    /* margin-top: -.5%; */
+    /* margin-left: 1.5%; */
+    /* } */
+    /* .pages-container { */
+    /* margin-top: 2.5%; */
+    /* margin-left: 4%; */
+    /* } */
+    /*  */
+    /* .page { */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* } */
+
+    .page>h2 {
+        /* display: inline-block; */
+        /* box-shadow: 0 0 2px 1px lightgray; */
+        /* font-size: 1.25rem; */
+        /* padding: .45% 2.5%; */
+    }
+
+    .page>.topics-container {
         /* width: 90%; */
         /* margin: 2% 0; */
         /* margin-left: 2.5%; */
     }
-    
+
     footer {
-        background-image: url('/images/DimLitMoutainSun.jpg');       
+        background-image: url('/images/DimLitMoutainSun.jpg');
         background-size: 95%;
         background-position-y: 30%;
         background-repeat: no-repeat;
@@ -356,5 +405,4 @@ footer{
         height: 100vmax;
         margin-top: 0;
     }
-    
 }
