@@ -77,6 +77,9 @@ main {
     transition: background-image 1500ms ease-in-out;
     /* height: 100vh; */
     padding-top: 1%;
+    padding-bottom: 5.5%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 .flex-2-2 {
     width: 100%;
@@ -137,21 +140,29 @@ body>header>nav>ul>li>sup {
 .pages-container {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-    gap: 1rem;
+    align-items: flex-start;
+    /* margin-left: 5%; */
+    /* gap: 1rem; */
+    width: 100%;
+    /* border: 10px dashed red; */
+}
+.page {
+    margin-bottom: 2.5%;
+    /* border: 10px dashed lime; */
 }
 .page > h2 {
-    display: inline-block;
+    font-size: 1.8rem;
     font-family: sans-serif 'Arial Narrow', Arial, sans-serif;
-    /* background-color: lightgray; */
     border-radius: 8px;
-    opacity: .95;
     text-shadow: 0 0 4px orange;
-    color: white;
+    color: whitesmoke;
+}
+.page#templates > h2 {
+    font-size: 190%;
 }
 .page > h2 > a{
     color: white;
-
+    font-weight: 1000;
     text-decoration: none;
 }
 .topics-container {
@@ -239,14 +250,15 @@ footer {
 .shortcuts-ul>li:last-child {
         white-space: wrap;
     }
-    }
+}
+
 @media screen and (max-width: 909px) {
     .shortcuts-ul>li:last-child {
             white-space: nowrap;
         }
     main {
-        margin: 0 2.5;
         background-position-y: 0;
+        padding-bottom: 2.5%;
     }
     .description-txt {
         flex-basis: 100% !important;
@@ -279,6 +291,11 @@ footer {
         flex-basis: 10%;
     }
 
+    #websitesAndApps {
+        flex-wrap: nowrap;
+        flex-basis: 100%;
+        /* border: 3px dashed magenta; */
+    }
     #websitesAndApps>h2 {
         font-size: 1.2rem
     }
@@ -324,7 +341,6 @@ footer {
     }
     main {
         margin: 0 2.5%;
-        border: 2px solid orange;
     }
 
     .description-txt {
