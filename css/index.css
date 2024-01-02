@@ -144,6 +144,7 @@ body>header>nav>ul>li>sup {
     /* margin-left: 5%; */
     /* gap: 1rem; */
     width: 100%;
+    padding: 0 5%;
     /* border: 10px dashed red; */
 }
 .page {
@@ -151,19 +152,16 @@ body>header>nav>ul>li>sup {
     /* border: 10px dashed lime; */
 }
 .page > h2 {
-    font-size: 1.8rem;
     font-family: sans-serif 'Arial Narrow', Arial, sans-serif;
     border-radius: 8px;
     text-shadow: 0 0 4px orange;
     color: whitesmoke;
 }
-.page#templates > h2 {
-    font-size: 190%;
-}
 .page > h2 > a{
     color: white;
     font-weight: 1000;
     text-decoration: none;
+    /* text-shadow: 0 0 4px white; */
 }
 .topics-container {
     display: flex;
@@ -177,10 +175,7 @@ body>header>nav>ul>li>sup {
     flex-basis: 12%;
     background-color: whitesmoke;
 }
-#websitesAndApps>h2 {
-    flex-basis: 50%;
-    white-space: nowrap;
-}
+
 a.topic {
     display: flex;
     justify-content: center;
@@ -208,18 +203,6 @@ a.topic {
     transform: scale(1.12);
     transition: all 250ms;
     border: 2px solid blue;
-}
-
-
-
-
-#templates {
-    /* display: flex; */
-}
-
-#templates>h2 {
-    display: inline-block;
-    max-height: 40px;
 }
 
 #templates>.topics-container {
@@ -294,7 +277,6 @@ footer {
     #websitesAndApps {
         flex-wrap: nowrap;
         flex-basis: 100%;
-        /* border: 3px dashed magenta; */
     }
     #websitesAndApps>h2 {
         font-size: 1.2rem
@@ -305,8 +287,12 @@ footer {
     #websitesAndAppsHome {
         font-size: .85rem;
     }
+    .page > h2 a{
+        font-size: 1rem;
+    }
     #websitesAndApps {
         white-space: wrap;
+        fon
     }
     body>header>h1 {
         display: none;
@@ -371,48 +357,13 @@ footer {
     /* padding-bottom: 1%; */
     /* } */
     /*  */
-    /* .specialty-txt>.shortcuts-ul { */
-    /* font-size: .8rem; */
-    /* margin: 1%; */
-    /* flex-wrap: wrap; */
-    /* } */
-    /*  */
-    /* #websitesAndApps { */
-    /* order: 3; */
-    /* } */
-    /*  */
-    /* .flex-2-2 { */
-    /* flex-direction: column; */
-    /* } */
-    /*  */
-    /* #websitesAndApps { */
-    /* margin-top: -5%; */
-    /* margin-top: -.5%; */
-    /* margin-left: 1.5%; */
-    /* } */
-    /* .pages-container { */
-    /* margin-top: 2.5%; */
-    /* margin-left: 4%; */
-    /* } */
-    /*  */
-    /* .page { */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* } */
-
-    .page>h2 {
-        /* display: inline-block; */
-        /* box-shadow: 0 0 2px 1px lightgray; */
-        /* font-size: 1.25rem; */
-        /* padding: .45% 2.5%; */
+    .specialty-txt>.shortcuts-ul > li a {
+       font-size: .28rem;
     }
-
-    .page>.topics-container {
-        /* width: 90%; */
-        /* margin: 2% 0; */
-        /* margin-left: 2.5%; */
+    #websitesAndApps {
+        order: 3;
+        padding-left: 5%;
     }
-
     footer {
         background-image: url('/images/DimLitMoutainSun.jpg');
         background-size: 95%;
@@ -425,15 +376,15 @@ footer {
     #websitesAndAppsHome {
         white-space: wrap;
     }
-        .specialty-txt>.shortcuts-ul>li {
-            color: var(--color-second-txt);
-            text-shadow: 0 0 10px var(--txt-shadow-color);
-        }
-        .specialty-txt>.shortcuts-ul>li:last-child {
-            color: var(--color-second-txt);
-            text-shadow: 0 0 10px red;
-            font-weight: bold;
-        }
+    .specialty-txt>.shortcuts-ul>li {
+        color: var(--color-second-txt);
+        text-shadow: 0 0 10px var(--txt-shadow-color);
+    }
+    .specialty-txt>.shortcuts-ul>li:last-child {
+        color: var(--color-second-txt);
+        text-shadow: 0 0 10px red;
+        font-weight: bold;
+    }
 }
 
 @media screen and (max-width:440px){

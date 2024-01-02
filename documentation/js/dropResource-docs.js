@@ -5,7 +5,7 @@ subResourcesContainers.forEach(subResourcesContainer => {
     if(!subResourcesContainer.classList.contains('show')){
 
         subResourcesContainer.classList.add('hide')
-    }
+    } 
 })
 
 resources.forEach(resource => {

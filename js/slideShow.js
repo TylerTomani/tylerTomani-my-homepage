@@ -1,19 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
     const slideshowContainer = document.querySelector('main');
     const images = ['../images/airplanSpaceSun.jpg',
-    // '../images/CityCloud.jpg',
-    '../images/Automn_landscape.jpg',
     '../images/DimLitMoutainSun.jpg',
+    '../images/fallPath.HEIC.heic',
+    '../images/BeachSet.jpg'
+    // '../images/lakeSunset.jpg',
+    // '../images/CityCloud.jpg',
     // '../images/CoundyMountainPeak.heic',
-    '../images/lakeSunset.jpg'
     // '../images/DangBeautyMountains.heic'
     ];
-                let currentIndex = 0;
+    let currentIndex = 0;
     slideshowContainer.style.opacity = 1
     slideshowContainer.style.backgroundImage = images[0]
     function updateBackground() {
         // currentIndex = Math.floor(Math.random()* images.length - 1)
-        currentIndex = (currentIndex + 1);
+        currentIndex = (currentIndex + 1) % images.length;
         if(currentIndex >= images.length - 1){
             currentIndex = 0
         }
