@@ -4,7 +4,68 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+:root {
+    --topic-min-height: 50px;
+    --topic-maxW-img: 50px;
+    --topic-maxH-img: 40px;
+    --txt-shadow-size: 24px;
+    --txt-shadow-color:blue ;
+    --color-second-txt: white;
+}
+main article,
+.flex-2-2>article{
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: 1000;
+    font-size: bold;
+}
+article>p {
+    padding: 0 2.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+article>ul {
+    margin-top: 2%;
+}
+article>ul>li {
+    margin: 1% 0;
+    margin-left: 7.5%;
+}
+body>header>nav>ul>li>sup {
+    font-size: 110%;
+}
+.specialty-txt {
+    margin-top: 2%;
+    padding-top: 2%;
+    margin-bottom: 2%;
+    flex-basis: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+.specialty-txt>.shortcuts-ul{
+    margin-left: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    padding-right: 5%;
+    align-self: flex-start;
+    justify-self: flex-start;
+}
+/* Header  */
+body>header>nav>ul>li>sup{
+    color: blue;
+    text-shadow: 0 0 var(--txt-shadow-size) var(--txt-shadow-color);        
+    background-color: whitesmoke;
+    text-shadow: 0 0 10px lightgreen;        
+}
+.shortcuts-ul>li {
+    font-size: 1rem;
+    flex-basis: 45%;
+    white-space: nowrap;
+}
+.specialty-txt>.shortcuts-ul>li {
+    color: var(--color-second-txt);
+    text-shadow: 0 0 var(--txt-shadow-size) var(--txt-shadow-color);        
+}
 #scrollPhotos,
 #photoScroll {
     margin: 0 5%
@@ -14,11 +75,6 @@
     font-size: .85rem;
 }
 
-:root {
-    --topic-min-height: 50px;
-    --topic-maxW-img: 50px;
-    --topic-maxH-img: 40px;
-}
 header {
     background-color: white;
     display: flex;
@@ -64,7 +120,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 10%;
+    margin: 0 8%;
     margin-top: 2.5%;
     background-image: url('../images/airplanSpaceSun.jpg');
     background-size: 100%;
@@ -80,50 +136,14 @@ main {
     width: 100%;
     display: flex;
 }
-main article,
-.flex-2-2>article,
-main>article {
-    border-radius: 10px;
-    padding: 0 2.5%;
-    color: whitesmoke;
-    font-weight: 1000;
-    font-size: bold;
-}
 
-article>p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.specialty-txt {
-    margin-top: 2%;
-    padding-top: 2%;
-    margin-bottom: 2%;
-    flex-basis: 100% !important;
-    display: flex;
-    flex-direction: column;
-}
-article>ul {
-    margin-top: 2%;
-}
-
-article>ul>li {
-    margin: 1% 0;
-    margin-left: 7.5%;
-}
 
 .flex-2-2 * {
     flex-basis: 50%;
 }
 
 
-.specialty-txt>.shortcuts-ul {
-    width: 100%;
-    display: flex;
-}
 
-.shortcuts-ul>li {
-    white-space: nowrap;
-}
 
 .pages-container {
     display: flex;
@@ -229,7 +249,15 @@ footer {
 }
 
 
+@media screen and (max-width: 1000px) {
+.shortcuts-ul>li:last-child {
+        white-space: wrap;
+    }
+    }
 @media screen and (max-width: 909px) {
+    .shortcuts-ul>li:last-child {
+            white-space: nowrap;
+        }
     main {
         margin: 0 2.5;
         background-position-y: 0;
@@ -392,6 +420,15 @@ footer {
     #websitesAndAppsHome {
         white-space: wrap;
     }
+        .specialty-txt>.shortcuts-ul>li {
+            color: var(--color-second-txt);
+            text-shadow: 0 0 10px var(--txt-shadow-color);
+        }
+        .specialty-txt>.shortcuts-ul>li:last-child {
+            color: var(--color-second-txt);
+            text-shadow: 0 0 10px red;
+            font-weight: bold;
+        }
 }
 
 @media screen and (max-width:440px){
