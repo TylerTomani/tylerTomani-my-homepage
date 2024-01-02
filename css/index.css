@@ -68,6 +68,7 @@ main {
     align-items: center;
     margin: 0 8%;
     margin-top: 2.5%;
+    border: 2px dashed orange;
     background-image: url('../images/airplanSpaceSun.jpg');
     background-size: 100%;
     background-position-y: 0%;
@@ -163,6 +164,13 @@ body>header>nav>ul>li>sup {
     text-decoration: none;
     /* text-shadow: 0 0 4px white; */
 }
+#websitesAndApps {
+    margin-top: 1.5%;
+}
+#websitesAndApps > .topics-container {
+    margin-left: 5%;
+    margin-top: 2.5%;
+}
 .topics-container {
     display: flex;
     flex-wrap: wrap;
@@ -214,6 +222,13 @@ a.topic {
 }
 
 footer {
+    /* border: 4px solid blue; */
+    /* background-position-y: -200%; */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0 8%;
+    padding: 0;
     background-image: url('../images/DimLitMoutainSun.jpg');
 }
 
@@ -227,8 +242,6 @@ footer {
     align-items: center;
     text-shadow: 0 0 5px orange;
 }
-
-
 @media screen and (max-width: 1000px) {
 .shortcuts-ul>li:last-child {
         white-space: wrap;
@@ -236,6 +249,16 @@ footer {
 }
 
 @media screen and (max-width: 909px) {
+    #websitesAndApps {
+            order: 3;
+            margin-left: 2.5%;
+            padding-left: 2.5%;
+            
+        }
+    #websitesAndApps>.topics-container {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
     .shortcuts-ul>li:last-child {
             white-space: nowrap;
         }
@@ -365,13 +388,15 @@ footer {
         padding-left: 5%;
     }
     footer {
+        margin: 0 2%;
         background-image: url('/images/DimLitMoutainSun.jpg');
-        background-size: 95%;
+        background-size: 100%;
         background-position-y: 30%;
         background-repeat: no-repeat;
         background-position-x: center;
         height: 100vmax;
         margin-top: 0;
+        padding-top: 0;
     }
     #websitesAndAppsHome {
         white-space: wrap;
