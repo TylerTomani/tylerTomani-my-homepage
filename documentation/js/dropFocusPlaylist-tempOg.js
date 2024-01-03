@@ -3,7 +3,7 @@ const playlistTutorialContainers = document.querySelectorAll('.playlist-tutorial
 
 const tutorialContainerTutorials = document.querySelectorAll('.tutorials-container >.tutorial-container > h3 > .tutorial ')
 let numFocus = false
-let currentPlistTutorials
+let pListTutorials = []
 function hidePlaylistTutorialsContainers(){
     playlistTutorialContainers.forEach(playlistTutorialContainers => {
         playlistTutorialContainers.classList.add('hide')
@@ -16,7 +16,6 @@ function togglePlistTutorialContainer(container){
     if(container.classList.contains('hide')){
         hidePlaylistTutorialsContainers()
         container.classList.remove('hide')
-        queryPlaylistTutorials(container)
         numFocus = true
     } else {
         container.classList.add('hide')
@@ -64,21 +63,14 @@ function getTutorialContainer(parent){
         return null
     }
 }
-function queryPlaylistTutorials(container){
-    currentPlistTutorials = container.querySelectorAll('.tutorial-container > h3 > .tutorial')
-    
-
-}
+// function queryPlaylistTutorial()
 
 addEventListener('keydown', e => {
     let key = e.key.toLowerCase()
+    // console.log(e.target)
+    // console.log(numFocus)
     if(numFocus){
-        // tutorialsContainer
-        currentPlistTutorials.forEach(tutorial => {
-            if(key === tutorial.innerText[0]){
-                tutorial.focus()
-            }
-        })
+        tutorialsContainer
     } else {
         playlistContainersHeaders.forEach(playlistContainersHeader => {
             const plistHeaderH2 = playlistContainersHeader.querySelector(' h2')
@@ -87,12 +79,25 @@ addEventListener('keydown', e => {
                 playlistContainersHeader.focus()
             }
         })
-        tutorialContainerTutorials.forEach((tutorialContainerTutorial) => {
-            if(key === tutorialContainerTutorial.innerText[0]){
-                tutorialContainerTutorial.focus()
+        tutorialContainerTutorials.forEach((tutorialContainerTutorial,i,arr) => {
+                // const tutorialContainer = getTutorialContainer(e.target.parentElement)              
+                console.log(tutorialContainerTutorial.parentElement)
+                // const tutorialH3 = tutorialContainerTutorial.querySelector('tutorial')
+                // const tutorialNum = tutorialH3.innerText[0]
                 // console.log(tutorialContainerTutorial)
-            }
-                
-        })            
+                if(key === tutorialContainerTutorial.innerText[0]){
+                    tutorialContainerTutorial.focus()
+                    console.log(tutorialContainerTutorial)
+                }
+                // console.log(tutn)
+                // if(tutorialNum){
+                //     confirm.log(tutorialNum)
+                // }
+                // console.log(tutorialContainerTutorial)
+                // if(key === 's'){
+                    // tutorialContainerTutorial.focus()
+                // }
+        })      
+        
     }
 })
