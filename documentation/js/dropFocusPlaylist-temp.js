@@ -86,10 +86,8 @@ addEventListener('keydown', e => {
                 tutorial.focus()
             }
             if(key === 'p'){
-                console.log(tutorial.parentElement)
                 const playlistContainer = getPlaylistContainer(tutorial.parentElement)
                 const playlistContainerHeader = playlistContainer.querySelector('header')
-                console.log(playlistContainer)
                 playlistContainerHeader.focus()
             }
         })
