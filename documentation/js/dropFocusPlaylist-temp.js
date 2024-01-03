@@ -24,7 +24,14 @@ function togglePlistTutorialContainer(container){
 
     }
 }
-
+playlistTutorialContainers.forEach(playlistTutorialContainer => {
+    playlistTutorialContainer.addEventListener('focusout', e => {
+        numFocus = false
+    })
+    playlistTutorialContainer.addEventListener('focusin', e => {
+        numFocus = true
+    })
+})
 playlistContainersHeaders.forEach(playlistContainersHeader => {
     playlistContainersHeader.addEventListener('click', e => {
         e.preventDefault()
@@ -77,6 +84,13 @@ addEventListener('keydown', e => {
         currentPlistTutorials.forEach(tutorial => {
             if(key === tutorial.innerText[0]){
                 tutorial.focus()
+            }
+            if(key === 'p'){
+                console.log(tutorial.parentElement)
+                const playlistContainer = getPlaylistContainer(tutorial.parentElement)
+                const playlistContainerHeader = playlistContainer.querySelector('header')
+                console.log(playlistContainer)
+                playlistContainerHeader.focus()
             }
         })
     } else {
