@@ -72,13 +72,12 @@ main {
 .resource-container > h3 {
     display: inline-block;
 }
-.resource >img {
+.resource > header img {
     border-top: 2px solid black;
     border-right: 2px solid black;
     position: relative;
     z-index: 2;
     height: 100%;
-
     width: 100%;
     max-height: 124px;
     /* min-width: 120px;
@@ -106,9 +105,12 @@ button:active,button:focus{
 }
 
 
-@media screen and (max-width:650px){
+@media screen and (max-width:650px) {
+    .resources-container {
+        flex-direction: column;
+    }
 
-    .shortcut-txt{
+    .shortcut-txt {
         display: none;
     }
 }
