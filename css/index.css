@@ -125,13 +125,14 @@ body>header>nav>ul>li>sup {
     display: flex;
     /* justify-content: flex-start; */
     align-items: center;
-    border: 2px dashed blue;
+    /* border: 2px dashed blue; */
     /* background-color: white; */
     /* color: black; */
+    font-size: 1.4rem;
 }
 .description-txt> ul {
-    /* color: black; */
-    /* justify-self: flex-end; */
+    display: flex;
+    flex-direction: column;
 }
 .specialty-txt>.shortcuts-ul {
     margin-left: 0;
@@ -164,7 +165,7 @@ body>header>nav>ul>li>sup {
     /* border: 10px dashed red; */
 }
 .page {
-    margin-bottom: 2.5%;
+    /* margin-bottom: 2.5%; */
     /* border: 10px dashed lime; */
 }
 .page > h2 {
