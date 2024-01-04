@@ -68,7 +68,6 @@ main {
     align-items: center;
     margin: 0 8%;
     margin-top: 2.5%;
-    border: 2px dashed orange;
     background-image: url('../images/airplanSpaceSun.jpg');
     background-size: 100%;
     background-position-y: 0%;
@@ -359,12 +358,7 @@ footer {
         margin: 0 2.5%;
     }
 
-    .description-txt {
-        font-size: 80%;
-        padding-top: 2%;
-        display: flex;
-        flex-direction: column;
-    }
+    
     /*  */
     /* .description-txt>p { */
     /* font-size: 150%; */
@@ -416,6 +410,35 @@ footer {
         color: var(--color-second-txt);
         text-shadow: 0 0 10px red;
         font-weight: bold;
+    }
+    .description-txt {
+        font-size: 80%;
+        padding-top: 2%;
+        display: flex;
+        flex-direction: column;
+        font-size: .5rem !important;
+    }
+    .description-txt > p {
+        font-size: 1.5rem !important;
+        /* background-color: blue; */
+    }
+    .description-txt > ul{
+        font-size: .66rem !important;
+        /* background-color: blue; */
+        margin-bottom: -2.5%;
+    }
+    .speciality-txt {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 2px solid orange;
+    }
+    .speciality-txt > p {
+        font-size: .5rem !important;
+        /* background-color: blue; */
+    }
+    .speciality-txt > ul {
+        font-size: .5rem !important;
+        /* background-color: blue; */
     }
 }
 
