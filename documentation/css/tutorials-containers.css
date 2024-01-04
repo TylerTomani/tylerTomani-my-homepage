@@ -56,9 +56,7 @@ main > header {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    /* background-color: green; */
     align-items: center;
-    /* padding: 1% 0; */
 }
 
 .tutorial-container>h3>img,

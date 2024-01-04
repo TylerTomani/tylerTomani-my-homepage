@@ -1,6 +1,7 @@
 const playlistContainersHeaders = document.querySelectorAll('.playlist-container > header')
 const playlistTutorialContainers = document.querySelectorAll('.playlist-tutorials-container')
 
+
 const tutorialContainerTutorials = document.querySelectorAll('.tutorials-container >.tutorial-container > h3 > .tutorial ')
 let numFocus = false
 let currentPlistTutorials
@@ -73,8 +74,6 @@ function getTutorialContainer(parent){
 }
 function queryPlaylistTutorials(container){
     currentPlistTutorials = container.querySelectorAll('.tutorial-container > h3 > .tutorial')
-    
-
 }
 
 addEventListener('keydown', e => {
