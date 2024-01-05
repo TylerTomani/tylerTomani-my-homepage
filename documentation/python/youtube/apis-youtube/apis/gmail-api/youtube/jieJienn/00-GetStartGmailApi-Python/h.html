@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://127.0.0.1:5501/websitesAndApps/websitesAndApps.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git-repo-Website&amp;Apps</title>
+    
+    
+    
+    <script src="./h_files/letterFocus.js" defer=""></script>
+    <script src="./h_files/loadTopic.js" defer=""></script>
+    <script src="./h_files/slideShow.js" defer=""></script>
+<link rel="stylesheet" href="./h_files/index.css"><link rel="stylesheet" href="./h_files/font-sizes.css"><link rel="stylesheet" href="./h_files/flex.css"></head>
+<body>
+    <header>
+        <h1>Website &amp; Apps</h1>
+        <nav>
+                <ul>
+                    <li><a tabindex="1" id="home" href="http://127.0.0.1:5501/index.html">home</a></li>
+                    <li><a tabindex="1" id="websitesAndApps" class="selectedPage" href="http://127.0.0.1:5501/websitesAndApps/websitesAndApps.html#">website &amp; apps</a></li>
+                    <li><a tabindex="1" id="docs" href="http://127.0.0.1:5501/documentation/documentation.html">documentation</a></li>
+                    <li><a tabindex="1" id="templates" href="http://127.0.0.1:5501/templates/templates.html">templates</a></li>
+                    <!-- <li><a tabindex="1" id="about" href="#">about</a></li> -->
+                    <li><a tabindex="1" id="c" href="http://127.0.0.1:5501/websitesAndApps/websitesAndApps.html#contact">contact</a></li>
+                </ul>
+        </nav>
+    </header>
+    <main style="opacity: 1; background-image: url(&quot;/images/DimLitMoutainSun.jpg&quot;);">    
+        <div id="websitesAndApps" class="page">
+            <h2>Websites, Projects &amp; Apps</h2>
+            <div class="topics-container">
+                <!-- Anatomy -->
+                <h3>
+                    <a tabindex="1" id="anatomy" class="topic" href="https://tylertomani.github.io/newAnatomy/">Anatomy <img src="./h_files/180px-Maxilla_-_animation_02.gif"></a>
+                </h3>
+                <!-- vitamins & nutrition -->
+                <h3>
+                    <a tabindex="1" id="vitaminsAndNutrition" class="topic" href="https://tylertomani.github.io/nutrient-vitamin-app/">Vitamins&amp;Nutrition <img src="./h_files/Photosynthesis_en.svg.png"></a>
+                </h3>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h2 id="contact">contact</h2>
+        <ul>
+            <li>ttomani@gmail.com</li>
+        </ul>
+
+    </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>

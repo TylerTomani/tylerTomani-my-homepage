@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+:root {
+    --maxImgHeight: 200px;
+}
+body > header {
+    display: flex;
+    border-bottom: 1px solid black;
+}
+#mainHomeLink
+body > header > #homeLink {
+    border: 1px solid black;
+    padding: 1% 2.5%;
+    margin: 1% 2.5%;
+    display: inline-block;
+    height: 10%;
+}
+body > header > h1 {
+    margin: 1% 0;   
+}
+body > header > img {
+    width: 50%;
+    max-height: 120px;
+    max-width: 200px;
+}

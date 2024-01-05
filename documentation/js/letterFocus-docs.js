@@ -28,10 +28,35 @@
         allEls.forEach(el => {
             if(el.hasAttribute('id')){
                 let id = el.getAttribute('id')
+                let num = key
                 if(key === id[0]){
                     el.focus()
                 }
+                
+                switch (key){
+                    case "1":
+                        num = 'one'
+                        break;
+                    case "2":
+                        num = 'two'
+                        break;
+                    case "3":
+                        num = 'three'
+                        break;
+                    case "4":
+                        num = 'four'
+                        break;
+                    case "5":
+                        num = 'five'
+                        break;
+                }
+                let resourceNum = document.querySelector(`.${num}`)
+                if(resourceNum){
+                    resourceNum.focus()
+
+                }
             }
+
         })  
         
     })

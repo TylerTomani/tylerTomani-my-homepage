@@ -4,10 +4,18 @@
 body > header {
     display: flex;
     border-bottom: 2px solid black;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0 2.5%;
     align-items: center;
     
+}
+header > .page-title > h1 {
+    font-size: 1rem;
+    align-self: flex-start;
+    border: 1px soli red;
+}
+#mainHomeLink{
+    border: 1px solid black;
 }
 #homeLink > a{
     font-size: 1.2rem;
@@ -50,4 +58,10 @@ body > header > .page-logo >  img{
 .notes > #notesTextArea:active,.notes > #notesTextArea:focus,
 #homeLink:active,#homeLink:focus{
     box-shadow: 0px 0px 10px 5px orange;
+}
+
+@media screen and (max-width: 680px){
+    header h1 {
+        display: none;
+    }
 }
