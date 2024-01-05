@@ -3,47 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JieJenn_GetStartGmailApi-Python</title>
-    <link rel="stylesheet" href="../../../../../../../../css/tutorial-temp.css">
-    <!-- <link rel="stylesheet" href="../../../../../../../../../css/imgAnimate.css">
-    <link rel="stylesheet" href="../../../../../../css/copy-code.css">
-    <script module src="../../../../../../js/copy-code.js" defer></script>
-    <script src="../../../../../js/playEnlargeVid.js" defer></script>
-    <script src="../../../../../js/addTabIndexImgEnlarge.js" defer></script>
-    <script src="../../../../../js/dropPartStepFocus.js" defer></script> -->
-    <script module src="../../../../../../../../js/letterFocus-docs.js" defer></script>
+    <title>JieJenn01_GetStartGmailApi-Python</title>
+    <link rel="stylesheet" href="../../../../../../../../../../css/font-sizes.css">
+    <link rel="stylesheet" href="../../../../../../../../../css/tutorial-temp.css">
+    <link rel="stylesheet" href="../../../../../../../../../css/resource-header-temp.css">
+
+    <link rel="stylesheet" href="../../../../../../../../../../css/imgAnimate.css">
+    <link rel="stylesheet" href="../../../../../../../../../../css/copy-code.css">
+    <script module src="../../../../../../../../../../js/copy-code.js" defer></script>
+    <script module src="../../../../../../../../../js/letterFocus-docs.js" defer></script>
+    <script module src="../../../../../../../../../js/playEnlargeVid.js" defer></script>
+    <script module src="../../../../../../../../../js/addTabIndexImgEnlarge.js" defer></script>
+    <script module src="../../../../../../../../../js/dropPartStepFocus.js" defer></script>
 </head>
 <body>
     <header>
         <div class="home-link">
-            <a id="home" tabindex="1" href="../../../gmail-api.htm">(home)gmail-api</a>
+            <a id="homeLink" tabindex="1" href="../../jie-jenn-gmail.htm">(home)gmail-api-jieJenn</a>
         </div>
         <div class="title-container">
             <h1>Jie Jenn - gmail api</h1>
             <h2>Getting Started with Gmail API in Python (For Beginners)</h2>
         </div>
         <div class="img-container">
-            <img src="00-jieJenn-getStart.png">
+            <img src="../00-googleDriveApiPython.png">
             <a id="tutorial" tabindex="1" target="_blank" href="https://www.youtube.com/watch?v=7X3fBlMw_1k">tutorial</a>
         </div>
     </header>
     <main>
         <div class="parts-container">
-        <!-- Part 1 Api Docs and scopes-->
+            <!-- Part 1 - Create venv & install flask  -->
             <div class="part">
-                <h3><a tabindex="1" id="p" href="#">Part 1 - Api Docs and scopes</a></h3>
+                <a id="part01" tabindex="1" href="#" class="dropPart
+                        ">
+                    <h2>Part 1 - Create venv & Install flask </h2>
+                </a>
+                <h2 style="color:red">Go back, re-watch and put <code>&lt;h3> tags in step-txt</code></h2>
+                <p>for each step</p>
                 <div class="steps-container ">
                     <!-- 01-01 -->
                     <div class="step">
-                        <div tabindex="1" class="step-txt">
-                            <h4>01</h4>
+                        <div autofocus  tabindex="1" class="step-txt">
+                            <h3>01</h3>
                             <p>
                                 &emsp;Go to the Gmail api homepage, and click on <q>Guides</q>
                                 <br>
                                 <a tabindex="-1" target="_blank" href="https://developers.google.com/gmail/api/guides">https://developers.google.com/gmail/api/guides</a>
                             </p>
                             <p>
-                                &emsp;Here the methods, classes, and use cases are described
+                                &emsp;Here, the methods, classes, and use cases are described
                             </p>
                         </div>
                         <div class="step-img">
@@ -53,8 +61,8 @@
                     <!-- 01-02 -->
                     <div class="step">
                         <div tabindex="1" class="step-txt ">
-                            <h4>02</h4>
-                            <h3>Scopes</h3>
+                            <h3>02</h3>
+                            <h4>Scopes</h4>
                             <p>
                                 &emsp;Go to, 
                                 <br>
@@ -69,20 +77,20 @@
                     </div>
                     <!-- 01-03 -->
                     <div class="step">
-                        <div   tabindex="1" class="step-txt">
-                            <h4>03</h4>
+                        <div tabindex="1" class="step-txt">
+                            <h3>03</h3>
                             <p>
                                 Common scopes are,
                             </p>
                             <div class="code-container md-code">
-                                <pre tabindex="1" class="copy-code ">
+                                <pre tabindex="1" class="smmd-code copy-code ">
 https://www.googleapis.com/auth/gmail.labels</pre>
                             </div>
                             <p>
                                 and,
                             </p>
-                            <div class="code-container md-code">
-                                <pre tabindex="1" class="copy-code">
+                            <div class="code-container ">
+                                <pre tabindex="1" class="smmd-code copy-code">
 https://www.googleapis.com/auth/gmail.settings.basic</pre>
                             </div>
                         </div>
@@ -93,11 +101,11 @@ https://www.googleapis.com/auth/gmail.settings.basic</pre>
                     <!-- 01-04 -->
                     <div class="step">
                         <div tabindex="1" class="step-txt">
-                            <h4>04</h4>
-                            <div class="code-container asc">
+                            <h3>04</h3>
+                            <div class="code-container ">
                                 <pre tabindex="1" class="copy-code md-code">
 https://mail.google.com/</pre>
-                            </div>    
+                            </div>
                             <p>
                                 Gives you full permission to gmail
                             </p>
@@ -106,32 +114,37 @@ https://mail.google.com/</pre>
                             <img class="" src="imagesVideos/01-04.png">
                         </div>
                     </div>
+
                 </div>
             </div>
-        <!-- Part 2 - Documentation Python for Gmail API  -->
+            <!-- Part 2 - Documentation Python for Gmail API  -->
             <div class="part">
-                <h3><a tabindex="1" href="#">Part 2 - Documentation Python for Gmail API </a></h3>
+                <a id="" tabindex="1" href="#" class="dropPart
+                        ">
+                    <h2>Part 2 - Documentation Python for Gmail API </h2>
+                </a>
                 <div class="steps-container ">
                     <!-- 02-01 -->
                     <div class="step">
-                        <div tabindex="1" class="step-txt">
-                            <h4>01</h4>
+                        <div autofocus tabindex="1" class="step-txt">
+                            <h3>01</h3>
                             <p>
                                 Go to <i><q>Guides</q></i> &rarr;Gmail API &rarr;Quickstarts &rarr; Python
-                                then, 
+                                then,
                                 <br>
-                                <a target="_blank" href="https://developers.google.com/gmail/api/quickstart/python">https://developers.google.com/gmail/api/quickstart/python</a>
+                                <a target="_blank"
+                                    href="https://developers.google.com/gmail/api/quickstart/python">https://developers.google.com/gmail/api/quickstart/python</a>
                             </p>
                         </div>
                         <div class="step-img">
-                            <img class="" src="imagesVideos/02-01.png">
+                            <img class="animate-lg" src="imagesVideos/02-01.png">
                         </div>
                     </div>
                     <!-- 02-02 -->
                     <div class="step">
                         <div tabindex="1" class="step-txt">
-                            <h4>02</h4>
-                            <h3>Instructions for setup and install</h3>
+                            <h3>02</h3>
+                            <h4>Instructions for setup and install</h4>
                             <p>
                                 You can follow the instructions on this page to see up, or continue to <a id="part03Link" >Part 3 - Create Project</a>
                             </p>
@@ -140,11 +153,21 @@ https://mail.google.com/</pre>
                             <img src="imagesVideos/02-02.png">
                         </div>
                     </div>
+
+                </div>
+            </div>
+            
+        
+            </div>
+            <div class="part">
+                <h3><a tabindex="1" href="#">Part 2 - Documentation Python for Gmail API </a></h3>
+                <div class="steps-container ">
+                    
                 </div>
             </div>
         <!-- Part 3 - google cloud platform - Create Project -->
             <div class="part">
-                <h3><a id="part03" tabindex="1" href="#">Part 3 - google cloud platform - Create Project</a></h3>
+                <h3><a id="" tabindex="1" href="#">Part 3 - google cloud platform - Create Project</a></h3>
                 <h3>console.cloud.google</h3>
                 <div class="steps-container ">
                     <!-- 03-01 -->

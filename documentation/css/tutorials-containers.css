@@ -32,6 +32,11 @@ main > header {
     display: flex;
     justify-content: space-between;
 }
+.playlist-container>header >.playlist-title{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+}
 .tutorials-container > .tutorial-container{
     flex-basis: 47.5%;
     display: flex;
@@ -66,6 +71,9 @@ main > header {
     max-width: 200px;
     max-height: 124px;
     /* margin: 2.5%; */
+}
+.tutorial > img {
+    max-height: 70px;
 }
 
 

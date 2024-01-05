@@ -80,7 +80,6 @@ function addTabIndex(e){
     if(!stepTabsAdded && parent.classList.contains('step')){
         aTabIndexAdd(as)
         imgs.forEach(img => {
-            console.log(img)
             enlargeImg(img)
         });
         copyCodeTabIndexAdd(copyCodes)
@@ -121,7 +120,6 @@ function denlargeAllImgs(){
         
     })
 }
-denlargeAllImgs()
 
 stepTxtsPAs.forEach(a =>{
     a.addEventListener('focus', e => {
@@ -176,17 +174,18 @@ function toggleImgSize(img){
 
 function enlargeImg(img){
     // console.log(img)
-    if(img.classList.contains('denlarge') && !img.classList.contains('animate-lg')){
+    if(img.classList.contains('denlarge')){
         img.classList.remove('denlarge')
-        img.classList.add('enlarge')       
-    } else if(img.classList.contains('animate-lg') ){
+        img.classList.add('enlarge')
+        
+    }
+    if(img.classList.contains('animate-lg')){
         img.classList.add('lg-animate')
-    } else {
+    } 
+    else if (img.classList.contains('lg-animate')){
         img.classList.remove('lg-animate')
         img.classList.remove('enlarge')
-        img.classList.remove('enlarge')
-
-        console.log('kjhjdf')
+        img.classList.add('denlarge')
     }
-    // img.classList.add('enlarge')
+    img.classList.add('enlarge')
 }

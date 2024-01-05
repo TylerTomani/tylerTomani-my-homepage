@@ -57,7 +57,7 @@ body > header > .page-logo {
 body > header > .page-logo >  img{
     max-height: 250px;
     /* border: 2px solid red; */
-    align-self: flex-end;
+align-self: flex-end;
     max-height: 124px ;
 }
 
