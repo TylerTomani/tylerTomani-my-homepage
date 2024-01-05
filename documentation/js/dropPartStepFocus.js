@@ -3,6 +3,29 @@ const stepsContainer = document.querySelectorAll('.steps-container')
 const part01 = document.getElementById('part01')
 let partFocused = true
 let stepsFocused = false
+let hideAllDropParts = false
+let windowWidth
+
+
+addEventListener('DOMContentLoaded', e => {
+    windowWidth = innerWidth
+    console.log(windowWidth)
+    if(windowWidth < 600){
+        hideAllDropParts = true
+    } else {
+        hideAllDropParts = false
+    }
+})
+addEventListener('resize', e => {
+    windowWidth = innerWidth
+    console.log(windowWidth)
+    if(windowWidth < 600){
+        hideAllDropParts = true
+    } else {
+        hideAllDropParts = false
+    }
+})
+
 
 function hideParts(){
     dropParts.forEach(part => {
@@ -48,7 +71,14 @@ function getPartContainer(parent){
 dropParts.forEach(part => {
     part.addEventListener('click', e => {
         e.preventDefault()
-        toggleStepsContainer(e)
+        if(hideAllDropParts){
+            hideParts()
+            toggleStepsContainer(e)
+        } else {
+            
+            toggleStepsContainer(e)
+        }
+        console.log(hideAllDropParts)
     })
     part.addEventListener('focus', e => {
         partFocused = true
