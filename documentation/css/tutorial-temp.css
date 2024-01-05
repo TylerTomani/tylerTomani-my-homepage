@@ -6,10 +6,9 @@
 .lgtxt {
     font-size: 1.1rem;
 }
-body > header {
+/* body > header {
     display: flex;
     border-bottom: 2px solid black;
-    /* justify-content: space-between; */
     padding: 1% 2.5%;
     align-items: center;
     
@@ -19,30 +18,23 @@ body > header > .home-link > a{
     display: inline-block;
     font-size: 1.2rem;
     padding: 25% 50%;
-    /* justify-self: flex-start; */
 }
 body > header > .page-title {
     display: flex;
-    /* border: 2px solid blue; */
     margin-left: 50%;
-    /* justify-self: flex-end; */
-    /* align-items: flex-end; */
 }
 .page-title > h1 {
-    /* box-shadow: 0 0 3px 3px orange; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-basis: 80%;
-    /* width: 80%; */
     margin-right: 5%;
 }
 body > header > .page-title > .page-logo > img  {
     flex-basis: 5%;
-    /* margin-left: 5%; */
     max-width: 200px;
     max-height: 100px;
-}
+} */
 .part {
     /* border: 1px solid black; */
     margin: 2% 2.5%;

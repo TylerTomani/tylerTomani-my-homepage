@@ -49,9 +49,15 @@ textarea{
     padding:  2.5%;
     padding-top: 0;
 }
+body > header > .page-logo {
+
+    display: flex;
+    flex-direction: column;
+}
 body > header > .page-logo >  img{
     max-height: 250px;
     /* border: 2px solid red; */
+    align-self: flex-end;
     max-height: 124px ;
 }
 
