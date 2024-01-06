@@ -53,7 +53,7 @@ header>nav>ul>li {
 }
 body>header>nav>ul>li>a:active,
 header>nav>ul>li>a:focus {
-    box-shadow: 0 0 2px 2px blue !important;
+    box-shadow: 0 0 1px 1px blue ;
 }
 body>header>nav>ul>li>sup{
     color: blue;
@@ -82,14 +82,17 @@ main {
     border-top-left-radius: 5px;
 }
 .flex-2-2 {
-    width: 100%;
-    display: flex !important;
+    /* width: 100%; */
+    display: flex ;
+
 }
 .flex-2-2 * {
-    flex-basis: 40%;
+    /* flex-basis: 40%; */
 }
 main article,
-.flex-2-2>article {
+.flex-2-2>article,
+.flex-2-2>.page{
+    /* border: 3px dashed red; */
     border-radius: 10px;
     color: whitesmoke;
 }
@@ -289,15 +292,7 @@ footer {
         max-width: 80px;
         min-height: 100px;
     }
-    #websitesAndApps {
-            margin-left: 2.5%;
-            padding-left: 2.5%;
-            
-        }
-    #websitesAndApps>.topics-container {
-        margin-left: 0%;
-        margin-top: 0%;
-    }
+    
     .shortcuts-ul>li:last-child {
             white-space: nowrap;
         }
@@ -305,19 +300,51 @@ footer {
         background-position-y: 0;
         padding-bottom: 2.5%;
     }
+    .flex-2-2
+    #websitesAndApps>h2 {
+        font-size: 1.2rem
+    }
+
+    #websitesAndApps>.topics-container {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
     .description-txt {
-        font-size: ;
-        /* flex-basis: 100% !important;
-        width: 100% !important; */  
+        /* font-size: 1.2rem; */
+        /* width: 100% !important;  */
+        flex-basis: 40% ;
+    }
+    .description-txt > ul{
+        font-size: .8rem;
+    }
+        #websitesAndApps {
+            order: 2 ;
+            /* padding-left: 5%; */
+            /* margin-left: 2.5%; */
+            /* padding-left: 2.5%; */
+        }
+        #websitesAndApps > .topics-container {
+            display: flex;
+            /* background-color: white; */
+            }
+        .description-txt {
+            /* flex-basis: 100%; */
+            font-size: 80%;
+            padding-top: 2%;
+            display: flex;
+            flex-direction: column;
+            font-size: .5rem !important;
+        }
+    .specialty-txt{
+        order: 3;
+        /* border: 5px dashed yellowgreen; */
     }
     header>h1 {
         display: none;
     }
-
     body>header>nav {
         flex-basis: 100%;
     }
-
     body>header>nav>ul>li>a {
         font-size: .8rem;
         text-shadow: none;
@@ -326,38 +353,28 @@ footer {
     body>header>nav>ul>li>sup{
         display: none;
     }
-
     .specialty-txt>.shortcuts-ul {
         font-size: .8rem;
         margin: 1%;
         flex-wrap: wrap;
     }
-
     .specialty-txt>.shortcuts-ul>li {
         flex-basis: 10%;
     }
-
-    #websitesAndApps {
-        flex-wrap: nowrap;
-        flex-basis: 100%;
-        order: 2;
-    }
-    #websitesAndApps>h2 {
-        font-size: 1.2rem
-    }
+    
+    
+    
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 731px) {
     #websitesAndAppsHome {
         font-size: .85rem;
+        white-space: wrap;
     }
     .page > h2 a{
         font-size: 1rem;
     }
-    #websitesAndApps {
-        white-space: wrap;
-        order: 2;
-    }
+    
     body>header>h1 {
         display: none;
     }
@@ -392,35 +409,27 @@ footer {
     main {
         margin: 0 2.5%;
     }
-    #websitesAndAppsHome {
-        white-space: wrap;
-    }
-    #websitesAndApps {
-        order: 3;
-        padding-left: 5%;
-    }
-    footer {
-        margin: 0 2%;
-        background-image: url('/images/DimLitMoutainSun.jpg');
-        background-size: 100%;
-        background-position-y: 30%;
-        background-repeat: no-repeat;
-        background-position-x: center;
-        height: 100vmax;
-        margin-top: 0;
-        padding-top: 0;
-    }
-    
+
+
+    .flex-2-2 {
+        /* flex-direction: column; */
+    };
     .specialty-txt>.shortcuts-ul>li:last-child {
         color: var(--color-second-txt);
         text-shadow: 0 0 10px red;
         font-weight: bold;
     }
+    #websitesAndApps {
+        order: 3 ;
+        /* padding-left: 5%; */
+        flex-basis: 100%;
+        /* background-color: yellow; */
+        /* border: 4px solid white; */
+    }
     .description-txt {
-        flex-basis: 100% !important;
         /* border: 3px solid orange; */
-        font-size: 80%;
-        padding-top: 2%;
+        /* font-size: 80%; */
+        flex-basis: 100% !important;
         display: flex;
         flex-direction: column;
         font-size: .5rem !important;
@@ -433,15 +442,17 @@ footer {
         display: flex;
         justify-content: center !important;
         align-content: center !important;
+        }
+    
+    .specialty-txt {
+        order: 2;
+        margin-top: 0;
+        padding-top: 0;
+        border: 2px solid orange;
     }
     .speciality-txt>ul,
     .description-txt > ul{
         font-size: .66rem !important;
-    }
-    .speciality-txt {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: 2px solid orange;
     }
     .specialty-txt > p {
         font-size: .85rem !important;
@@ -451,13 +462,32 @@ footer {
         font-size: .5rem !important;
         /* background-color: blue; */
     }
-    
+    footer {
+        margin: 0 2%;
+        background-image: url('../images/DimLitMoutainSun.jpg');
+        background-size: 100%;
+        background-position-y: 30%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        height: 100vmax;
+        margin-top: 0;
+        padding-top: 0;
+    }
 }
 
 @media screen and (max-width:440px){
     #websitesAndAppsHome{
         font-size: 38% !important;
-
+        
+    }
+    .flex-2-2 {
+        flex-direction: column;
+    }
+    #websitesAndApps{ 
+        /* order: 3 ; */
+    }
+    .speciality-txt {
+        /* order: 2 ; */
     }
     body > header > nav > ul > li > a{
         font-size: 50% !important;
