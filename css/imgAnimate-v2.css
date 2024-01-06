@@ -19,6 +19,22 @@
     z-index: 0;
 }
 
+.enlarged-sm {
+    position: relative;
+    margin-right: 50%;
+    transform: scale(1.05) !important;
+    height: 40px !important;
+    /* border: 20px solid blue; */
+    transition: all .3s !important;
+    z-index: 1;
+}
+.lg-enlarged{
+    position: relative;
+    margin-right: 150%;
+    transform: scale(0.5) !important;
+    transition: all .3s;
+    z-index: 1;
+}
 .enlarge {
     position: relative;
     margin-right: 50%;

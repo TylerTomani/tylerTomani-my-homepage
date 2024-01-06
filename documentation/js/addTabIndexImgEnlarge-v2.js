@@ -54,10 +54,25 @@ stepTxts.forEach(stepTxt => {
     stepTxt.addEventListener('click', e => {
         e.preventDefault()
         addTabIndex(e)
+        let parent = e.target.parentElement
+        let img = parent.querySelector('.step-img > img ')
+        if(img){
+            enlargeImg(img)
+            console.log(img)
+
+        }
     })
     stepTxt.addEventListener('keydown', e => {
         if(e.keyCode === 13){
             addTabIndex(e);
+            let parent = e.target.parentElement
+            let img = parent.querySelector('.step-img > img ')
+            if(img){
+                // enlargeImg(img)
+                console.log(img)
+        
+            }
+
         }
     })
     stepTxt.addEventListener('focus', e => {
@@ -88,6 +103,8 @@ function addTabIndex(e){
     const parent = getStepParent(e.target.parentElement)
     const as = parent.querySelectorAll('a')
     const copyCodes = parent.querySelectorAll('.copy-code')
+    const imgs = parent.querySelectorAll('img')
+    aTabIndexAdd(as)
     if(parent.classList.contains('step-col')){
         console.log('step col')
         const imgs = parent.querySelectorAll('img')
@@ -96,34 +113,13 @@ function addTabIndex(e){
             
         
     
-        stepTabsAdded = !stepTabsAdded
-    } 
-    
+        
+    } else
     if(parent.classList.contains('step')){
         const vidImg = parent.querySelector('.step-img > img') ? parent.querySelector('.step-img > img') : parent.querySelector('.step-vid > video') 
-        aTabIndexAdd(as)
-        copyCodeTabIndexAdd(copyCodes)
-        if(vidImg && !stepTabsAdded){
-            console.log(vidImg)
-            vidImg.classList.add('enlarge')
-            if(vidImg.parentElement.classList.contains('step-vid')){
-                vidImg.play()
-                vidImg.currentTime = 0
-            }
-        } else {
-            
-            if(vidImg.parentElement.classList.contains('step-vid')){
-                vidImg.pause()
-                vidImg.currentTime = 0
-            }
-            vidImg.classList.remove('enlarge')
-        }
-        stepTabsAdded = !stepTabsAdded
-        
-    }
-    
+        enlargeImg(vidImg)
+    }   
 }
-
 function aTabIndexAdd(as){
     as.forEach(a => {
         a.setAttribute('tabindex','1')
@@ -134,7 +130,6 @@ function copyCodeTabIndexAdd(copyCodes){
         copyCode.setAttribute('tabindex','1')
     })
 }
-
 function imgTabIndexAdd(imgs){
     if(imgs){
         imgs.forEach(img => {
@@ -142,23 +137,24 @@ function imgTabIndexAdd(imgs){
         });
     }
 }
-
-function enlargeImg(img){
-    if(img.classList.contains('denlarge')){
-        img.classList.remove('denlarge')
+// I can't this to work for different class, I need it to do different actions based on if img has class list 
+// sm-enlarge and lg-enlarge, spent two hours on this, need to move on
+function enlargeImg(img) {
+    if(!img.classList.contains('enlarge')){
         img.classList.add('enlarge')
-        
+    } else {
+        denlargeAllImgs()
     }
-    img.classList.add('enlarge')
-
+    
+    console.log(img);
 }
+
 
 function denlargeAllImgs(){
     imgs.forEach(img =>{
         img.classList.remove('enlarge')
-        
+        img.classList.remove('enlarged-sm')
     })
- 
     videos.forEach(vid =>{
         vid.classList.remove('enlarge')
         
@@ -193,6 +189,8 @@ imgs.forEach(img => {
     })
 })
 
+
+// This is for step-col images only, (This code is really messy, clean up later)
 function toggleImgSize(img){
     if(img.classList.contains('img-l')){
 
@@ -220,4 +218,5 @@ function toggleImgSize(img){
         img.classList.remove('r-enlarge')
         
     }
+    
 }
