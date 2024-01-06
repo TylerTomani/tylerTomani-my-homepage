@@ -176,10 +176,12 @@ body>header>nav>ul>li>sup {
     border:2px solid floralwhite;
     border-radius: 20px;
 } 
-#websitesAndApps > .topics-container > h3 > .topic{
+.topics-container > h3 > .topic{
     border:2px solid floralwhite;
     border-radius: 20px;
     padding: 0 5;
+    text-decoration: none;
+    color: black;
 } 
 #websitesAndApps > .topics-container > h3 > .topic > img{
     border:2px solid floralwhite;
@@ -312,10 +314,19 @@ footer {
     .description-txt {
         /* font-size: 1.2rem; */
         /* width: 100% !important;  */
-        flex-basis: 40% ;
+        display: flex;
+        justify-content: center;
+        padding-top: 2%;
+        display: flex;
+        flex-direction: column;
+        font-size: .5rem !important;
     }
     .description-txt > ul{
-        font-size: .8rem;
+        font-size: 1rem;
+        /* align-self: center; */
+    }
+    .description-txt > ul> li{
+        font-size: 1rem;
     }
         #websitesAndApps {
             order: 2 ;
@@ -327,14 +338,7 @@ footer {
             display: flex;
             /* background-color: white; */
             }
-        .description-txt {
-            /* flex-basis: 100%; */
-            font-size: 80%;
-            padding-top: 2%;
-            display: flex;
-            flex-direction: column;
-            font-size: .5rem !important;
-        }
+        
     .specialty-txt{
         order: 3;
         /* border: 5px dashed yellowgreen; */
@@ -427,8 +431,6 @@ footer {
         /* border: 4px solid white; */
     }
     .description-txt {
-        /* border: 3px solid orange; */
-        /* font-size: 80%; */
         flex-basis: 100% !important;
         display: flex;
         flex-direction: column;
@@ -448,7 +450,6 @@ footer {
         order: 2;
         margin-top: 0;
         padding-top: 0;
-        border: 2px solid orange;
     }
     .speciality-txt>ul,
     .description-txt > ul{
@@ -473,6 +474,21 @@ footer {
         margin-top: 0;
         padding-top: 0;
     }
+    .topics-container>.topic-container{
+        opacity: .85;
+        display: flex;
+        justify-content: center;
+        
+    }
+    #websitesAndApps>.topics-container>.topic-container>.topic {
+        margin:  0 15%;
+        padding: 0 2.5%;
+        display: reverse;
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: white;
+        font-size: .7rem;
+    }
 }
 
 @media screen and (max-width:440px){
@@ -483,15 +499,16 @@ footer {
     .flex-2-2 {
         flex-direction: column;
     }
-    #websitesAndApps{ 
-        /* order: 3 ; */
+    #websitesAndApps > .topics-container > .topic-container{
     }
+
     .speciality-txt {
         /* order: 2 ; */
     }
     body > header > nav > ul > li > a{
         font-size: 50% !important;
     }
+    
     .topic > img {
         max-width: 100px !important;
         max-height: 100px !important;
