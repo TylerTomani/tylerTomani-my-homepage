@@ -19,19 +19,19 @@
     z-index: 0;
 }
 
-.enlarged-sm {
+.sm-enlarged {
     position: relative;
     margin-right: 50%;
-    transform: scale(1.05) !important;
-    height: 40px !important;
+    transform: scale(1.65) !important;
+    /* height: 140px !important; */
     /* border: 20px solid blue; */
     transition: all .3s !important;
     z-index: 1;
 }
 .lg-enlarged{
     position: relative;
-    margin-right: 150%;
-    transform: scale(0.5) !important;
+    margin-right: 50%;
+    transform: scale(2.5) !important;
     transition: all .3s;
     z-index: 1;
 }
