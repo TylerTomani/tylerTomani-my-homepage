@@ -9,6 +9,27 @@ body > header {
     align-items: center;
     
 }
+body>header>.page-logo {
+
+    display: flex;
+    flex-direction: column;
+}
+body>header> .page-logo>img {
+    flex-basis: 5%;
+    /* margin-left: 5%; */
+    max-width: 200px;
+    max-height: 100px !important;
+    max-height: 250px;
+    /* border: 2px solid red; */
+    align-self: flex-end;
+    max-height: 124px;
+}
+
+.page-title {
+    display: flex;
+    flex-direction: column;
+}
+
 header > .page-title > h1 {
     font-size: 1rem;
     align-self: flex-start;
@@ -48,17 +69,6 @@ body > header > .notes > h2{
 textarea{
     padding:  2.5%;
     padding-top: 0;
-}
-body > header > .page-logo {
-
-    display: flex;
-    flex-direction: column;
-}
-body > header > .page-logo >  img{
-    max-height: 250px;
-    /* border: 2px solid red; */
-align-self: flex-end;
-    max-height: 124px ;
 }
 
 .notes > #notesTextArea:active,.notes > #notesTextArea:focus,

@@ -49,6 +49,21 @@
                     case "5":
                         num = 'five'
                         break;
+                    case "5":
+                        num = 'five'
+                        break;
+                    case "6":
+                        num = 'six'
+                        break;
+                    case "8":
+                        num = 'seven'
+                        break;
+                    case "9":
+                        num = 'nine'
+                        break;
+                    case "0":
+                        num = 'ten'
+                        break;
                 }
                 let resourceNum = document.querySelector(`.${num}`)
                 if(resourceNum){
