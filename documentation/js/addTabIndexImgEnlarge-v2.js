@@ -101,6 +101,8 @@ function addTabIndex(e){
     
     if(parent.classList.contains('step')){
         const vidImg = parent.querySelector('.step-img > img') ? parent.querySelector('.step-img > img') : parent.querySelector('.step-vid > video') 
+        aTabIndexAdd(as)
+        copyCodeTabIndexAdd(copyCodes)
         if(vidImg && !stepTabsAdded){
             console.log(vidImg)
             vidImg.classList.add('enlarge')

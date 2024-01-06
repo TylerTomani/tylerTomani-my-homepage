@@ -32,6 +32,7 @@ function toggleStepsContainer(e){
     } else if (!stepsContainer.classList.contains('hide')){
         stepsContainer.classList.add('hide')
     } else {
+        hideParts()
         stepsContainer.classList.remove('hide')
         
     }
