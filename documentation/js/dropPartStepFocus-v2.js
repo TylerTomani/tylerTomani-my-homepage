@@ -1,5 +1,5 @@
 const dropParts = document.querySelectorAll('.dropPart')
-const stepsContainer = document.querySelectorAll('.steps-container')
+const stepsContainers = document.querySelectorAll('.steps-container')
 const part01 = document.getElementById('part01')
 let partFocused = true
 let stepsFocused = false
@@ -7,8 +7,13 @@ let stepsFocused = false
 function hideParts(){
     dropParts.forEach(part => {
         const parent = part.parentElement
-        const stepsContainer = parent.querySelector('.steps-container')
+        let stepsContainer = parent.querySelector('.steps-container')
+        console.log(stepsContainer)
+        if(stepsContainer == null){
+            return
+        }
         stepsContainer.classList.add('hide')
+        stepsContainer.style.display = 'hide'
         
     })
 }
@@ -16,7 +21,7 @@ hideParts()
 
 function partFocus(key){
     dropParts.forEach(part => {
-        const h2 = part.querySelector('h2')
+        const h2 = part.querySelector('h3')
         if(key === h2.innerText[5] && partFocused && !stepsFocused){
             part.focus()
             partFocused = true
@@ -57,7 +62,7 @@ dropParts.forEach(part => {
     })
 })
 
-stepsContainer.forEach(stepsContainer => {
+stepsContainers.forEach(stepsContainer => {
     const steps = stepsContainer.querySelectorAll('.step-txt')
     steps.forEach(step => {
         step.addEventListener('focus', e => {

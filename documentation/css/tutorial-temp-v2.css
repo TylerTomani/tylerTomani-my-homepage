@@ -127,7 +127,7 @@ img:hover,
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .show {
