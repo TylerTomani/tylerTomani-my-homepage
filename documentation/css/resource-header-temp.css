@@ -10,7 +10,6 @@ body > header {
     
 }
 body>header>.page-logo {
-
     display: flex;
     flex-direction: column;
 }
@@ -18,8 +17,8 @@ body>header> .page-logo>img {
     flex-basis: 5%;
     /* margin-left: 5%; */
     max-width: 200px;
+    /* max-height: 100px !important; */
     max-height: 100px !important;
-    max-height: 250px;
     /* border: 2px solid red; */
     align-self: flex-end;
     max-height: 124px;
@@ -30,8 +29,18 @@ body>header> .page-logo>img {
     flex-direction: column;
 }
 
-header > .page-title > h1 {
-    font-size: 1rem;
+body >header > .title-container  > h1 {
+    font-size: .75rem;
+}
+body >header > .title-container  > h2 {
+    font-size: .75rem;
+}
+body >header > .page-title > h1 {
+    align-self: flex-start;
+    border: 1px soli red;
+}
+body > header > .page-title > h2 {
+    font-size: .5rem;
     align-self: flex-start;
     border: 1px soli red;
 }
