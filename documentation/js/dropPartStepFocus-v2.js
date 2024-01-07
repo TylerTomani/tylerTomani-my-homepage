@@ -8,7 +8,7 @@ function hideParts(){
     dropParts.forEach(part => {
         const parent = part.parentElement
         let stepsContainer = parent.querySelector('.steps-container')
-        console.log(stepsContainer)
+        // console.log(stepsContainer)
         if(stepsContainer == null){
             return
         }
@@ -20,10 +20,12 @@ function hideParts(){
 hideParts()
 
 function partFocus(key){
-    dropParts.forEach(part => {
-        const h2 = part.querySelector('h3')
-        if(key === h2.innerText[5] && partFocused && !stepsFocused){
-            part.focus()
+    dropParts.forEach(dropPart => {
+        const h2 = dropPart.querySelector('h3')
+        // console.log(dropPart)
+        console.log(dropPart.innerText)
+        if(key === dropPart.innerText[5] && partFocused && !stepsFocused){
+            dropPart.focus()
             partFocused = true
         }
     })
