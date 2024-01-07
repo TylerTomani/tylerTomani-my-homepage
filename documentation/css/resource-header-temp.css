@@ -113,3 +113,9 @@ textarea{
         /* display: none; */
     }
 }
+@media screen and (max-width: 680px) {
+    body > header >.title-container > h1,
+    body > header >.title-container > h2{
+        display: none;
+    }
+}
