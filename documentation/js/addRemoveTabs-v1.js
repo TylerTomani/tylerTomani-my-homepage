@@ -42,11 +42,9 @@ stepTxts.forEach(stepTxt => {
     stepTxt.addEventListener('click', e => {
         e.preventDefault()
         // let stepTxt = getStepTxt(e.target.parentElement)
-        console.log(e.target)
         let as = e.target.querySelectorAll('a')
         let copyCodes = e.target.querySelectorAll('.code-container > .copy-code')
         addTabs(as)
-        console.log(stepTxt)
         addTabs(copyCodes)
 
     })
@@ -57,14 +55,12 @@ stepTxts.forEach(stepTxt => {
             let as = e.target.querySelectorAll('a')
             let copyCodes = e.target.querySelectorAll('.code-container > .copy-code')
             addTabs(as)
-            console.log(stepTxt)
             addTabs(copyCodes)
         }
         if(!partFocus){
 
             if(key === 'p'){
                 let part = getPartContainerFocus(e.target.parentElement)
-                console.log(part)
                 part.focus()
             }
         }
@@ -84,7 +80,6 @@ function getStepTxt(parent){
 
 function addTabs(els){
     els.forEach(el => {
-        console.log(el)
         el.setAttribute('tabindex','1')
     })
 
@@ -104,10 +99,10 @@ function getPartContainerFocus(parent){
 
 addEventListener('keydown', e => {
     let key = e.key.toLowerCase()
-    console.log(partFocus)
     if(partFocus){
-        if(key === 'p'){
-            part01.focus()
+            if(key === 'p'){
+                part01.focus()
         }
     }
+
 })

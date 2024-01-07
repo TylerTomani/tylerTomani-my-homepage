@@ -3,7 +3,84 @@
     margin: 0;
     padding: 0;
 }
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
 
+.steps-container>.step {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-self: space-around;
+}
+
+.steps-container>.step>.step-txt {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.steps-container>.step>.step-txt>h3 {
+    align-self: flex-start;
+}
+
+.steps-container>.step>.step-txt,
+.steps-container>.step>.step-img,
+.steps-container>.step>.step-vid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 2.5%;
+    margin: 1% 2.5%;
+    flex-basis: 50%;
+    border: 1px solid orange;
+}
+
+.part>.steps-container>.step>.step-img>img {
+    border: 1px solid black;
+}
+.part>.steps-container>.step>.step-vid>video {
+    border: 3px solid black;
+}
+
+.steps-container>.step>.step-vid>video,
+.steps-container>.step>.step-img>img {
+    width: 100%;
+    /* max-width: 500px;
+    max-height: 490px; */
+}
+.steps-container>.step-col>.step-img>img {
+    /* max-width: 350px; */
+    /* border: ; */
+}
+
+.steps-container>.step-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1% 0;
+}
+
+.step-col>.step-txt {
+    border: 1px solid black;
+    padding: 1.5%;
+    margin: 1.5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-2-container {
+    display: flex;
+    /* padding-left: 5%; */
+    justify-content: center;
+}
+
+.img-2-container>.step-img>img {
+    width: 80%;
+}
 
 .part {
     /* border: 1px solid black; */
@@ -12,11 +89,6 @@
     flex-direction: column;
 }
 
-.steps-container {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid blue;
-}
 
 .steps-container>.step-col>.step-img>img {
     max-width: 350px;
@@ -49,51 +121,8 @@
     width: 80%;
 }
 .step-img > img {
-
-    /* max-height: 350px !important; */
 }
 
-
-.part>.steps-container>.step {
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-self: space-around;
-}
-
-.part>.steps-container>.step>.step-txt {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.part>.steps-container>.step>.step-txt>h3 {
-    align-self: flex-start;
-}
-
-.part>.steps-container>.step>.step-txt,
-.part>.steps-container>.step>.step-img,
-.part>.steps-container>.step>.step-vid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1% 2.5%;
-    margin: 1% 2.5%;
-    flex-basis: 45%;
-    border: 1px solid orange;
-}
-
-.part>.steps-container>.step>.step-img>img {
-    border: 1px solid black;
-}
-.part>.steps-container>.step>.step-vid>video,
-.part>.steps-container>.step>.step-img>img {
-    width: 100%;
-    max-width: 500px;
-    max-height: 490px;
-}
 
 
 img:active,
@@ -146,9 +175,48 @@ footer {
 }
 
 .mdtxt {
-    font-size: .75rem !important;
+    /* font-size: .75rem !important; */
 }
 
 .copy-code.full-width {
-    width: 100% !important;
+    /* width: 100% !important; */
+}
+
+@media screen and (max-width: 909px) {
+    .steps-container > .step{
+        display: flex;
+    }
+    .steps-container>.step>.step-txt,
+    .steps-container>.step>.step-img,
+    .steps-container>.step>.step-vid {
+        /* background-color: blue; */
+        border: 2px dashed white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* padding: 1% 2.5%; */
+        /* margin: 1% 2.5%; */
+        width: 50%;
+        flex-basis: 50% !important;
+        border: 1px solid orange;
+    }
+    .step-txt > p {
+        width: 100%;
+        white-space: wrap;
+        overflow: scroll;
+        font-size: .8rem;
+    }
+    .step-txt > .code-container {
+        margin: 0 0 !important;
+        padding: 0 0 !important;
+        width: 100%;
+    }
+    .step-txt > .code-container > .copy-code{
+        /* margin: 0 0 !important; */
+        padding: 0 0 !important;
+        font-size: .8rem;
+    }
+
+        
 }

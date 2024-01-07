@@ -22,8 +22,6 @@ hideParts()
 function partFocus(key){
     dropParts.forEach(dropPart => {
         const h2 = dropPart.querySelector('h3')
-        // console.log(dropPart)
-        console.log(dropPart.innerText)
         if(key === dropPart.innerText[5] && partFocused && !stepsFocused){
             dropPart.focus()
             partFocused = true
@@ -89,13 +87,14 @@ addEventListener('keydown', e => {
 })
 
 function stepsFocus(key){
-    stepsContainer.forEach(stepsContainer => {
+    stepsContainers.forEach(stepsContainer => {
         const steps = stepsContainer.querySelectorAll('.step-txt')
         steps.forEach(step => {
             // const part = step.parentElement.parentElement.parentElement
-            const h3s = step.querySelectorAll('h3')
+            const h3s = step.querySelectorAll('h4')
             h3s.forEach(h3 => {
                 if(key === h3.innerText[1]){
+                    console.log(h3)
                     step.focus()
                 }
             })

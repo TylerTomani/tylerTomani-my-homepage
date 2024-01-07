@@ -1,8 +1,10 @@
 (function(){
-    // const allEls =document.querySelectorAll('body *')
+    const allEls =document.querySelectorAll('body *')
     const changeFlexBtnId = document.getElementById('changeFlexBtn')
     const homeLink = document.getElementById('homeLink')
     const tutorialLink = document.getElementById('tutorialLink')
+    const parts = document.querySelectorAll('.dropPart')
+    let partFocus = true    
     
 
 
@@ -30,7 +32,8 @@
         if(key === 't'){
             tutorialLink.focus()
         }
-        
+
+
         
     })
 }())
