@@ -156,15 +156,19 @@ body>header>nav>ul>li>sup {
 }
 
 /*///////////////////////////// Pages */
-
+.page > .topics-container{
+    display: flex;
+}
 .topics-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
+.page> .topics-container > .topic-container,
 .topics-container > .topic-container {
     border: 3px dashed magenta;
 }
+.page >.topics-container>.topic-container>.topic,
 .topics-container>.topic-container>.topic {
     display: flex;
     background-color: lavenderblush;
@@ -176,6 +180,7 @@ body>header>nav>ul>li>sup {
 
     
 }
+.page > .topics-container>.topic-container>.topic>img,
 .topics-container>.topic-container>.topic>img {
     max-height: 100px;
     max-width: 100px;
