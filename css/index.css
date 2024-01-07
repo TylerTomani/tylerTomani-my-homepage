@@ -5,12 +5,8 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 :root {
-    --topic-min-height: 50px;
-    --topic-maxW-img: 50px;
-    --topic-maxH-img: 40px;
-    --txt-shadow-size: 24px;
-    --txt-shadow-color:blue ;
-    --color-second-txt: white;
+    --max-topic-h: 100px;
+    --max-topic-w: 100px;
 }
 
 /* ///////////////////////////// Body Header */
@@ -163,34 +159,43 @@ body>header>nav>ul>li>sup {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    padding: 2% 0
 }
 .page> .topics-container > .topic-container,
 .topics-container > .topic-container {
     border-radius: 20px;
     display: flex;
+    max-height: var(--max-topic-h);
+    max-width: var(--max-topic-w);
 }
 .page >.topics-container>.topic-container>.topic,
 .topics-container>.topic-container>.topic {
+    /* max-height: var(--max-topic-h);
+    max-width: var(--max-topic-w); */
     text-decoration: none;
     color: black;
     text-shadow: 1p 2px white;
-    padding: 0 2.5%;
+    /* margin: 0 4.5%; */
     display: flex;
     background-color: lavenderblush;
     flex-direction: column-reverse;
     opacity: .85;
-    height: 100%;
     border-radius: 20px;
     justify-content: space-around;
     align-items: center;
 
     
 }
+.page > .topics-container>.topic-container>.topic,
+.topics-container>.topic-container>.topic{
+    font-size: .8rem !important;
+}
 .page > .topics-container>.topic-container>.topic>img,
 .topics-container>.topic-container>.topic>img {
     min-height: 80px;
     min-width: 80px;
     width: 80%;
+    border-radius: 20px;
     height: 50%;
     max-height: 120px;
     max-width: 120px;
@@ -209,38 +214,9 @@ body>header>nav>ul>li>sup {
 
 
 #websitesAndApps {
-    /* display: flex;
+     display: flex; 
     flex-direction: column; */
 }
-
-#websitesAndApps>.topics-container {
-    /* margin-left: 5%; */
-    /* margin-top: 2.5%; */
-    /* display: flex; */
-}
-#websitesAndApps>.topics-container>.topic-container {
-    /* border: 3px dashed whitesmoke; */
-    /* flex-basis: 25%; */
-    /* position: static; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* border-radius: 20px; */
-    /* font-size: .8rem; */
-    /* border: 2px solid magenta; */
-}
-
-
-.pages-container {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: flex-start; */
-    /* margin-left: 5%; */
-    /* gap: 1rem; */
-    /* width: 100%; */
-    /* padding: 0 5%; */
-    /* border: 10px dashed red; */
-}
-
  
 .page > h2 > a{
     color: white !important;
