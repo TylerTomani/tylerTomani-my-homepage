@@ -76,3 +76,13 @@ function getStepContainer(parent){
         return null
     }
 }
+
+allImages.forEach(img => {
+    img.addEventListener('click', e => {
+        e.preventDefault()
+        toggleStepImg(img)
+    })
+    
+    
+    
+})
