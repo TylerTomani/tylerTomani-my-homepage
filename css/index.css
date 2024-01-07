@@ -17,6 +17,7 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 1;
     padding: .5% 0;
 }
 header>h1 {
@@ -46,6 +47,7 @@ header>nav>ul>li {
 }
 #websitesAndAppsHome {
     white-space: nowrap;
+    
 }
 body>header>nav>ul>li>a:active,
 header>nav>ul>li>a:focus {
@@ -214,10 +216,11 @@ body>header>nav>ul>li>sup {
 
 
 #websitesAndApps {
-     display: flex; 
-    flex-direction: column; */
+    display: flex; 
+    flex-direction: column;
+    padding: 2% 5%;
 }
- 
+
 .page > h2{
     color: white;
 }
@@ -227,8 +230,8 @@ body>header>nav>ul>li>sup {
     text-decoration: none;
     text-shadow: 0 0 1px black;
 }
-#templates>.topics-container {
-    /* justify-self: flex-start; */
+#templates>.topics-container > .topic-container > .topic{
+    padding: 2% 8%;
 }
 #sql {
     /* display: flex; */
@@ -288,9 +291,10 @@ footer {
         font-size: 1.2rem
     }
 
-    #websitesAndApps>.topics-container {
-        margin-left: 0%;
-        margin-top: 0%;
+    #websitesAndApps {
+        display: flex;
+        flex-direction: column;
+        padding: 0% 0%;
     }
     .description-txt {
         /* font-size: 1.2rem; */
