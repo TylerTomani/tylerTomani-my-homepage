@@ -57,7 +57,7 @@ export function playVid(vid){
 
 addEventListener('keydown', e => {
     let key = e.keyCode
-    if(keyCode === 32){
+    if(key === 32){
         e.preventDefault()
         console.log(currentVid)
         playVid(currentVid)
