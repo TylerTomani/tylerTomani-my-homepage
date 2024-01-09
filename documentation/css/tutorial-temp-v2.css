@@ -16,6 +16,8 @@
 }
 
 .steps-container>.step>.step-txt {
+    flex-basis: 50%;
+    max-width: 50%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -23,6 +25,8 @@
 
 .steps-container>.step>.step-txt>h3 {
     align-self: flex-start;
+    justify-self: flex-start;
+    border: 3px solid red;
 }
 
 .steps-container>.step>.step-txt,
@@ -51,9 +55,15 @@
     /* max-width: 500px;
     max-height: 490px; */
 }
-.steps-container>.step-col>.step-img>img {
-    /* max-width: 350px; */
+.step-txt .code-container{
+    max-width: 550px;
+    width: 98%;
+    margin-right: 2.5%;
+    max-height: 500px;
     /* border: ; */
+}
+.code-container > .copy-code {
+    font-size: .8rem;
 }
 
 .steps-container>.step-col {
@@ -125,18 +135,13 @@
 
 
 
-img:active,
-img:focus,
+img:active,img:focus,
 img:hover,
-.step-txt:active,
-.step-txt:focus,
+.step-txt:active,.step-txt:focus,
 .step-txt:hover,
-.question-txt:active,
-.question-txt:focus,
+.question-txt:active,.question-txt:focus,
 .question-txt:hover,
-.dropPart:active,
-.dropPart:focus,
-.dropPart:hover {
+.dropPart:active,.dropPart:hover {
     box-shadow: 2px 2px 5px 2px blue;
 }
 
@@ -178,9 +183,7 @@ footer {
     /* font-size: .75rem !important; */
 }
 
-.copy-code.full-width {
-    /* width: 100% !important; */
-}
+
 
 @media screen and (max-width: 909px) {
     .steps-container > .step{

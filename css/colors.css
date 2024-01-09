@@ -1,0 +1,10 @@
+.rbshadow {
+    box-shadow: 0 0 2px 2px red;
+    max-width: fit-content;
+}
+.rbshadow:focus{
+    color: red !important;
+    box-shadow:0 0 3px 3px red !important;
+}
+.gr { color: goldenrod}
+.m { color: magenta}

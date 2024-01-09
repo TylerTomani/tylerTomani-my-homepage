@@ -3,6 +3,10 @@ const stepsContainers = document.querySelectorAll('.steps-container')
 const part01 = document.getElementById('part01')
 let partFocused = true
 let stepsFocused = false
+const allStepTxtAs = document.querySelectorAll('.step-txt > p > a')
+allStepTxtAs.forEach(a => {
+    a.setAttribute('tabindex', '-1')
+})
 
 function hideParts(){
     dropParts.forEach(part => {
@@ -94,7 +98,6 @@ function stepsFocus(key){
             const h3s = step.querySelectorAll('h4')
             h3s.forEach(h3 => {
                 if(key === h3.innerText[1]){
-                    console.log(h3)
                     step.focus()
                 }
             })
