@@ -50,7 +50,7 @@ export function playVid(vid){
         vid.currentTime = '0'
     } else {
         vid.pause()
-        vid.currentTime = '0'
+        // vid.currentTime = '0'
     }
     playing = !playing
 }

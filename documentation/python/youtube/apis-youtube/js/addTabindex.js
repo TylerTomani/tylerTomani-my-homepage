@@ -87,6 +87,7 @@ function addTabIndex(e){
         copyCodeTabIndexAdd(copyCodes)
     } else if (!stepTabsAdded && parent.classList.contains('step-col')){
         aTabIndexAdd(as)
+        copyCodeTabIndexAdd(copyCodes)
         imgTabIndexAdd(imgs)
     } else if (stepTabsAdded){
         denlargeAllImgs()
@@ -152,7 +153,6 @@ imgs.forEach(img => {
         denlargeAllImgs()
     })
 })
-
 function toggleImgSize(img){
     if(img.classList.contains('img-l')){
 

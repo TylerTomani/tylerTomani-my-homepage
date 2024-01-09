@@ -48,7 +48,6 @@
                                 <br>
                                 <a tabindex="-1" target="_blank" href="https://console.cloud.google.com/apis/dashboard?project=mygmaildata-408619">https://developers.google.com/gmail/api/guides</a>
                             </p>
-                
                             <p>
                                 &emsp;Create a new project name <q>mygmaildata</q>
                             </p>
@@ -72,22 +71,45 @@
                     </div>
                     <!-- 01-03 -->
                     <div class="step">
-                        <div tabindex="1" class="step-txt">
+                        <div tabindex="1" class="step-txt playVid-click">
                             <h4>03</h4>
                             <p>
-                                Go to <i><q>CREATE CREDENTIALS</q></i>
-                                <span class="r">in the api??</span>
+                                Enable The <i><q>Gmail API</q></i> 
+                            </p>
+                        </div>
+                        <div class="step-vid">
+                            <video src="imagesVideos/01-03.mov"></video>
+                        </div>
+                    </div>
+                    <!-- 01-04 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt playVid-click">
+                            <h4>04</h4>
+                            <p>
+                                Go to <i><q>CREATE CREDENTIALS</q></i> in the api.
+                            </p>
+                        </div>
+                        <div class="step-vid">
+                            <video src="imagesVideos/01-04.mov"></video>
+                        </div>
+                    </div>
+                    <!-- 01-05 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt rbshadow">
+                            <h4>05</h4>
+                            <p>
+                                You might also be able to do it on the <i><q>Credential</q></i> pages
                             </p>
                         </div>
                         <div class="step-img">
-                            <img src="imagesVideos/01-03.png">
+                            <img src="imagesVideos/01-05.png">
                         </div>
                     </div>
                 </div>
             </div>
         <!-- Part 2 - Create Credentials - Credential Type & Scopes -->
             <div class="part">
-                <h3><a tabindex="1" href="#" class="dropPart">Part 2 - Create Credentials - <span class="bl">Credential Type & Scopes</span></a></h3>
+                <h3><a tabindex="1" href="#"   class="dropPart">Part 2 - Create Credentials - <span class="bl">Credential Type & Scopes</span></a></h3>
                 <h4><strong>Credential types and Scopes</strong></h4>
                 <div class="steps-container hide">
                     <!-- 02-01 -->
@@ -153,6 +175,30 @@
                         </div>
                         <div class="step-vid">
                             <video src="imagesVideos/02-05.mov">
+                        </div>
+                    </div>
+                    <!-- 02-06 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>06</h4>
+                            <p>
+                                Choose <i><q>Desktop App</q></i> for OAuth type, and name it
+                            </p>
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/02-06.png">
+                        </div>
+                    </div>
+                    <!-- 02-07 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>07</h4>
+                            <p>
+                                Download the client_secret file to same directory as the script
+                            </p>
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/02-07.png">
                         </div>
                     </div>
                 </div>
@@ -223,28 +269,40 @@
                             <img src="imagesVideos/04-01.png">
                         </div>
                     </div>
+                    <!-- 04-02 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>04</h4>
+                            <p>
+                                Enter the email you wish to use
+                            </p>
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/04-02.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         <!-- Part 5 Create a VENV & Install Libraries -->
             <div class="part">
                 <a tabindex="1" href="#" class="dropPart"><h3>Part 5 Create a VENV & Install Libraries</h3></a>
-                <div class="steps-container hide">
+                <div class="steps-container ">
                     <!-- 05-01 -->
                     <div class="step">
-                        <div tabindex="1" class="step-txt">
+                        <div tabindex="1"  class="step-txt">
                             <h4>01</h4>
                             <p>
                                 Go to
-                                <a target="_blank" href="../../jieJienn/00-GetStartGmailApi-Python/GetStartGmailApi-Python.htm">jieJenn 00-GetStartGmailApi-Python</a> for review, and install a venv in the directory of the
+                                <a target="_blank" href="../../../jieJienn/00-googleDriveApiPython/01-gettingStarted/01-gettingStarted.htm">jieJenn 00-GetStartGmailApi-Python</a> for review, and install a venv in the directory of the
                                 project, and install the libraries
                             </p>
-                            <div class="code-container asc ">
+                            <div class="code-container w-80">
                                 <pre tabindex="1" class="copy-code">
-    python -m venv venv</pre>
+python -m venv venv</pre>
                             </div>
-                            <div class="code-container asc ">
+                            <div class="code-container w-80">
                                 <pre tabindex="1" class="copy-code">
-    ./venv/bin/activate</pre>
+./venv/bin/activate</pre>
                             </div>
             
                         </div>
@@ -260,9 +318,9 @@
                                 If <code>./venv/bin/activate</code> <strong>Does Not Work</strong>
                                 run
                             </p>
-                            <div class="code-container  ac">
+                            <div class="code-container  w-80">
                                 <pre tabindex="1" class="copy-code">
-    source ./venv/bin/activate</pre>
+source ./venv/bin/activate</pre>
                             </div>
             
                         </div>
@@ -280,13 +338,13 @@
                                 </a>,
                                 and install the client libraries
                             </p>
-                            <div class="code-container asc online-doc">
+                            <div class="code-container ">
                                 <pre tabindex="1" class="copy-code">
-    pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib</pre>
+pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib</pre>
                             </div>
                         </div>
                         <div class="step-img">
-                            <img src="imagesVideos/05-03.png">
+                            <img class="xlg-enlarge" src="imagesVideos/05-03.png">
                         </div>
                     </div>
                     <!-- 05-04 -->
@@ -296,9 +354,9 @@
                             <p>
                                 To deactivate and exit the venv type,
                             </p>
-                            <div class="code-container asc ">
+                            <div class="code-container ">
                                 <pre tabindex="1" class="copy-code">
-    deactivate</pre>
+deactivate</pre>
                             </div>
                             
                         </div>
@@ -310,7 +368,7 @@
             </div>
         <!-- Part 6 - Gmail Api -> Quickstarts -> python ->  (token.json)-->
             <div class="part">
-                <a tabindex="1" href="#" class="dropPart"><h3>Part 6 - Gmail Api -> Quickstarts -> python -> (<code class="gr">token.json</code>)</h3></a>
+                <a tabindex="1" href="#" class="dropPart rbshadow r"><h3>Part 6 - Gmail Api -> Quickstarts -> python -> (<code class="gr">token.json</code>)</h3></a>
                 <div class="steps-container">
                     <!-- 06-01 -->
                     <div class="step">
@@ -464,18 +522,19 @@ if __name__ == "__main__":
             </div>
         <!-- Part 7 - Python Code - python Code get token.json -->
             <div class="part">
-                <a tabindex="1" href="#" class="dropPart"><h3>Part 7 - Project - Python Code get <code class="gr">token.json</code></h3></a>
-                <div class="steps-container ">
+                
+                <a tabindex="1" href="#" class="dropPart"><h3>Part 7 - Project - Python Code get <code class="gr">token.json</code> - ( step 1 )</h3> </a>
+                <div class="steps-container show">
                 <!-- 07-01 -->
                     <div class="step-col">
-                        <div tabindex="1" class="step-txt">
+                        <div tabindex="1" autofocus  class="step-txt">
                             <h4>01</h4>
                             <p>
                                 Import the client libraies and add the scope
                             </p>
                         </div>
                         <div class="img-2-container">
-                            <div class="code-container asc ">
+                            <div class="code-container ">
                                 <pre tabindex="1" class="copy-code ">
 import os.path
 from google.auth.transport.requests import Request
@@ -682,7 +741,7 @@ myEmails()</pre>
             </div>
         <!-- Part 8 - Python Code - service = build('gmail','api',) -->
             <div class="part">
-                <a tabindex="1" href="#"><h3>Part 8 - Python Code - <code>service = build('gmail','v1',Credentials=creds)</code></h3></a>
+                <a tabindex="1" href="#"><h3>Part 8 - Python Code - <code>service = build('gmail','v1',Credentials=creds)</code> - (step 2)</h3></a>
                 <div class="steps-container hide">
                     <!-- 08-01 -->
                     <div class="step-col">

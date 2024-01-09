@@ -35,6 +35,16 @@
     transition: all .3s;
     z-index: 1;
 }
+.xlg-enlarged {
+    position: relative;
+    margin-right: 50%;
+    transform: scale(3.5) !important;
+    border: 20px solid red;
+    /* height: 60vh !important; */
+    /* width: 75vh !important; */
+    transition: all .3s;
+    z-index: 1;
+}
 .enlarge {
     position: relative;
     margin-right: 50%;
