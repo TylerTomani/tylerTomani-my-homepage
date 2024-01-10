@@ -11,6 +11,50 @@ let partFocus = true
 
 let stepColText = document.querySelectorAll('.step-col > .step-txt ')
 
+let img4Containers = document.querySelectorAll('.img-4-container')
+img4Containers.forEach(el => {
+    let parent = el.parentElement
+    console.log(parent)
+    let stepTxt = parent.querySelector('.step-txt')
+    // console.log(stepTxt)
+    stepTxt.addEventListener('keydown', e => {
+        let key = e.keyCode
+        console.log(tabsAdded)
+        if(key === 13 && !tabsAdded){   
+            // console.log(e.target)
+            tabsAdded = true
+            let parent = e.target.parentElement
+            let images = parent.querySelectorAll('.img-4-container > .step-img > img')
+            images.forEach(img => {
+                img.addEventListener('focus', e => {
+                    denlargeAllImgVids()
+                })
+            })
+            addTabs(images)
+        } else if(key === 13 && tabsAdded){
+            let parent = e.target.parentElement
+            let images = parent.querySelectorAll('.img-4-container > .step-img > img')
+            images.forEach(img => {
+                console.log(imgs)
+                img.setAttribute('tabindex','-1')
+            })
+            removeAllTabIndexes()
+        }
+        tabsAdded = !tabsAdded
+    })
+    stepTxt.addEventListener('focus' , e => {
+        tabsAdded = false
+        let parent = e.target.parentElement
+        let images = parent.querySelectorAll('.img-4-container > .step-img > img')
+        images.forEach(img => {
+            console.log(img)
+            img.setAttribute('tabindex','-1')
+        })
+        removeAllTabIndexes()
+    })
+})
+
+
 function removeAllTabIndexes(){
     asStepTxt.forEach(a => {
         a.setAttribute('tabindex','-1')
@@ -84,16 +128,28 @@ stepTxts.forEach(stepTxt => {
 
 stepColText.forEach(stepColText => {
     stepColText.addEventListener('click', e => {
-        console.log(e.target)
+        let parent = e.target.parentElement
+        let copyCodes = parent.querySelectorAll('.code-container > .copy-code')
+        addTabs(copyCodes)
+        tabsAdded = !tabsAdded
     })
     stepColText.addEventListener('keydown', e => {
         let key = e.keyCode
-        if(key === 13){   
-            console.log(e.target)
+        if(key === 13 && !tabsAdded){   
             let parent = e.target.parentElement
             let copyCodes = parent.querySelectorAll('.code-container > .copy-code')
             addTabs(copyCodes)
+            // tabsAdded = true
+        } else if(key === 13 && tabsAdded){
+            removeAllTabIndexes()   
+            // tabsAdded = false
         }
+        tabsAdded = !tabsAdded
+    })
+    stepColText.addEventListener('focus', e => {
+        tabsAdded = false
+        removeAllTabIndexes()
+
     })
 
 })
@@ -111,7 +167,6 @@ function getStepTxt(parent){
 
 function addTabs(els){
     els.forEach(el => {
-        console.log(el)
         el.setAttribute('tabindex','1')
     })
 }

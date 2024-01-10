@@ -1,4 +1,4 @@
-export const stepTxts = document.querySelectorAll('.step-txt')
+export const stepTxts = document.querySelectorAll('.step > .step-txt')
 import { playVid } from "./play-enlarge-video.js"
 const allImages = document.querySelectorAll('img') 
 const allVideos = document.querySelectorAll('video') 
@@ -7,19 +7,60 @@ let imgEnlarged = false
 
 
 
+
+// const allElsss = document.querySelectorAll('body > *')
+// allElsss.forEach(el => {
+//     el.addEventListener('keydown',e => {
+//         let key = e.keyCode
+//         if(key === 13){
+//             console.log(e.target) 
+//         }
+        
+//     } )
+// })
+
+let img2StepTxts = document.querySelectorAll('.step-col > .step-txt')
+img2StepTxts.forEach(el => {
+    el.addEventListener('click', e => {
+        let parent = e.target.parentElement
+        let img = parent.querySelector('.img-2-container > .step-img > img')
+        if(img){
+            scrollToImg(img)
+            toggleStepImg(img)
+        }
+        
+    })
+    el.addEventListener('keydown', e => {
+        let key = e.keyCode
+        if(key === 13){
+            let parent = e.target.parentElement
+            let img = parent.querySelector('.img-2-container > .step-img > img')
+            if(img){
+                toggleStepImg(img)
+                scrollToImg(img)
+            }
+        }
+    })
+    el.addEventListener('focus', e => {
+        denlargeAllImgVids()
+    })
+})
 stepColCodeContainers.forEach(el => {
     el.addEventListener('click', e => {
+        let parent = e.target.parentElement.parentElement 
+        let img = parent.querySelector('.step-img > img')
+        if(img){
+            toggleStepImg(img)
+        }
 
     })
     el.addEventListener('keydown', e => {
         let key = e.keyCode
         if(key === 13){
             let parent = e.target.parentElement.parentElement 
-            console.log(parent.parentElement)
             let img = parent.querySelector('.step-img > img')
-            console.log(img)
             if(img){
-                imgEnlarged(img)
+                toggleStepImg(img)
             }
         }
         
@@ -48,7 +89,6 @@ stepTxts.forEach(stepTxt => {
         e.preventDefault()
         const stepContainer = getStepContainer(e.target.parentElement)
         const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img') : stepContainer.querySelector('.step-vid > video')
-        console.log(img)
         if(img){
             toggleStepImg(img) 
             const children = e.target.querySelectorAll("*")
@@ -72,8 +112,9 @@ stepTxts.forEach(stepTxt => {
             if(stepContainer){
                 const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img') : stepContainer.querySelector('.step-vid > video')
                 if(img){
-                    
                     toggleStepImg(img) 
+                    scrollToImg(img)             
+                    
                 }
             }
 
@@ -135,6 +176,12 @@ allImages.forEach(img => {
         e.preventDefault()
         toggleStepImg(img)
     })  
+    img.addEventListener('keydown', e => {
+        let key = e.keyCode
+        if(key === 13){
+            toggleStepImg(img)
+        }
+    })  
 })
 allVideos.forEach(img => {
     img.addEventListener('click', e => {
@@ -143,3 +190,25 @@ allVideos.forEach(img => {
         playVid(img)
     })  
 })
+
+
+function scrollToImg(img){
+    let parent = getStepColContainer(img)
+    console.log(parent)
+    if(parent){
+
+        if(parent.classList.contains('step-col')){   
+            if(imgEnlarged){
+                
+                img.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+                imgEnlarged = true
+                
+            } else {
+                img.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                imgEnlarged = false
+                
+            }
+        }
+    }
+    
+}
