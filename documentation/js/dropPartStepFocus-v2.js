@@ -17,7 +17,6 @@ function hideParts(){
             return
         }
         stepsContainer.classList.add('hide')
-        stepsContainer.style.display = 'hide'
         
     })
 }
@@ -40,7 +39,7 @@ function toggleStepsContainer(e){
         stepsContainer.classList.add('hide')
     } else if (!stepsContainer.classList.contains('hide')){
         stepsContainer.classList.add('hide')
-    } else {
+    } else if(stepsContainer.classList.contains('hide')){
         hideParts()
         stepsContainer.classList.remove('hide')
         

@@ -204,7 +204,7 @@ function scrollToImg(img){
                 imgEnlarged = true
                 
             } else {
-                img.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+                img.scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
                 imgEnlarged = false
                 
             }

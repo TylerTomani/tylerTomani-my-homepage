@@ -16,8 +16,10 @@ pre.online {
     color: red !important;
     box-shadow:0 0 3px 3px red !important;
 }
+.b { color: blue}
 .gr { color: goldenrod}
 .m { color: magenta}
+.mt { color: mediumturquoise}
 .r { color:red}
 
 .rbshadow:active,.rbshadow:focus{

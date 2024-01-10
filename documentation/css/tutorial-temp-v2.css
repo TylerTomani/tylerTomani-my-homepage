@@ -166,10 +166,13 @@ img:hover,
 .question-txt:active,.question-txt:focus,
 .question-txt:hover,
 .dropPart:active,
-.dropPart:focus,
-.dropPart:hover {
+.dropPart:focus{
     box-shadow: 2px 2px 4px 4px blue;
     /* text-decoration: none; */
+}
+.step-txt:hover{
+
+    box-shadow: 1px 1px 4px 4px black !important;
 }
 .question:active,
 .question:focus,
