@@ -1,7 +1,9 @@
 const playVidClicks = document.querySelectorAll('.playVid-click')
 import { getStepContainer } from "./img-enlarge-v1.js"
+import { getStepColContainer } from "./img-enlarge-v1.js"
 let currentVid 
 let playing = false
+let vidEnlarged = false
 
 playVidClicks.forEach(playVidClick => {
     
@@ -23,27 +25,22 @@ playVidClicks.forEach(playVidClick => {
             // console.log(e.target)
             let vid = parent.querySelector('.step-vid > video')
             currentVid = vid
-            console.log(vid)
             if(vid){
                 playVid(vid)
+                scrollToVid(vid)
                 vid.play()
             } else {
                 vid.pause()
             }
         }
     })
-    playVidClick.addEventListener('focusout', e => {
-        
-            
+    playVidClick.addEventListener('focusout', e => {          
             let parent = getStepContainer(e.target)
             let vid = parent.querySelector('.step-vid > video')            
             vid.pause()
             vid.currentTime = 0
     })
-
 })
-
-
 export function playVid(vid){
     if(!playing){
         vid.play()
@@ -63,3 +60,27 @@ addEventListener('keydown', e => {
         playVid(currentVid)
     }
 })
+
+
+function scrollToVid(vid){
+    // let parent = vid.parentElement.parentElement
+    // let vid = parent.querySelector()
+    console.log(vid)
+    // if(parent){
+        // console.log(img)
+        // if(parent.classList.contains('step-col')){   
+    console.log(vidEnlarged)
+            if(!vidEnlarged ){
+                vid.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+                vidEnlarged  = true
+                
+            } else {
+                vid.scrollIntoView({ behavior: "smooth", block: "end", inline: "start" });
+                // vid.scrollIntoView({ behavior: "smooth", });
+                vidEnlarged  = false
+                
+            }
+        // }
+    // }
+    
+}

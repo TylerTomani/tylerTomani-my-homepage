@@ -48,7 +48,7 @@ img2StepTxts.forEach(el => {
 stepColCodeContainers.forEach(el => {
     el.addEventListener('click', e => {
         let parent = e.target.parentElement.parentElement 
-        let img = parent.querySelector('.step-img > img')
+        let img = parent.querySelector('.step-img > img') ? parent.querySelector('.step-img > img') : parent.querySelector('.step-vid > vid')
         if(img){
             toggleStepImg(img)
         }
@@ -58,7 +58,7 @@ stepColCodeContainers.forEach(el => {
         let key = e.keyCode
         if(key === 13){
             let parent = e.target.parentElement.parentElement 
-            let img = parent.querySelector('.step-img > img')
+            let img = parent.querySelector('.step-img > img') ? parent.querySelector('.step-img > img') : parent.querySelector('.step-vid > vid')
             if(img){
                 toggleStepImg(img)
             }
@@ -194,7 +194,7 @@ allVideos.forEach(img => {
 
 function scrollToImg(img){
     let parent = getStepColContainer(img)
-    console.log(parent)
+    // console.log(parent)
     if(parent){
 
         if(parent.classList.contains('step-col')){   
