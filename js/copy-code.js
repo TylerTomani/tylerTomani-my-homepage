@@ -1,9 +1,25 @@
 const codeCopy = document.querySelectorAll('.copy-code')
 const codeContainers = document.querySelectorAll('.code-containers')
-
+const stepTxtPAsCopy = document.querySelectorAll('.step-txt > p > a')
 let cntrlCarray = []
 codeCopy.forEach(copycode => {
+    copycode.addEventListener('keydown' , e => {        
+        cntrlCarray.unshift(e.keyCode)
+        if(cntrlCarray.length > 3){
+            cntrlCarray.pop()
+        }
+        if(cntrlCarray[0] === 67 && cntrlCarray[1] === 91){
+            animate(e)
+            console.log("cntrl + c")
+        }
+    })
+    copycode.addEventListener('click', e => {
+        e.preventDefault()
+        animate(e)
+    })
 
+})
+stepTxtPAsCopy.forEach(copycode => {
     copycode.addEventListener('keydown' , e => {        
         cntrlCarray.unshift(e.keyCode)
         if(cntrlCarray.length > 3){

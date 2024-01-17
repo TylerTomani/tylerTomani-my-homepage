@@ -14,3 +14,17 @@
 .flex-2-2 > * {
     flex-basis: 50%;
 }
+
+.as{align-items: flex-start !important;}
+.ac{align-items: center !important;}
+.ae{align-items: flex-end !important;}
+.js{justify-content: flex-start !important;}
+.jc{justify-content: center !important;}
+.je{justify-content: flex-end !important;}
+
+.ass{align-self: flex-start !important;}
+.asc{align-self: center !important;}
+.ase{align-self: flex-end !important;}
+.jss{justify-self: flex-start !important;}
+.jsc{justify-self: center !important;}
+.jse{justify-self: flex-end !important;}

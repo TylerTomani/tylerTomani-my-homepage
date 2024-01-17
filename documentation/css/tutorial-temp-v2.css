@@ -4,6 +4,7 @@
 
 .code-container {
     background-color: lightyellow;
+    border: 1px solid black;
     max-width: 550px;
     width: 98%;
     margin-right: 2.5%;
@@ -116,8 +117,9 @@
 }
 .img-2-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
 }
 .img-2-container > .code-container{
     /* justify-self: flex-start; */

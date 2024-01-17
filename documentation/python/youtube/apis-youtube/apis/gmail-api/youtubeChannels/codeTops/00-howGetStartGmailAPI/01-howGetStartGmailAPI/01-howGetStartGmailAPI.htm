@@ -743,14 +743,14 @@ myEmails()</pre>
         <!-- Part 8 - Python Code - service = build('gmail','api',) -->
             <div class="part">
                 <a tabindex="1" href="#" class="dropPart"><h3>Part 8 - Python Code - <code>service = build('gmail','v1',Credentials=creds)</code> - (step 2)</h3></a>
-                <div class="steps-container show ">
+                <div class="steps-container">
                     <!-- 08-01 -->
                     <div class="step-col">
                         <div  tabindex="1" class="step-txt ">
                             <h4></h4>
                             <h4>01</h4>
                             <p>
-                                The <code class="m">build</code> function from <code>googleapiclient.discovery</code> will check if
+                                The <code class="md-blue">build</code> function from <code>googleapiclient.discovery</code> will check if
                                 <code>creds</code>
                                 exists, and connect to the api, here we can print out the first message
                             </p>
@@ -785,7 +785,7 @@ def myEmails():
         with open ('token.json ','w') as token:
             token.write(creds.to_json())
     try:
-        service = build('gmail','v1',credentials=creds)
+        service = <span class="md-blue">build</span>('gmail','v1',credentials=creds)
         result = service.users().messages().list(userId='me').execute()
         messages = result.get('messages')
         print(messages[0])
@@ -826,11 +826,11 @@ except HttpError as error:
                     </div>
                     <!-- 08-03 -->
                     <div class="step">
-                        <div autofocus  tabindex="1" class="step-txt playVid-click">
+                        <div   tabindex="1" class="step-txt playVid-click">
                             <h4>03</h4>
                             <p>
                                 As we are loopin throught the messages, we can use the <code class="m">'id'</code>'s
-                                in the <code><span class="mt">get</span>()</code> function to retrieve the 
+                                in the <code><span class="md-blue">get</span>()</code> function to retrieve the 
                                 <code class="gr">payload</code>,
                                 <br>
                                 <span class="r">Figure out what a payload means</span>
@@ -840,9 +840,9 @@ except HttpError as error:
 try:
     service = build('gmail','v1',credentials=creds)
     result = service.users().messages().list(userId='me').execute()
-    messages = result.<span class="mt">get</span>('messages')
+    messages = result.<span class="md-blue">get</span>('messages')
     for i in messages:
-        txt = service.users().messages().<span class="mt">get</span>(userId='me',id=i[<span class="m">'id'</span>]).execute()</span>
+        txt = service.users().messages().<span class="md-blue">get</span>(userId='me',id=i[<span class="m">'id'</span>]).execute()</span>
         payload = txt[<span class="gr">'payload'</span>]
         print(payload)
 except HttpError as error:
@@ -860,13 +860,12 @@ except HttpError as error:
                     </div>
                     <!-- 08-04 -->
                     <div class="step">
-                        <div tabindex="1" class="step-txt playVid-click">
+                        <div tabindex="1" class="step-txt playVid-click ">
                             <h4>04</h4>
                             <p>
-                                With the <code>'payload'</code> we can retrieve the <code class="gr">headers</code>
-                                which contains the subjects,senders,and body for each messages in gmail. 
+                                The <code>'payload'</code> contains the <code class="gr">headers</code>
+                                which contains the <code class="gr">'subjects'</code> and <code class="gr">'senders'</code>  for each messages in gmail. 
                             </p>
-                            
                             <div class="code-container">
                                 <pre tabindex="1" class="copy-code">
 try:
@@ -877,32 +876,28 @@ try:
         txt = service.users().messages().get(userId='me',id=i['id']).execute()
         payload = txt['payload']
         headers = payload[<span class="gr">'headers'</span>]
-        for i in headers:
-            print(i)
+        print(headers)
 except HttpError as error:
     print('err',error)</pre>
 
                             </div>
-                            
+                            <p>
+                                This shows the content in <code class="gr">headers</code> being printed out
+                            </p>
                         </div>
                         <div class="step-vid">
-                            <video src="imagesVideos/08-04.mov"></video>
+                            <video src="imagesVideos/08-04.mov">
                         </div>
                     </div>
-
                     <!-- 08-05 -->
                     <div class="step">
                         <div tabindex="1" class="step-txt">
                             <h4>05</h4>
                             <p>
-                                Create 3 empty list to add to for
+                                We can query the <code>'headers'</code> and search for the attribute
+                                <code class="m">'name'</code> to find email's 'senders' <code class="gr">'From'</code>  and 'subjects' <code class="gr">'Subject</code>
+                                to get their <code class="m">'value'</code>
                             </p>
-                            <ul>
-                                <li>subject</li>
-                                <li>senders</li>
-                                <li>body</li>
-                            </ul>
-                            <p>and add to the list for each loop</p>
                         </div>
                         <div class="step-img">
                             <img src="imagesVideos/08-05.png">
@@ -912,20 +907,228 @@ except HttpError as error:
                     <div class="step">
                         <div tabindex="1" class="step-txt">
                             <h4>06</h4>
+
                             <p>
-                                Now we can search for a message with a condition and append what we want to these list.
+                                Create 3 empty list to add to for
                             </p>
+                            <ul>
+                                <li><code class="gr">subject</code></li>
+                                <li><code class="gr">senders</code></li>
+                                <li><code class="gr">body</code></li>
+                            </ul>
+                            <p>and add to the list for each loop</p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+subjects = []
+senders = []
+body = []                       </pre>
+                            </div>
+                            
                         </div>
                         <div class="step-img">
-                            <img src="../../../../../../../../../../images/airplanSpaceSun.jpg">
+                            <img src="imagesVideos/08-06.png">
+                        </div>
+                    </div>
+                    <!-- 08-07 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>07</h4>
+                            <p>
+                                Loop through <code>'headers'</code> and Query with a conditional and search for <code class="m">name</code>
+                                for <code class="gr">'Subject'</code>, append to <code>subjects</code> and <code class="gr">From</code>, append to 
+                                <code>senders</code>
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+try:
+    service = build('gmail','v1',credentials=creds)
+    result = service.users().messages().list(userId='me').execute()
+    messages = result.get('messages')
+    for i in messages:
+        txt = service.users().messages().get(userId='me',id=i['id']).execute()
+        payload = txt['payload'] 
+        headers = payload['headers']
+        for i in headers:
+            if i['name'] == 'Subject':
+                subjects.append(i['value'])
+            if i ['name'] == 'From':
+                senders.append(i['value'])
+    print(subjects[0])
+    print(senders[0])</pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/08-07.png">
+                        </div>
+                    </div>
+                    <!-- 08-08 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>08</h4>
+                            <p>
+                                The body of the email is the email itself, It is located in 
+                                <code class="m">parts</code> which is located back in <span class="gr">payload</span>
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+try:
+    service = build('gmail','v1',credentials=creds)
+    result = service.users().messages().list(userId='me').execute()
+    messages = result.get('messages')
+    for i in messages:
+        txt = service.users().messages().get(userId='me',id=i['id']).execute()
+        payload = txt.get('payload')
+        headers = payload.get('headers')
+        for i in headers:
+            if i['name'] == 'Subject':
+                subjects.append(i['value'])
+            if i['name'] == 'From':
+                senders.append(i['value'])
+        parts = payload.get('parts')
+        print(parts)</pre>
+                            </div>
+                            <p>The <code class="m">parts</code>
+                                is very long because it contains the email, if you scroll up you 
+                                can see the <code class="m">'body</code></code> with the <code class="gr">data</code>
+                                attribute which contains the email content.
+                            </p>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/08-08.png">
+                        </div>
+                    </div>
+                    <!-- 08-09 -->
+                    <div class="step ">
+                        <div tabindex="1" class="step-txt rbshadow">
+                            <h4>10</h4>
+                            <p>
+                                <span class="r">** This code will cause an error because empty messages with have a 
+                                    <code style="color:black">Nonetype</code>
+                                </span>
+                                We must replact and Decode the body.'data' attribute,
+                                using the library <code class="md-blue">base64</code>
+                                seen at the top of script.
+                                <code>import base64</code>
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+try:
+    service = build('gmail','v1',credentials=creds)
+    result = service.users().messages().list(userId='me').execute()
+    messages = result.get('messages')
+    for i in messages:
+        txt = service.users().messages().get(userId='me',id=i['id']).execute()
+        payload = txt['payload']
+        headers = payload['headers']
+        for i in headers:
+            if i['name'] == 'Subject':
+                subjects.append(i['value'])
+            if i['name'] == 'From':
+                senders.append(i['value'])
+        parts = payload.get('parts')[0]
+        data = parts['body']['data']
+        data = data.replace('-','+').replace('_','/')
+        decode_data = base64.b64decode(data)
+        body.append(decode_data)
+        
+        print(data)    
+            </pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/08-09.png">
+                        </div>
+                    </div>
+                    <!-- 08-10-->
+                    <div class="step ">
+                        <div tabindex="1" class="step-txt rbshadow">
+                            <h4>10</h4>
+                            <p>
+                                Check for a none type, and here is the full code 
+                            </p>
+                            <p class="r">
+                                This code doesn't work entirely you can print each message but,
+                                if none it breaks
+                            </p>
+                            <p>
+                                Move on to jieJenn to find new approach,
+                                <a href="../../../jieJienn/00-googleDriveApiPython/01-gettingStarted/01-gettingStarted.htm">jieJenn-01-gettingStarted</a>
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+    import os.path
+    from google.auth.transport.requests import Request
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from googleapiclient.discovery import build
+    from googleapiclient.errors import HttpError
+    import base64
+    import email
+    
+    SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"]
+    subjects = []
+    senders = []
+    body = []
+    
+    def myEmails():
+        creds = None
+        if os.path.exists('token.json'):
+            creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+        if not creds or not creds.valid:
+            if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+            else:
+                flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+                creds = flow.run_local_server(port=0)
+            with open('token.json', 'w') as token:
+                token.write(creds.to_json())
+    
+        try:
+            service = build('gmail', 'v1', credentials=creds)
+            result = service.users().messages().list(userId='me').execute()
+            messages = result.get('messages')
+            for i in messages:
+                txt = service.users().messages().get(userId='me', id=i['id']).execute()
+                payload = txt['payload']
+                headers = payload['headers']
+                for i in headers:
+                    if i['name'] == 'Subject':
+                        subjects.append(i['value'])
+                    if i['name'] == 'From':
+                        senders.append(i['value'])
+                parts = payload.get('parts')
+                if parts:
+                    parts = parts[0]
+                    data = parts['body']['data']
+                    data = data.replace('-', '+').replace('_', '/')
+                    decode_data = base64.b64decode(data)
+                    print(decode_data)
+                    body.append(decode_data)
+
+        if body:
+            print(body[0].decode('utf-8'))  # Decode the bytes to string
+            # print(body[2])  # Decode the bytes to string
+    
+        except HttpError as error:
+            print('err', error)
+    
+    myEmails()
+    
+                                </pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/08-10.png">
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
 
     </main>
-
 </body>
 </html>

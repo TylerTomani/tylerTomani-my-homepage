@@ -73,12 +73,11 @@ main {
     display: inline-block;
 }
 .resource > header img {
-    border-top: 2px solid black;
-    border-right: 2px solid black;
+    border: 2px solid black;
     position: relative;
     z-index: 2;
-    height: 100%;
-    width: 100%;
+    height: 90%;
+    width: 90%;
     max-height: 124px;
     /* min-width: 120px;
     min-height: 59px;

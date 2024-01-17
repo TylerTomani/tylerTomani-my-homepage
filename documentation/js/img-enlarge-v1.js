@@ -7,7 +7,6 @@ let imgEnlarged = false
 
 
 
-
 // const allElsss = document.querySelectorAll('body > *')
 // allElsss.forEach(el => {
 //     el.addEventListener('keydown',e => {
@@ -112,6 +111,7 @@ stepTxts.forEach(stepTxt => {
             if(stepContainer){
                 const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img') : stepContainer.querySelector('.step-vid > video')
                 if(img){
+                    console.log(img)
                     toggleStepImg(img) 
                     scrollToImg(img)             
                     

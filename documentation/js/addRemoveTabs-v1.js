@@ -75,6 +75,7 @@ copyCodes.forEach(el => {
 
 stepTxts.forEach(stepTxt => {
     stepTxt.addEventListener('focus', e => {
+        console.log("focus")
         denlargeAllImgVids()
         removeAllTabIndexes()
         tabsAdded = false
@@ -138,6 +139,15 @@ stepColTexts.forEach(stepColText => {
             let parent = e.target.parentElement
             let copyCodes = parent.querySelectorAll('.code-container > .copy-code')
             let as = e.target.querySelectorAll(' a')
+            let images = parent.querySelectorAll('.step-img > img')
+            images.forEach(img => {
+                img.addEventListener('focus', e => {
+                    denlargeAllImgVids()
+                    // removeAllTabIndexes()
+                })
+            })
+            addTabs(images)
+            // denlargeAllImgVids()
             addTabs(as)
             addTabs(copyCodes)
             // tabsAdded = true
