@@ -10,6 +10,7 @@ codeCopy.forEach(copycode => {
         }
         if(cntrlCarray[0] === 67 && cntrlCarray[1] === 91){
             animate(e)
+
             console.log("cntrl + c")
         }
     })

@@ -61,6 +61,7 @@ function togglePart(e) {
         stepsContainer.classList.remove('hide')
     }
     if(stepsContainer.classList.contains('hide')){
+        
         stepsContainer.classList.remove('hide')
     } else {
         stepsContainer.classList.add('hide')

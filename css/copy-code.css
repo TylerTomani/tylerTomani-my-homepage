@@ -6,7 +6,7 @@
     box-shadow: 0 0 3px 2px black;
     background-color: whitesmoke;
     transform: scale(1.22);
-    transition: all .3s;
+    transition: all .33s;
 }
 .decopied {
     border: 1px solid whitesmoke;

@@ -7,6 +7,7 @@ theseProjects.forEach(project => {
     })
     project.addEventListener('keydown', e => {
         if(e.keyCode === 13){
+            console.log('jkdjfjhjsdjfh')
             e.preventDefault()
             loadpage(e)
         }

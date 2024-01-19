@@ -188,7 +188,7 @@ img:hover,
     display: none !important;
 }
 .show {
-    display: inline-block;
+    display: inline-block !important;
 }
 footer {
     padding: 0 2.5%;

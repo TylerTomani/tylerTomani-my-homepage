@@ -87,7 +87,8 @@ stepTxts.forEach(stepTxt => {
     stepTxt.addEventListener('click' , e => {
         e.preventDefault()
         const stepContainer = getStepContainer(e.target.parentElement)
-        const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img') : stepContainer.querySelector('.step-vid > video')
+        const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img')
+         : stepContainer.querySelector('.step-vid > video')
         if(img){
             toggleStepImg(img) 
             const children = e.target.querySelectorAll("*")
@@ -109,17 +110,14 @@ stepTxts.forEach(stepTxt => {
         if(key === 13){
             const stepContainer = getStepContainer(e.target.parentElement)
             if(stepContainer){
-                const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img') : stepContainer.querySelector('.step-vid > video')
+                const img = stepContainer.querySelector('.step-img > img') ? stepContainer.querySelector('.step-img > img')
+                 : stepContainer.querySelector('.step-vid > video')
                 if(img){
-                    console.log(img)
                     toggleStepImg(img) 
-                    scrollToImg(img)             
-                    
+                    scrollToImg(img)                         
                 }
             }
-
         }
-        
     })
 })
 
