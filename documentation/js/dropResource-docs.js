@@ -6,6 +6,9 @@ function hideSubResources(){
     if(!subResourcesContainer.classList.contains('show')){
         subResourcesContainer.classList.add('hide')
     } 
+    if(subResourcesContainer.classList.contains('show')){
+        subResourcesContainer.classList.remove('show')
+    }
 })
 }
 hideSubResources()
@@ -45,7 +48,15 @@ function toggleSubResourcesContainer(container){
         if(container.classList.contains('hide')){
             hideSubResources()
             container.classList.remove('hide')
-        }else {
+            container.classList.remove('show')
+        }
+        // else if (container.classList.contains('show')){
+        //     container.classList.remove('show')
+        //     container.classList.add('hide')
+        // }
+        else {
+            hideSubResources()
+            container.classList.remove('show')
             container.classList.add('hide')
         }
     }

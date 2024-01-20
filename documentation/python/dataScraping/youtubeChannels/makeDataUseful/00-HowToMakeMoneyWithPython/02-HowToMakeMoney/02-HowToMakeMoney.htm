@@ -256,6 +256,48 @@ Thanks. This project is for machine learning
             <div class="part">
                 <a tabindex="1" href="#" class="dropPart"><h3>Part 3 - Start script with requests and sitemap url</h3></a>
                 <div class="steps-container ">
+                    <!-- 03-00 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt rbshadow">
+                            <h4>00</h4>
+                            <p>
+                                <span class="r">** Important Note</span> if <span class="r">requests</span> isn't begin recognized, 
+                                change into your <code>venv</code>
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+source ./venv/bin/activate</pre>
+                            </div>
+                            <p>
+                            Then install
+                            </p>  
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+pip install jupyter
+                                </pre>
+                            </div>
+                            <p>
+                                Run the following command
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+ipython kernel install --user --name=venv</pre>
+                            </div>
+                            
+                            <p>
+                                Run jupyter and you should be good, restart vs code if neccesary
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+jupyter notebook</pre>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/03-00.png">
+                        </div>
+                    </div>
                     <!-- 03-01 -->
                     <div class="step">
                         <div tabindex="1" class="step-txt">
@@ -335,7 +377,7 @@ pip install lxml</pre>
                         <div tabindex="1" class="step-txt">
                             <h4>04</h4>
                             <p>
-                                Replace the second argument in <code class="mdblue">BeautifulSoup</code> <code>'xml'</code> to <code class="r">'lxml</code>
+                                Replace the second argument in <code class="mdblue">BeautifulSoup</code> <code>'xml'</code> to <code class="gr">'lxml</code>
                             </p>
                             <div class="code-container">
                                 <pre tabindex="1" class="copy-code">
@@ -345,10 +387,12 @@ from bs4 import BeautifulSoup
 site_map = 'https://www.pngmart.com/sitemap.xml'
 response = requests.get(site_map)
 xml = response.text
-soup = BeautifulSoup(xml,'lxml')
+soup = BeautifulSoup(xml,<span class="gr">'lxml'</span>)
 soup</pre>
                             </div>
-                            
+                            <p>
+                                If you receive an error message change the 2nd argument back to <code>'xml'</code> from <code class="gr">'lxml'</code>
+                            </p>
                         </div>
                         <div class="step-img">
                             <img src="imagesVideos/03-04.png">
@@ -384,13 +428,16 @@ soup.<span class="gr">find_all</span>('loc')
                         <div tabindex="1" class="step-txt">
                             <h4>06</h4>
                             <p>
-                                We now have the url for each post link which has the links to the images
+                                We now have the url from each <code>&larr;loc></code> element, attach each one but make sure you target the 
+                                one with <code class="m">posts</code>, that is where the images are. Not <span class="r">catagories </span>
+                                or <span class="r">tags</span>...
                             </p>
                             <div class="code-container">
                                 <pre tabindex="1" class="copy-code">
-    
+site_maps =[]
 for loc in soup.find_all('loc'):
-    print(loc.txt)</pre>
+    print(loc.txt)
+    site_map</pre>
                             </div>
                         </div>
                         
@@ -398,7 +445,265 @@ for loc in soup.find_all('loc'):
                             <img src="imagesVideos/03-06.png">
                         </div>
                     </div>
+                    <!-- 03-07 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>07</h4>
+                            <p>
+                                Check if url contains 'posts', add to <code>site_maps</code> list. These urls have the images
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+site_maps = []
+for loc in soup.find_all('loc'):
+    url = loc.text
+    if 'posts' in url:
+        site_maps.append(url)
+site_maps[0:4]</pre>
+                            </div>
+                            <p>
+                                site_maps[0:4] shows the first 4 urls
+                            </p>               
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/03-07.png">
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <!-- Part 4 - put site_maps url into soup again -->
+            <div class="part">
+                <a tabindex="1" href="#" class="dropPart"><h3>Part 4 - put site_maps url into soup again</h3></a>
+                <div class="steps-container">
+                    <!-- 04-01 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt playVid-click">
+                            <h4>01</h4>
+                            <p>
+                                If you click on a url from the <code>site_maps</code> list it will take you the url full of all the image urls.
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://www.pngmart.com/sitemap.xml'
+
+response = requests.get(url)
+xml = response.text
+soup = BeautifulSoup(xml,'xml')
+
+site_maps = []
+for loc in soup.find_all('loc'):
+    url = loc.text
+    if 'posts' in url:
+        site_maps.append(url)
+site_maps[0]
+                                </pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-vid">
+                            <video src="imagesVideos/04-01.mov">
+                        </div>
+                    </div>
+                    <!-- 04-02 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>02</h4>
+                            <p>
+                                Do the same process on the <code>site_maps</code> urls. Do one at a time <code class="m">img_urls[0]</code> , because there are thousands of images
+                                on each <code>site_map-post</code> url page. We can see the firs 4 images, but it seems it displays the 
+                                id at the end then the name.
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+response = requests.get(<span class="m">site_maps[0]</span>)
+soup = BeautifulSoup(response.text,'xml')
+
+img_urls = []
+for xml_url in soup.find_all('loc'):
+    img_urls.append(xml_url.text)
+img_urls[0:5]
+
+                                </pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/04-02.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Part 5 - visit each img_url and download images -->
+            <div class="part">
+                <a tabindex="1" href="#" class="dropPart"><h3>Part 5 - visit each img_url and download images</h3></a>
+                <div class="steps-container show">
+                    <!-- 05-01 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>01</h4>
+                            <p>
+                                There are 2000 image url on the site-map-post-1.xml page
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+response = requests.get(site_maps[0])
+soup = BeautifulSoup(response.text,'xml')
+
+img_urls = []
+for xml_url in soup.find_all('loc'):
+    img_urls.append(xml_url.text)
+print(site_maps[0])
+len(img_urls)</pre>
+                            </div>                
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/05-01.png">
+                        </div>
+                    </div>
+                    <!-- 05-02 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>02</h4>
+                            <p>
+                                Loop throught the img_urls and place the first image to a response, 
+                                the <code class="g">break</code> keyword stops the loop from running 
+                                after 1 iteration, (great for testing large amount of data)
+                            </p>
+                            <p>
+                                When a loop only runs 1 time, the last variable <code class="r">response</code>
+                                is usually available outsite the loop
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+for img_url in img_urls:
+    print(img_url)
+    <span class="r">response</span> = requests.get(img_url)
+    <span class="g">break</span>
+<span class="r">response</span>
+</pre>
+                            </div>
+                        
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/05-02.png">
+                        </div>
+                    </div>
+                    <!-- 05-03 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>03</h4>
+                            <p>
+                                The text in the response for the img_url, contains all the html.
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+response.text</pre>
+                            </div>               
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/05-03.png">
+                        </div>
+                    </div>
+                    <!-- 05-04 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt playVid-click">
+                            <h4>04</h4>
+                            <p>
+                                Go to the img download button and inspect the html to see where the image resides
+                            </p>
+                        </div>
+                        <div class="step-vid">
+                            <video src="imagesVideos/05-04.mov">
+                        </div>
+                    </div>
+                    <!-- 05-05 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>05</h4>
+                            <p>
+                                Notice the 'download' class on the image, use this in soup to find all the images
+                            </p>
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/05-05.png">
+                        </div>
+                    </div>
+                    <!-- 05-06 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>06</h4>
+                            <p>
+                                Pass <span class="r">'html.parser'</span> to soup, and look for all <code>'a'</code>
+                                elements with a class of <span class="gr">'download'</span>.
+                            </p>
+                            <p>
+                                Here print the first element in find_all of soup [0]
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+for img_url in img_urls:
+    print(img_url)
+    response = requests.get(img_url)
+    break
+soup = BeautifulSoup(response.text,'html.parser')
+soup.find_all('a',{'class':'download'})[0]</pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/05-06.png">
+                        </div>
+                    </div>
+                    <!-- 05-07 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt playVid-click">
+                            <h4>07</h4>
+                            <p>
+                                use <code class="mblue">find</code> instead of find all and remove <code class="g">break</code>
+                                with the soup object available outside the loop you can spit one img url and img at a time
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+for img_url in img_urls:
+    print(img_url)
+    response = requests.get(img_url)
+    # break
+soup = BeautifulSoup(response.text,'html.parser')
+soup.<span class="mdblue">find</span>('a',{'class':'download'})</pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-vid">
+                            <video src="imagesVideos/05-08.mov">
+                        </div>
+                    </div>
+                    <!-- 05-08 -->
+                    <div class="step">
+                        <div tabindex="1" class="step-txt">
+                            <h4>08</h4>
+                            <p>
+                                We want the <code class="gr">href</code> from the a with a class of download, save it to a png within the loop
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+for img_url in img_urls:
+    response = requests.get(img_url)
+    soup = BeautifulSoup(response.text,'html.parser')
+    png = soup.find('a',{'class':'download'})['href']
+    break
+png</pre>
+                            </div>
+                            
+                        </div>
+                        <div class="step-img">
+                            <img src="imagesVideos/">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
             

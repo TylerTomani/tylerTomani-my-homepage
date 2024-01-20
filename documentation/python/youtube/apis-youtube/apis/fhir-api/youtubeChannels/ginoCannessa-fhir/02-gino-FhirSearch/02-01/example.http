@@ -1,3 +1,0 @@
-@fhirUrl = http://hapi.fhir.org/baseR4
-GET {{fhirUrl}}/Patient?given=eve
-Accept: application/fhir+json

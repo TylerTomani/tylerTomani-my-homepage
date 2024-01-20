@@ -19,13 +19,13 @@ pre.online {
 .b { color: blue}
 .g { color: green}
 .gr { color: goldenrod}
-.m { color: magenta}
+.m { color: rgb(233, 88, 233);font-weight: 999; }
 .mdblue,
 .md-blue { 
     color: rgb(0,180,240);
     font-weight: 900 !important;
 }
-.r { color:red}
+.r { color:rgb(180, 80, 80);font-weight: 999;}
 
 .rbshadow:active,.rbshadow:focus{
         box-shadow: 2px 0 10px 4px blue !important;
