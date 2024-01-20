@@ -18,14 +18,18 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 2% 0;
 }
-.resources-container > .resource-container> header {
+.resource-container> header > h3{
+    font-size: 2rem;
+}
+.resource-container> header {
     padding-left: 1.5%;
     display: flex;
     border: 2px solid blue;
     align-items: center;
 }
-.resources-container >  .resource-container> header > img {
+.resource-container> header > img {
     /* border: 4px solid red; */
     width: 10%;
     align-self: flex-end;
@@ -38,7 +42,7 @@ main {
     flex-wrap: wrap;
     padding-left: 1.5%;
     padding-top: .25%;
-    /* background-color: yellow; */
+    margin: 2% 0;
 }
 .sub-resource{
     flex-basis: 20%;

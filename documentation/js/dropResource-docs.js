@@ -1,13 +1,14 @@
 const resources = document.querySelectorAll('.resource')
 const subResourcesContainers = document.querySelectorAll('.sub-resources-container')
 
-subResourcesContainers.forEach(subResourcesContainer => {
+function hideSubResources(){
+    subResourcesContainers.forEach(subResourcesContainer => {
     if(!subResourcesContainer.classList.contains('show')){
-
         subResourcesContainer.classList.add('hide')
     } 
 })
-
+}
+hideSubResources()
 resources.forEach(resource => {
     resource.addEventListener('click', e => {
         console.log('kljd')
@@ -42,6 +43,7 @@ function getResourceContainer(parent){
 function toggleSubResourcesContainer(container){
     if(container){
         if(container.classList.contains('hide')){
+            hideSubResources()
             container.classList.remove('hide')
         }else {
             container.classList.add('hide')
