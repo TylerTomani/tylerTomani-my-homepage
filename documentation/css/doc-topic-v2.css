@@ -92,10 +92,10 @@ main {
 .project:active,.project:focus,.project:hover,
 .playlist-container:active,.playlist-container:focus,
 .resource:active,.resource:focus{
-        box-shadow: 2px 3px 3px 5px lightblue;
-        background-color: lightblue;
+        box-shadow: 5px 4px 6px 6px lightblue;
         border: 2px solid blue;
         background-color: white;
+        background-color: lightcyan;
         position: relative;
         bottom: 2%;
         z-index: 20;

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.animate {transform: scale(1.2); transition: all 1000;}
+main {
+    display: flex;
+    flex-direction: column;
+}
+.canvas-code-container {
+    display: flex;
+
+}
+.canvas-code-container > canvas{
+    flex-basis: 45%;
+    border: 1px solid blue
+}
+.canvas-code-container > #segments-pre-section{
+    flex-basis: 45%;
+    min-width: 50vw;
+    border: 1px solid blue;
+    max-height: 900px;
+    /* /* overflow: hidden; */
+    /* overflow-y: scroll; */ */
+    background-color: lightgoldenrodyellow;
+}
+.canvas-code-container > #segments-pre-section > .segment{
+    display: flex;
+    flex-direction: column;
+}
+#segCode{
+    display: inline-block
+}
+#segCode:active,#segCode:focus,#segCode:hover {
+    border: 3px solid red;
+    min-height: 400px;
+
+}
+
+canvas {
+    border: 1px solid black;
+    width: 50%;
+    height: 90vh;
+}
+pre#segCode {
+    font-size: 1.05rem;
+    overflow: scroll;
+}
+pre#segCode {
+    height: auto;
+    max-height: 750px;
+    overflow: auto;
+    overflow-y: none;
+    background-color: #eeeeee;
+}
+pre#segCode::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+  }
+  
+pre#segCode::-webkit-scrollbar-track {
+    background-color: blue; /* Set the background color of the scrollbar track */
+  }
+  
+pre#segCode::-webkit-scrollbar-thumb {
+    background-color: #red; /* Set the color of the scrollbar thumb */
+    border-radius: 400px; /* Add border radius to the scrollbar thumb */
+  }
+  
+pre#segCodepre::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Set the color of the scrollbar thumb on hover */
+  }
+.hide {
+    display: none;
+}

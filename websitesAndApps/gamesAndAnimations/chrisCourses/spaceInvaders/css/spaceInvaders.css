@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding:0;
+}
+header>.title>a img {
+    margin-right: 2.5%;
+}
+
+header>.title>a img {
+    max-width: 250px;
+}
+canvas {
+    height: 55vmax;
+    width: 100%;
+    /* border-bottom: 2px solid blue; */
+}
+
+.scripts-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 4.5%;
+}
+
+.scripts-container  > header {
+    display: flex;
+    padding: 1% 2%;
+}
+.scripts-container > header > h3{
+    font-size: 1.4rem;
+    
+}
+.scripts-container > header > button{
+    padding: 1% 2.5%;
+}
+    
+canvas:active,canvas:focus{
+    box-shadow: 0 0 6px 6px blue;
+}
+a:active,a:focus,a:hover,
+a:active,a:focus,a:hover,
+.scripts-container > header > button:active,
+.scripts-container > header > button:active,
+.scripts-container > header > button:focus{
+    border: 5px solid white;
+    box-shadow: 0 0 6px 6px goldenrod       ;
+}
+.scripts-container>.script {
+    /* border: 1px solid black; */
+    width: 100%;
+    /* background-color: darkslateblue; */
+    color: white;
+    font-size: 1.05rem;
+    max-height: 100vh;
+}
+
+.code-container>.copy-code {
+    width: 97.5%;
+    padding: 0 1%;
+    /* border: 1px solid black; */
+    background-color: black;
+    columns: white;
+    max-height: 100vh;
+    overflow-x: scroll;
+}
+.scripts-section{
+    /* padding: 10% 0; */
+    background-color: black;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}

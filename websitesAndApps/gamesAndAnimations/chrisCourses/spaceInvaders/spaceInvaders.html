@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spaceInvaders</title>
+    <link rel="stylesheet" href="../css/chrisCourses.css">
+    <link rel="stylesheet" href="css/spaceInvaders.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/copy-code.css">
+    <script src="../../js/copy-code.js" defer></script>
+    <script  src="js/changeScript.js" defer></script>
+    <script src="js/letterFocus.js" defer></script>
+    <script src="spaceInvaders.js" defer></script>
+</head>
+<body>
+    <header>
+        <ul>
+        <li><a id="home" tabindex="1" href="../chrisCourses.html">&larr;home</a></li>
+        <!-- <li><a tabindex="1" href="../../../javascript-docs/javascript-docs.html">javascript&nbsp;documentation</a></li> -->
+        </ul>
+        <div class="explain">
+            <h2>Press "C" for canvas and "S" for scripts</h2>
+        </div>
+        <div class="fi title">
+            <h1>space Invaders</h1>
+            <a tabindex="1" target="_blank" href="https://www.youtube.com/watch?v=MCVU0w73uKI
+            "><img id="logo" src="spaceInvaders.png" alt=""></a>
+
+        </div>
+    </header>
+    <canvas autofocus  id="canvas" tabindex="1"></canvas>
+        <hr>
+    <h2 tabicndex="1" >Scripts</h2>
+    <section class="scripts-section">
+        <div class="scripts-container">
+            <header>
+                <button tabindex="1" id="prevBtn">Previous</button>
+                <button tabindex="1" id="nextBtn">Next</button>
+            </header>
+            <div id="scriptFullCode" tabindex="1" class="script ">
+                <h3>Full Code</h3>
+                <div class="code-container asc">
+                    <pre  class="copy-code">
+    Lorem ipsum dolor    sit amet consectetur, adipisicing elit.
+    Explicabo nam, dolor laboriosam tenetur enim dicta nesciunt molestias 
+        impedit cum quis consectetur maxime eveniet placeat! Veniam praesentium
+        saepe tempore accusamus harum!
+                    </pre>
+                </div>
+            </div>
+            <!-- part1 - Create Player -->
+            <div id="script01" class="script " >
+                <h3>part1 - create Player</h3>
+                <div class="code-container ">
+                    <pre  tabindex="1" class="copy-code">
+const canvas = document.querySelector('canvas')
+const c = canvas.getContext('2d')
+
+canvas.width = innerWidth
+canvas.height = innerHeight
+
+class Player{
+constructor(){
+    this.velocity = {
+        x: 0,
+        y: 0,
+    }<div class="code-container asc">
+        <pre tabindex="1" class="copy-code wbs-txt">
+   const <span class="m">image</span> = new <span class="lc">Image</span>()
+   <span class="m">image</span>.src = ('sprites/spaceship.png')
+   <span class="m">image</span>.onload = () => {
+        const scale = .2
+        this.image = image
+        this.width = image.width * scale
+        this.height = image.height * scale
+        this.position = {
+                x: canvas.width * .5 - (this.width * .5),
+                y: canvas.height * .82
+                }
+            }
+        }
+    draw(){
+        if(<span class="m">this.image</span>){
+            c.drawImage(this.image,this.position.x,this.position.y,this.width,this.height)
+        }
+    }</pre></div>
+}
+
+const player = new Player()
+
+function animate(){
+    requestAnimationFrame(animate)
+    c.fill = 'black'
+    c.fillRect(0,0,canvas.width,canvas.height)
+    player.draw()
+}
+animate()
+                    </pre>
+                </div>
+            </div>
+            <!-- part2 Player Movement -->
+            <div id="script02" class="script show">
+                <h3>part2 - Player Movement</h3>
+                <div class="code-container ">
+                    <pre tabindex="1" class="copy-code">
+    const canvas = document.querySelector('canvas')
+    const c = canvas.getContext('2d')
+
+    canvas.width = innerWidth
+    canvas.height = innerHeight
+
+    class Player{
+        constructor(){
+            this.velocity = {
+                x: 0,
+                y: 0,
+            }
+
+            const image = new Image()
+            image.src = ('sprites/spaceship.png')
+            image.onload = () => {
+                this.image = image
+                this.width = image.width * .2
+                this.height = image.height * .22
+                this.position = {
+                    x: canvas.width * .5 - (this.width * .5),
+                    y: canvas.height * .82
+                }
+            }
+        }
+        draw(){
+            if(this.image){
+                this.position.x += this.velocity.x
+                this.position.y -= this.velocity.y
+                c.drawImage(this.image,this.position.x,this.position.y,this.width,this.height)
+            }
+        }
+    }
+
+    const player = new Player()
+    const keys = {
+        a: {
+            pressed: false
+        },
+        d: {
+            pressed: false
+        },
+        w: {
+            pressed: false
+        },
+        s: {
+            pressed: false
+        }
+    }
+
+    function animate(){
+        requestAnimationFrame(animate)
+        c.fill = 'black'
+        c.fillRect(0,0,canvas.width,canvas.height)
+        player.draw()
+
+        if(keys.a.pressed && player.position.x > 0){
+            player.velocity.x = -4
+        }else if(keys.d.pressed && player.position.x < canvas.width - player.width) {
+            player.velocity.x = 4
+        } else if (keys.w.pressed && player.position.y >= (canvas.height * .5) + player.heights ){
+            player.velocity.y = 4 
+        } else if (keys.s.pressed && player.position.y > canvas.height * .5){
+            player.velocity.y = -4
+        } 
+        else {
+            player.velocity.x = 0
+            player.velocity.y = 0
+        }
+        
+        
+    }
+    animate()
+    addEventListener('keydown' , ( { key }) => {
+        switch (key){
+            case 'a' || 'A':
+                console.log('left')
+                keys.a.pressed = true
+                break;
+            case 'w' || 'W':
+                console.log('up "w"')
+                keys.w.pressed = true
+                break;
+            case 's' || 'S':
+                console.log('down"s"')
+                keys.s.pressed = true
+                break;
+            case 'd' || 'D':
+                console.log('right')
+                keys.d.pressed = true
+                break;
+            
+        }
+    })
+    addEventListener('keyup' , ( { key }) => {
+        switch (key){
+            case 'a' || 'A':
+                keys.a.pressed = false
+                break;
+            case 'w' || 'W':
+                keys.w.pressed = false
+                break;
+            case 's' || 'S':
+                keys.s.pressed = false
+                break;
+            case 'd' || 'D':
+                keys.d.pressed = false
+                break;
+            
+        }
+    })
+                    </pre>
+                </div>
+            </div>
+            <!-- part3 - rotate player -->
+            <div id="script03" tabindex="1" class="script">
+                <h3>part3 - Rotate Player</h3>
+                <div class="code-container asc">
+                    <pre tabindex="1" class="copy-code">
+                        
+                    </pre>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+    <footer tabindex="1"></footer>
+</body>
+</html>

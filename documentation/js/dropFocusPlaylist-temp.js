@@ -6,14 +6,19 @@ const tutorialContainerTutorials = document.querySelectorAll('.tutorials-contain
 let numFocus = false
 let currentPlistTutorials
 function hidePlaylistTutorialsContainers(){
-    playlistTutorialContainers.forEach(playlistTutorialContainers => {
-        playlistTutorialContainers.classList.add('hide')
+    playlistTutorialContainers.forEach(playlistTutorialContainer => {
+        if(!playlistTutorialContainer.classList.contains('show')){
+            playlistTutorialContainer.classList.add('hide')
+        }
     })
 }
 hidePlaylistTutorialsContainers()
 
 // numFocus in togglePlistTutorialContainer()
 function togglePlistTutorialContainer(container){
+    if(container.classList.contains('show')){
+    container.classList.remove('show')
+    }
     if(container.classList.contains('hide')){
         hidePlaylistTutorialsContainers()
         container.classList.remove('hide')

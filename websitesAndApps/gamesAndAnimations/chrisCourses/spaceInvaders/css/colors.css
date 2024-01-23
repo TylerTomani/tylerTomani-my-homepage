@@ -1,0 +1,17 @@
+.lc{
+    color: darkturquoise;
+    font-weight: 560;
+}
+.m {
+    color:magenta; 
+    font-weight: 60  0;
+    font-size: 1.25rem;
+}
+/* white box shadow */
+.wbs {
+    box-shadow: 0 0 4px 4px white;
+}
+.wbs-txt {
+    font-weight: 600;
+    font-size: 1.1rem;
+}

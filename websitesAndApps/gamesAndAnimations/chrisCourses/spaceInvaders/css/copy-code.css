@@ -1,0 +1,21 @@
+.code-container {
+    width: 90%k;
+}
+
+
+.copy-code:active,.copy-code:focus {
+    box-shadow: 0 0 5px 6px blue;
+    
+}
+
+
+.animate {
+    box-shadow: 2px 1px 6px 6px blue;
+    transform: scale(1.025);
+    transition: all 300ms;
+}
+
+.deanimate {
+    box-shadow: none;
+    transition: all 200ms;
+}
