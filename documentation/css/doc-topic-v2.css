@@ -34,35 +34,40 @@ main {
     width: 10%;
     align-self: flex-end;
 }
-.resource-container > .sub-resources-container{
-    border: 2px solid black;   
-    border-top: 0;
-    border-right: 0;
+.sub-resources-container{
+    display: flex;
+    border: 1px solid orange;
+    /* border-top: 0; */
+    /* border-right: 0; */
     display: flex;
     flex-wrap: wrap;
     padding-left: 1.5%;
     padding-top: .25%;
+    padding: 1%;
+    /* max-width: 200px;
+    max-height: 125px; */
     margin: 2% 0;
 }
 .sub-resource{
-    flex-basis: 20%;
+    /* flex-basis: 20%; */
     margin: 1% 2%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* padding: 1% 0; */
-}
-.sub-resource > h2{
-    align-self: center;
-    justify-self: flex-start;
-    /* padding-bottom: 2.5%; */
-    /* padding-left: 2.5%; */
-}
-.sub-resource > img{
-    width: 60%;
+    justify-content: flex-start;
+    padding: 1%;
+    white-space: none;
+    padding: 0 2.5%;
     max-width: 200px;
-    max-height: 124px;
-    margin: 2.5%;
+    max-height: 125px;
+    border: 1px solid black;
+}
+.sub-resource-container>h4 {}
+
+.sub-resource>img {
+    width: 100%;
+    height: 100%;
+    max-height: 118px;
+    /* margin: 2.5%; */
 }
 .sub-resource > .tutorials-container {
     margin-top: 1%;
@@ -70,21 +75,11 @@ main {
     flex-direction: row;
     gap: 1rem;
 }
-.sub-resource{
-    display: flex;
-    white-space: none;
-    padding:0 2.5%;
-    border: 1px solid black;
-    /* background: blue; */
-}
-.sub-resource > a{
-
-}
 
 
 
 .sub-resource:active,.sub-resource:focus{
-    box-shadow: 0px 0px 4px 3px yellow;
+    box-shadow: 0px 0px 5px 5px yellow;
     background-color: lightblue;
     border: 2px solid blue;
     background-color: white;

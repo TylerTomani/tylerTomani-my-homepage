@@ -16,7 +16,10 @@ function hideParts(){
         if(stepsContainer == null){
             return
         }
-        stepsContainer.classList.add('hide')
+        if(!stepsContainer.classList.contains('show')){
+
+            stepsContainer.classList.add('hide')
+        }
         
     })
 }

@@ -30,3 +30,17 @@ pre.online {
 .rbshadow:active,.rbshadow:focus{
         box-shadow: 2px 0 10px 4px blue !important;
 }
+
+.question {
+    color: red;
+    display: inline-block;
+    font-weight: 999;
+    font-size: 110%;
+    margin-top: .5% ;
+    margin-bottom: 1.25% ;
+}
+
+.vs-code {
+    background-color: black;
+    color:white;
+}

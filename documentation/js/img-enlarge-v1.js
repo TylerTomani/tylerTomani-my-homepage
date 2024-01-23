@@ -1,7 +1,7 @@
 export const stepTxts = document.querySelectorAll('.step > .step-txt')
 import { playVid } from "./play-enlarge-video.js"
-const allImages = document.querySelectorAll('img') 
-const allVideos = document.querySelectorAll('video') 
+export const allImages = document.querySelectorAll('img') 
+export const allVideos = document.querySelectorAll('video') 
 let stepColCodeContainers = document.querySelectorAll('.step-col > .img-2-container > .code-container > .copy-code')
 let imgEnlarged = false
 

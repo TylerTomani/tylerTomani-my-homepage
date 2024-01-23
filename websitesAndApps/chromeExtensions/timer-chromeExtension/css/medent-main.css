@@ -1,0 +1,141 @@
+main {
+    margin: 0 2.5%
+}
+.topic-container {
+    display: flex;
+    flex-direction: column;
+
+    margin: .5%  1.5%;
+    margin-bottom: 0;
+    /* border: 2px solid black; */
+}
+.topic-container > .topic {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.topic-container:active,.topic-container:focus,.topic-container:hover{
+    box-shadow: 0 0 4px 4px blue;
+}
+.topic-container > header > h2 {
+    background-color: lightblue;
+    padding-left: 1%;
+    padding-bottom: .25%;
+}
+.topic > .documentation {
+    display: flex;
+}
+.topic > .documentation > .topic-container > header > h2 {
+    /* background-color: lightskyblue; */
+}
+.topic > .documentation > .doc {
+    padding-left: 2.5%;
+}
+.topic > .documentation > .doc > h3 {
+    /* background-color: lightskyblue; */
+}
+
+
+.question-txt {
+    font-family:   sans-serif, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    /* border: 1px solid black; */
+    display: flex;
+    width: 75%;
+    max-height: 250px;
+    /* justify-content: space-around; */
+    padding: 2.5%;
+    padding-bottom: 1%;
+}
+
+.question-txt > img {
+    width: 100%;
+    max-width: 50px;
+}
+.question-txt > p {
+    display: inline-block;
+    align-self: center;
+    margin-left: 5%;
+    padding-bottom: 2.5%;
+    /* border: 1px solid red; */
+}
+.answer-container {
+    font-family:   sans-serif, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    /* border: 1px solid black; */
+    display: flex;
+    width: 90%;
+    max-height: 550px;
+    overflow-y: scroll;
+    margin-top: .5%;
+    padding-top: 1.25%;
+}
+.answer-container > .answer-txt {
+    display: flex;
+    flex-direction: column;
+    /* align-self: center; */
+    margin-left: 5%;
+    /* padding-top: 15%; */
+    /* border: 1px solid red; */
+}
+img:active,img:focus,img:hover,
+.step-txt:active,.step-txt:focus,.step-txt:hover,
+.chatgpt-question:active,.chatgpt-question:focus,.chatgpt-question:hover,
+.question-txt:active,.question-txt:focus,.question-txt:hover,
+.dropPart:active,.dropPart:focus,.dropPart:hover{
+    box-shadow: 1px 0px 4px 6px blue;
+}
+.question:active,.question:focus,.question:hover{
+    box-shadow: 2px 2px 5px 2px red;
+}
+
+.background-change {
+    background-color: lightgray;
+}
+
+.my-question {
+    font-weight: 900;
+    padding: 1% 2%
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+
+footer {
+    padding: 0 2.5%;
+    margin-bottom: 5%;
+}
+
+.question {
+    box-shadow: 0 0 20px 5px rgb(255,0,0,.8);
+}
+
+.mdtxt {
+    font-size: .75rem !important;
+}
+
+.copy-code.full-width {
+    width: 100% !important;
+}
+
+.code-container {
+    align-self: flex-start;
+    width: 100%;
+    /* margin: .25% 0; */
+    /* max-width: 50%; */
+    margin-left: 0;
+}
+.code-container > code,
+.code-container > pre{
+    display: inline-block;
+    /* margin: 0 1%; */
+    font-size: .3rem;
+    overflow-y: scroll;
+    max-height: 400px;
+    
+}
+.code-container > pre.copy-code:active,.code-container > pre.copy-code:focus{
+    box-shadow: 0 0 6px 8px orange;
+}

@@ -1,4 +1,4 @@
-import { stepTxts } from "./img-enlarge-v1.js";
+import { allImages, stepTxts } from "./img-enlarge-v1.js";
 import { denlargeAllImgVids } from "./img-enlarge-v1.js";
 import { getStepColContainer } from "./img-enlarge-v1.js";
 
@@ -45,10 +45,12 @@ img4Containers.forEach(el => {
         let images = parent.querySelectorAll('.img-4-container > .step-img > img')
         images.forEach(img => {
             console.log(img)
+            
             img.setAttribute('tabindex','-1')
         })
         removeAllTabIndexes()
     })
+    
 })
 
 function removeAllTabIndexes(){
@@ -59,8 +61,12 @@ function removeAllTabIndexes(){
         // el.removeAttribute('tabindex')
         el.setAttribute('tabindex','-1')
     })
+    allImages.forEach(el => {
+        // el.removeAttribute('tabindex')
+        el.setAttribute('tabindex','-1')
+    })
 }
-removeAllTabIndexes()
+// removeAllTabIndexes()
 asStepTxt.forEach(a => {
     a.addEventListener('focus', e => {
         denlargeAllImgVids()

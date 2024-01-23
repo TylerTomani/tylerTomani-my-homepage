@@ -1,0 +1,394 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer-chromeExtension</title>
+    <script type="module" src="../../../documentation/js/img-enlarge-v1.js" defer></script>
+    <link rel="stylesheet" href="../../../css/imgAnimate-v2.css">
+    <script type="module" src="../../../documentation/js/play-enlarge-video.js" defer></script>
+    <script type="module" src="../../../documentation/js/addRemoveTabs-v1.js" defer></script>
+    <script src="../../../documentation/js/dropPartStepFocus-v2.js" defer></script>
+    <script  src="../../../js/copy-code.js" defer></script>
+    <link rel="stylesheet" href="../../../css/colors.css">    
+    <link rel="stylesheet" href="../../../css/copy-code.css">    
+    <link rel="stylesheet" href="../../../css/font-sizes.css">    
+    <link rel="stylesheet" href="../../../css/resource-header-temp.css">
+    <link rel="stylesheet" href="../../../css/steps-main-temp.css">
+    <link rel="stylesheet" href="../../../css/chatGpt-questions.css"/>
+    <script module src="js/chatGpt-drop-topics.js" defer></script>
+    <script module src="../../../js/letterFocus-lesson-template.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="fi home-link">
+            <a id="homeLink" tabindex="1" href="../../websitesAndApps.html">(home) - Website, Projects & Apps</a>
+        </div>
+        <div class="fi tutorial-links ">
+        </div>
+        <div class="fi page-title">
+            <h1>timer-chromeExtension</h1>
+            <div class="page-logo">
+            </div>
+
+        </div>
+    </header>
+    <main>       
+        <!-- Part 1 Usage Summary source 1 -->
+        <div class="part">
+            <h3><a id="part01" tabindex="1" href="#" class="dropPart">Part 1 - Project Code </a></h3>
+            <div class="steps-container hide">
+                <!-- 01-01 -->
+                <div class="step-col">
+                    <div tabindex="1" class="step-txt">
+                        <h4>01</h4>
+                        <p>
+                            Make the <strong><code>manifest.json</code></strong>
+                            file in a directory
+                        </p>
+                    </div>
+                    <div class="img-2-container">
+                        <div class="step-img">
+                            <img class="xlg-enlarge" src="imagesVideos/01-01a.png">
+                        </div>
+                        <div class="step-img">
+                            <img class="xlg-enlarge" src="imagesVideos/01-01b.png">
+                        </div>
+                    </div>
+                </div>
+                <!--01-02 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>02</h4>
+                        <p>
+                            Replace "images/icon16.png", "images/icon48.png", and "images/icon128.png" with the path to your extension's icon files.
+                            You can create icons of different sizes for better appearance
+                            <span class="m">Figure this out at the end</span>
+                        </p>
+                        <h5><strong><code>manifest.json</code></strong></h5>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code vs-code">
+{
+  "manifest_version": 2,
+  "name": "Timer Extension",
+  "version": "1.0",
+  "description": "A simple timer extension",
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}</pre>
+                        </div>
+                        
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-02.png">
+                    </div>
+                </div>
+                <!-- 01-03 -->
+                <!-- popup.html -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>03</h4>
+                        <p>
+                            Create the html file 
+                        </p>
+                        <h5><strong><code>popup.html</code></strong></h5>
+                        <div class="code-container">
+                                <pre tabindex="1" class="copy-code vs-code">
+&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+  &lt;title>Timer Extension&lt;/title>
+  &lt;script src="popup.js" defer>&lt;/script>
+&lt;/head>
+
+&lt;body>
+  &lt;h1 id="timer">00:00:00&lt;/h1>
+  &lt;button id="startButton">Start&lt;/button>
+  &lt;button id="stopButton">Stop&lt;/button>
+&lt;/body>
+
+&lt;/html></pre>
+                            </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-03.png">
+                    </div>
+                </div>
+                <!-- 01-04 -->
+                <!-- popup.js -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>04</h4>
+                        <p>
+                            Create the js script
+                        </p>
+                        <h6><strong><code>popup.js</code></strong></h6>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code vs-code">
+let timer;
+let seconds = 0;
+
+function updateTimer() {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+  document.getElementById("timer").innerText = `${hours}:${minutes}:${remainingSeconds}`;
+}
+
+document.getElementById("startButton").addEventListener("click", function () {
+  timer = setInterval(function () {
+    seconds++;
+    updateTimer();
+  }, 1000);
+});
+
+document.getElementById("stopButton").addEventListener("click", function () {
+  clearInterval(timer);
+});
+                            </pre>
+                        </div>
+                        
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-04.png">
+                    </div>
+                </div>
+                <!-- 01-05 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>05</h4>
+                        <p>
+                            type,
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code">
+chrome://extensions/</pre>
+                        </div>
+                        <p>
+                            in the chrome browser, and enable <q><code class="m">Developer mode</code></q> in the top right
+                        </p>
+                    </div>
+                    <div class="step-img">
+                        <img class="xlg-enlarge" src="imagesVideos/01-05.png">
+                    </div>
+                </div>
+                <!-- 01-06 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>06</h4>
+                        <p>
+                            Click <q><code class="m">Load unpacked</code></q> and select your extension folder
+                        </p>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-06.png">
+                    </div>
+                </div>
+                <!-- 01-07 -->
+                <div class="step-col">
+                    <div tabindex="1" class="question step-txt">
+                        <h4 class="">07</h4>
+                        <p>
+                            If you get this error, place an images with the name <strong><code>icon.png</code></strong>
+                            in the same directory and see if if works
+                        </p>
+                    </div>
+                    <div class="img-2-container">
+                        <div class="step-img">
+                            <img class="xlg-enlarge" src="imagesVideos/01-07a.png">
+                        </div>
+                        <div class="step-img">
+                            <img class="xlg-enlarge" src="imagesVideos/01-07b.png">
+                        </div>
+                    </div>
+                </div>
+                <!-- 01-08 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>08</h4>
+                        <p>
+                            Click retry or <q><code>Load unpacked</code></q> and the extension will show up on the screen,
+                            go to the top right and click the extensions and select the Timer Extension.
+                        </p>
+                    </div>
+                    <div class="step-img">
+                        <img class="xlg-enlarge" src="imagesVideos/01-08.png">
+                    </div>
+                </div>
+                <!-- 01-09 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>09</h4>
+                        <p>
+                            You now how the basics of a timer, (Right now it doesn't work but get it done!)
+                        </p>
+                    </div>
+                    <div class="step-img">
+                        <img class="xlg-enlarge" src="imagesVideos/01-09.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Step 2 - Chat Gpt Question-->
+        <div class="part">
+            <a id="" tabindex="1" href="#" class="dropPart"><h3>Part 2 - Chat Gpt Question</h3></a>
+            <div class="steps-container show">
+                <!-- 02-01 -->
+                <div class="chatgpt-question-container step-txt">
+                    <div  tabindex="1" class="chatgpt-question step-txt">
+                        <h4>01</h4>
+                        <div class="ts-icon-container">
+                            <img class="fi logo" src="imagesVideos/ts-icon.png" alt="">
+                        </div>
+                        <div class="chatgpt-question-txt">
+                            <h5 tabindex="1" class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
+                            how do i make a chrome extension timer
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="logo-icon-container">
+                            <img class="fi logo" src="imagesVideos/logo-icon.png" alt="">
+                        </div>
+                        <div class="answer-txt">
+                            <p>
+                                Creating a Chrome extension timer involves a few steps. Here's a basic outline to help you get started:
+                            </p>
+                            <!-- 1. -->
+                            <p>
+                                1.<strong>Set Up Your Project:</strong>
+
+                                    <ul>
+                                        <li>Create a new folder for your extension.</li>
+                                        <li>Inside the folder, create a file named manifest.json. This file defines the extension's properties.</li>
+                                    </ul>
+                            </p>
+                            <!-- 2. -->
+                            <p>
+                                2. <strong>Edit manifest.json:</strong>
+                                    <ul>
+                                        <li>Open <strong><code>manifest.json</code></strong> </li>
+                                        <li>Define the basic structure, including <strong><code>manifest_version</code></strong>, <strong><code>name</code></strong>,
+                                            <strong><code>version</code></strong>, and <strong><code>description</code></strong>.
+                                        </li>
+                                        <li>Specify permissions, such as <strong>"<code>activeTab</code>"</strong> if your extension interacts with the current tab.</li>
+                                    </ul>
+                            </p>
+                            <!-- Question -->
+                            <p>
+                                <a tabindex="1" href="#question2" class="question">**Question</a>,
+                                <br>
+                                <span class="r">How do i save <strong><code>manifest.json</code></strong> to the <strong>extension folder</strong>?
+                                Where is the <strong>extension folder</strong></span>
+                            </p>    
+                            <h6>// manifest.json</h6>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+{
+  "manifest_version": 2,
+  "name": "Timer Extension",
+  "version": "1.0",
+  "description": "A simple timer extension",
+  "permissions": ["activeTab"],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}</pre>
+                            </div>
+                            <p>
+                                Replace "images/icon16.png", "images/icon48.png", and "images/icon128.png" with the path to your extension's icon
+                                files.
+                                You can create icons of different sizes for better appearance.
+                            </p>
+                            <!-- 3. -->
+                            <p>
+                                3. <strong>Create HTML and JavaScript Files:</strong>
+                                    <ul>
+                                        <li>Create an HTML file (e.g., <strong><code>popup.html</code></strong>) for the popup interface.</li>
+                                        <li>Create a JavaScript file (e.g., <strong><code>popup.js</code></strong>) to handle the timer logic.</li>
+                                    </ul>
+                            </p>
+                            <h6>popup.html</h6>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+  &lt;title>Timer Extension&lt;/title>
+  &lt;script src="popup.js">&lt;/script>
+&lt;/head>
+
+&lt;body>
+  &lt;h1 id="timer">00:00:00&lt;/h1>
+  &lt;button id="startButton">Start&lt;/button>
+  &lt;button id="stopButton">Stop&lt;/button>
+&lt;/body>
+
+&lt;/html></pre>
+                            </div>
+                            <h6>popup.js</h6>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+let timer;
+let seconds = 0;
+
+function updateTimer() {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const remainingSeconds = seconds % 60;
+  document.getElementById("timer").innerText = `${hours}:${minutes}:${remainingSeconds}`;
+}
+
+document.getElementById("startButton").addEventListener("click", function () {
+  timer = setInterval(function () {
+    seconds++;
+    updateTimer();
+  }, 1000);
+});
+
+document.getElementById("stopButton").addEventListener("click", function () {
+  clearInterval(timer);
+});</pre>
+                            </div>
+                            <!-- 4.-->
+                            <p>
+                                4. <strong>Load the Extension:</strong>
+                                    <ul>
+                                        <li>Open Chrome and go to chrome://extensions/.</li>
+                                        <li>Enable "Developer mode" at the top.</li>
+                                        <li>Click "Load unpacked" and select your extension folder.</li>
+                                    </ul>
+                            </p>
+                            <!-- 5. -->
+                            <p>
+                                5. <strong>Test the Extension:</strong>
+                                    <ul>
+                                        <li>Click on the extension icon in the toolbar.</li>
+                                        <li>The popup with the timer and buttons should appear.</li>
+                                    </ul>
+                            </p>
+                            <p>
+                                This is a basic example, and you can customize it further based on your requirements.
+
+                            </p>                
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+</body>
+</html>

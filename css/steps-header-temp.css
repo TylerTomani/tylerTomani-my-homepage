@@ -1,0 +1,46 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body>header {
+    display: flex;
+    /* border-bottom: 2px solid black; */
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+body>header>.fi {
+    flex-basis: 30%;
+    display: flex;
+    /* border: 1px solid black; */
+}
+
+body>header>.fi>a,
+body>header>.fi>a {
+    display: inline-block;
+    font-size: 1.2rem;
+    /* padding: 25% 50%; */
+    /* justify-self: flex-start; */
+}
+
+body>header>.tutorial-links {
+    display: flex;
+    flex-direction: column;
+}
+
+body>header>.page-title {
+    display: flex;
+    /* border: 2px solid blue; */
+    /* margin-left: 50%; */
+    /* justify-self: flex-end; */
+    align-items: flex-end;
+}
+
+body>header>.page-title>.page-logo>img {
+    max-width: 200px;
+    /* border: 1px solid green; */
+    max-height: 100px;
+}
