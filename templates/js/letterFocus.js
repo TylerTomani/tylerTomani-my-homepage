@@ -7,7 +7,6 @@ addEventListener('keydown',e =>{
         if(el.hasAttribute('id')){
             let id = el.getAttribute('id')
             if(key === id[0]){
-                console.log(el)
                 el.focus()
             }
         }

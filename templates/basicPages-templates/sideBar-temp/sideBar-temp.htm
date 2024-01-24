@@ -8,6 +8,9 @@
     <script src="../../js/letterFocus.js" defer></script>
     <!-- the script below are specific to this template -->
     <link rel="stylesheet" href="css/header-sideBar-temp.css">
+    <script src="js/inject-target-div.js" defer></script>
+    <script type="module" src="js/script.js" defer></script>
+    <script type="module" src="js/toggleBars.js" defer></script>
 </head>
 <body>
     <a tabindex="1" id="homelink" href="../basicPages-templates.htm">home-basicPages-templates</a>
@@ -38,11 +41,29 @@
                 <code>&lt;main></code>
                 <code>&emsp;&emsp;&lt;aside class="aside-main"></code>
                 <section class="section">
-                    <h4></h4>
+                    <a tabindex="1" id="section01" href="#" class="dropSection"><h4>Section 1</h4></a>
+                    <ul>
+                        <li><a href="#" class="sub-section">1. sub-section</a></li>
+                        <li><a href="#" class="sub-section">2. sub-section</a></li>
+                        <li><a href="#" class="sub-section">3. sub-section</a></li>
+                    </ul>
                 </section>
-                <ul>
-                    <li>1.</li>
-                </ul>
+                <section class="section">
+                    <a tabindex="1" href="#" class="dropSection"><h4>Section 2</h4></a>
+                    <ul>
+                        <li><a href="#" class="sub-section">1. sub-section</a></li>
+                        <li><a href="#" class="sub-section">2. sub-section</a></li>
+                        <li><a href="#" class="sub-section">3. sub-section</a></li>
+                    </ul>
+                </section>
+                <section class="section">
+                    <a tabindex="1" href="#" class="dropSection"><h4>Section 2</h4></a>
+                    <ul>
+                        <li><a href="#" class="sub-section">1. sub-section</a></li>
+                        <li><a href="#" class="sub-section">2. sub-section</a></li>
+                        <li><a href="#" class="sub-section">3. sub-section</a></li>
+                    </ul>
+                </section>
             </aside>
             <div tabindex="1" id="targetDivContainer" class="target-div-container">
                 <code>&lt;div class="target-div-container"></code>
