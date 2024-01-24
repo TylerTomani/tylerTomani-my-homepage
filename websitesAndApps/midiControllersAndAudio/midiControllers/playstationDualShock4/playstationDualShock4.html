@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps4-front-displayControl</title>
+    <!-- <link rel="stylesheet" href="../css/chatGpt.css"> -->
+    <!-- <link rel="stylesheet" href="../css/copy-code.css"> -->
+    <!-- <script src="../js/letterFocus.js" defer></script> -->
+    <!-- <script src="../js/copy-code.js" defer></script> -->
+    <!-- <script src="../js/chatGpt.js" defer></script> -->
+    
+    <link rel="stylesheet" href="../../../../css/resource-header-temp.css">
+    <script src="../../../../js/letterFocus-lesson-template.js" defer></script>
+    <link rel="stylesheet" href="css/playstationDualShock4.css">
+    <script src="js/ps4Control.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <a id="homeLink" tabindex="1" href="../midiControllers.html">home-midiControllers</a>
+        <div class="page-title">
+            <h1>playstationDualShock4</h1>
+        </div>
+        <div class="page-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/DualShock_4.jpg/330px-DualShock_4.jpg">
+        </div>
+
+    </header>
+    <h1>ps4-front-displayControl</h1>
+    <h2 style="color:red">Open console figure out how to get both left and right joystick values</h2>    
+    <main>
+        <h2 id="script" tabindex="1">Script</h2>
+        <div class="controller-script-container">
+            <div class="fi ps4-display-controller">
+                <div class="ps4-top-display">
+                    <div class="fi topLeft">
+                        <button id="l2-display">L2</button>
+                        <button id="l1-display">L1</button>
+                    </div>
+                    <div class="fi topRight">
+                        <button id="r2-display">R2</button>
+                        <button id="r1-display">R1</button>
+                    </div>
+                </div>
+                <div class="ps4-front-display">
+                    <div class="fi dpad-display">
+                        <div class="top">
+                            <button id="upPad-display">&uparrow;</button>
+                      </div>
+                        <div class="mid">
+                            <button id="leftPad-display">&larr;</button>
+                            <button id="rightPad-display">&rarr;</button>
+                        </div>
+                        <div class="btm">
+                            <button id="downPad-display">&DownArrow;</button>
+                        </div>
+                    </div>
+                    
+                    <div class="fi joystick-display">
+                        <div class="top"></div>
+                        <div class="bottom">
+                            <input id="joy-left" type="range">
+                            <input id="joy-right" type="range">
+                        </div>
+                    </div>
+                    <div class="fi btns-display">
+                        <div class="top">
+                            <button id="triangleBtn-display">&triangle;</button>
+                        </div>
+                        <div class="mid">
+                            <button id="squareBtn-display">&Square;</button>
+                            <button id="oBtn-display">O</button>
+                        </div>
+                        <div class="btm">
+                            <button id="xBtn-display">X</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-pressed-value">
+                    <h3>Btn : Val</h3>
+                </div>
+            </div>
+            <div class="fi script">
+                <div class="code-container asc">
+                    <pre id="script" tabindex="1" class="copy-code">
+put complete script here when working and clean!   
+let b = Lorem ipsum dolor sit amet consectetur adipisicing
+function elit(Iste a){
+    dolorum doloribus amet corrupti pariatur, porro eum voluptate nulla 
+    return accusamus commodi at asperiores. Accusamus voluptatibus natus
+} 
+console.log(asperiores fugit molestias labore?)
+    
+                    </pre>
+                </div>
+                
+            </div>
+        </div>
+        <h2 id="questions" tabindex="1">Questions</h2>
+        <!-- how do i connect a ps4-front-display to control elements in html using javascript? -->
+        <div class="chat-gpt-container">
+            <div  tabindex="1" class="question-container">
+                <div class="icon-question">
+                    <!-- <img src="../chatGptQuestions/icon-question.png"> -->
+                </div>
+                <div class="question-txt">
+                    <h3>how do i connect a ps4-front-display to control elements in html using javascript?</h3>
+                </div>
+            </div>
+            <div class="answer-container ">
+                <div class="icon-answer">
+                    <!-- <img src="../chatGptQuestions/icon-answer.png"> -->
+                </div>
+                <div class="answer-txt">        
+                    <!-- 2.  -->
+                    <p>
+                        2. <strong>JavaScript Code:</strong>
+                        Write JavaScript code to access the PS4 joystick values. Here's a basic example of how to get joystick input from a
+                        connected gamepad:
+                    </p>
+                    <!-- HTML -->
+                    <div class="code-container ">
+                        <pre tabindex="1" class="copy-code">
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;title>ps4-front-display Controller Demo&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;button id="button1">Button 1&lt;/button>
+    &lt;button id="button2">Button 2&lt;/button>
+    &lt;!-- Add more elements as needed --&gt;
+    &lt;script src="your_script.js">&lt;/script>
+&lt;/body>
+&lt;/html></pre>
+                    </div>
+                    <div class="code-container asc">
+                        <pre tabindex="1" class="copy-code">
+// Check for gamepad support
+if ("getGamepads" in navigator) {
+    // Function to update the HTML elements based on controller input
+    function updateElements() {
+        const gamepads = navigator.getGamepads();
+        if (gamepads[0]) {
+            const button1 = gamepads[0].buttons[0].pressed;
+            const button2 = gamepads[0].buttons[1].pressed;
+            // Update HTML elements based on controller input
+            document.getElementById("button1").innerText = `Button 1: ${button1 ? "Pressed" : "Released"}`;
+            document.getElementById("button2").innerText = `Button 2: ${button2 ? "Pressed" : "Released"}`;
+            // Add more logic to control other elements
+        }
+        requestAnimationFrame(updateElements);
+    }
+
+    // Start listening for controller input
+    requestAnimationFrame(updateElements);
+}
+
+                        </pre>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!-- how do i use the values of the ps4 joy sticks in javascript  -->
+        <div class="chat-gpt-container">
+            <div id="" tabindex="1" class="question-container">
+                <div class="icon-question">
+                    <!-- <img src="../chatGptQuestions/icon-question.png"> -->
+                </div>
+                <div class="question-txt">
+                    <h3>how do i use the values of the ps4 joy sticks in javascript</h3>
+                </div>
+            </div>
+            <div class="answer-container ">
+                <div class="icon-answer">
+                    <!-- <img src="../chatGptQuestions/icon-answer.png"> -->
+                </div>
+                <div class="answer-txt">
+                    <!-- 2.  -->
+                    <p>
+                        2. <strong>JavaScript Code:</strong>
+                        Write JavaScript code to access the PS4 joystick values. Here's a basic example of how to get joystick input from a
+                        connected gamepad:
+                    </p>
+                    <!-- js -->
+                    <div class="code-container ">
+                        <pre tabindex="1" class="copy-code">
+// Function to update joystick values
+function updateJoystick() {
+    const gamepads = navigator.getGamepads();
+        if (gamepads[0]) { // Assuming the PS4 controller is the first gamepad
+            const joystickX = gamepads[0].axes[0]; // X-axis of the left joystick
+            const joystickY = gamepads[0].axes[1]; // Y-axis of the left joystick
+            
+            // Do something with the joystick values
+            console.log(`Joystick X: ${joystickX}, Joystick Y: ${joystickY}`);
+            }
+
+    requestAnimationFrame(updateJoystick);
+    }
+
+// Start listening for gamepad input
+requestAnimationFrame(updateJoystick);
+
+                        </pre>
+                    </div>
+                    <p>
+                        In this example, we're accessing the values of the left joystick on the PS4 controller, which are available in the axes
+                        array. The first element (index 0) is the X-axis, and the second element (index 1) is the Y-axis.
+
+                    </p>
+                    
+                    
+                    
+                </div>
+
+            </div>
+        </div>
+        
+        
+    </main>
+    
+</body>
+</html>

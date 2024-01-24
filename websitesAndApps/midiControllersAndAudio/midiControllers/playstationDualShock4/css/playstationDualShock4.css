@@ -1,0 +1,79 @@
+* {margin: 0;padding: 0;}
+main {
+    padding-top: 2.5%;
+}
+.controller-script-container {
+    display: flex;
+    /* margin: 0 2.5%; */
+    /* border: 1px solid blue; */
+    /* margin-bottom: 2.5%; */
+}
+.controller-script-container > .ps4-display-controller,
+.controller-script-container > .script {
+    flex-basis: 47.5%;
+    border: 3px solid black;
+}
+.ps4-display-controller{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    flex-basis: 40%;
+    width: 50%;
+}
+.ps4-top-display {
+/* background-color: blue; */
+    display: flex;
+    
+}
+.ps4-top-display > .fi{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    justify-content:space-between;
+    align-items: center;
+
+}
+.ps4-top-display > .fi > button{
+    width: 80%;
+    height: 2rem;
+}
+.ps4-front-display{
+    display: flex;
+}
+.ps4-front-display > .fi{
+    flex-basis: 30%;
+}
+.ps4-front-display > .dpad-display,
+.ps4-front-display>.btns-display{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 28px;
+    padding: .5% 1%;
+}
+.ps4-front-display>.dpad-display > .top,
+.ps4-front-display>.dpad-display > .btm,
+.ps4-front-display>.btns-display > .top,
+.ps4-front-display>.btns-display > .btm {
+    display: flex;
+    justify-content: center;
+}
+.ps4-front-display>.dpad-display>.mid,
+.ps4-front-display>.btns-display>.mid {
+    display: flex;
+    justify-content: space-between;
+}
+.ps4-front-display button {
+    width: 50%;
+    /* margin: 1% 0; */
+    background-color: white;
+    border-radius: 20px;
+    font-size: 2rem;
+}
+#questions {
+    margin-bottom: 2.5%;
+}
+
+.copy-code:active,.copy-code:active{
+    box-shadow: 2px 3px 5px 5px lightblue;
+}
