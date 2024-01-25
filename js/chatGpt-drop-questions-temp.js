@@ -1,4 +1,10 @@
-import { addTabIndex } from "./partStepQuestionFocus.js"
+(function(){
+
+ function addTabIndex(els){
+    els.forEach(el => {
+        el.setAttribute('tabindex','1')
+    })
+}
 
 const allCopyCodes = document.querySelectorAll(' .copy-code')
 const questionCopyCodes = document.querySelectorAll('.the-chatgpt-question > .copy-code')
@@ -163,3 +169,4 @@ addEventListener('keydown', e => {
         })
     }
 })
+}())

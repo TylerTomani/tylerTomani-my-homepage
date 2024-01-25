@@ -1,10 +1,11 @@
-const homelink = document.getElementById('homelink')
+(function(){
+    const homelink = document.getElementById('homelink')
 const parts = document.querySelectorAll('.dropPart')
 const stepsContainers = document.querySelectorAll('.steps-container')
 const stepTxts = document.querySelectorAll('.step-txt')
 
-export let partsFocused = true
-export let stepsFocused = false
+ let partsFocused = true
+ let stepsFocused = false
 
 function hideStepsContainers(){
     stepsContainers.forEach(el => {
@@ -95,7 +96,7 @@ function toggleStepsContainer(el){
     }
 }
 
-export function addTabIndex(els){
+function addTabIndex(els){
     els.forEach(el => {
         el.setAttribute('tabindex','1')
     })
@@ -113,3 +114,4 @@ addEventListener('keydown', e => {
         stepsFocus(key,e)
     }
 })
+}())
