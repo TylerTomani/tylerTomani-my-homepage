@@ -49,8 +49,9 @@ main {
     margin-left: 5%;
 }
 .main-container > .target-div-container {
+    /* position: relative; */
     border: 2px solid black;
-    width: 100%;
+    width: 100% ;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -63,12 +64,21 @@ main {
 #targetDivContainer:active,#targetDivContainer:focus{box-shadow: 2px 0 8px 5px orange;}
 #mainContainer:active,#mainContainer:focus{box-shadow: 2px 0 8px 5px magenta;}
 
+.hide {display: none;}
+.show {display: inline-block;}
 
-
-.hide {
-    display: none !important;
-    /* display: none ; */
+.hide-aside {
+    /* position: relative; */
+    width: 0 !important;
+    opacity: 0;
+    transition: width 350ms;
+    /* opacity: 0; */
+    /* display: none !important; */
+    /* transition: width 350ms, opacity 350ms; */
+    
 }
-.show {
-    display: inline-block;
+.show-aside {
+    width: 25% ;
+    opacity: 1;
+    transition: all 500ms;
 }
