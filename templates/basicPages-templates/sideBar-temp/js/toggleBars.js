@@ -3,7 +3,7 @@ import { asideMain } from "./script.js";
 
 navMain.addEventListener('click', e => {
     e.preventDefault()
-    toggleMenu(asideMain)
+    toggleAsideBar(asideMain)
 })
 navMain.addEventListener('keydown', e => {
     let key = e.keyCode

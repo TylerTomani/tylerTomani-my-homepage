@@ -33,29 +33,6 @@ main {
     display: flex;
     margin: 0 .75%;
 }
-.main-container > #asideMain {
-    border: 2px dashed black;
-    width: 20vw;
-    display: flex;
-    flex-direction: column;
-}
-.main-container > #asidemain > .section{
-    margin: 1% 2.5%;
-}
-#asideMain>.section > ul {
-    margin-left: 5%;
-}
-#asidemain>.section > ul {
-    margin-left: 5%;
-}
-.main-container > .target-div-container {
-    /* position: relative; */
-    border: 2px solid black;
-    width: 100% ;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 
 
 #homelink:active,#homelink:focus,
@@ -68,17 +45,34 @@ main {
 .show {display: inline-block;}
 
 .hide-aside {
-    /* position: relative; */
     width: 0 !important;
     opacity: 0;
     transition: width 350ms;
-    /* opacity: 0; */
-    /* display: none !important; */
-    /* transition: width 350ms, opacity 350ms; */
-    
 }
 .show-aside {
     width: 25% ;
     opacity: 1;
     transition: all 500ms;
+}
+.aside-main > section > ul{
+    background-color: lightblue;
+    /* margin-left: 100%; */
+}
+.aside-main > section > ul {
+    margin-left: 25%;
+}
+.main-container>#asideMain {
+    border: 2px dashed black;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.main-container>.target-div-container {
+    border: 2px solid black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
