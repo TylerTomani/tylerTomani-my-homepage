@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VsCodeShortcuts</title>
     <!-- <link rel="stylesheet" href="../../../css/imgAnimate-v2.css"> -->
-    <!-- <link rel="stylesheet" href="../../../css/colors.css"> -->
-    <link rel="stylesheet" href="../../../css/copy-code.css">
+    <link rel="stylesheet" href="../../../css/colors.css">
+    <link rel="stylesheet" href="../../../../css/copy-code.css">
     <link rel="stylesheet" href="../../../css/font-sizes.css">
     <link rel="stylesheet" href="../../../css/resource-header-temp.css">
-    <script src="../../../js/copy-code.js" defer></script>
+    <script src="../../../js/copycode.js" defer></script>
     
-<!-- // script below are unique to this page     -->
+<!-- // These css and scripts below are unique to this page     -->
     <link rel="stylesheet" href="../../../css/steps-main-temp.css">
     <link rel="stylesheet" href="../../../css/chatGpt-questions-temp.css" />
+
+    <script type="module" src="../../../js/partStepQuestionFocus.js" defer></script>
     <script type="module" src="../../../js/chatGpt-drop-questions-temp.js" defer></script>
-    <script type="module" src="../../../js/partStepNumFocus.js" defer></script>
-    <!-- <script module src="../../../js/letterFocus-lesson-template.js" defer></script> -->
-    <!-- <script src="../../../documentation/js/dropPartStepFocus-v2.js" defer></script> -->
 </head>
 <body>
     <header>
-        <a tabindex="1" id="homeLink" href="../../documentation.html">&larr;home-documentation</a>
+        <a tabindex="1" id="homelink" href="../../documentation.html">&larr;home-documentation</a>
         <div class="page-title">
             <p>This script uses the css and js script found in, 
                 <a target="_blank" tabindex="1" href="../../../websitesAndApps/chromeExtensions/timer-chromeExtension/timer-chromeExtension.htm">Websites, Project & Apps - timer-chrome-extension</a>
@@ -38,20 +37,22 @@
     </header>
     <main>
         <h2 ><a tabindex="1" id="shortcuts" href="#">shortcuts</a></h2>
-        <!-- Catagory 1 1 -->
+        <h2 class="r">Go back an work on this page after completing side bar page template</h2>
+        <!-- Part 1 - Settings -->
         <div class="part">
             <a id="part01" id="settings" tabindex="1" href="#" class="dropPart"><h3>Part 1 - Settings </h3></a>
             <div class="steps-container ">
                 <!-- 01-01-01 -->
-                <div class="chatgpt-question-container step-txt">
-                    <div class="chatgpt-question step-txt">
+                <div class="chatgpt-question-container ">
+                    <div autofocus tabindex="1" class="rbshadow chatgpt-question step-txt">
                         <h4>01</h4>
                         <div class="ts-icon-container">
                             <img class="fi logo" src="../../../images/ts-icon.png" alt="">
                         </div>
                         <div class="chatgpt-question-txt">
-                            <h5 class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
-                            how to keep close the debug console in the vs terminal console when i press ⌘ and j when openinig
+                            <p class="r">This one does not work for me, debug console continues to open</p>
+                            <h5 class="the-chatgpt-question lg-txt"><strong>question:</strong>
+                            <span class="copy-code">how to keep close the debug console in the vs terminal console when i press ⌘ and j when openinig</span>
                             </h5>
                         </div>
                         <img class="question-img" src="imagesVideos/01-01-00-question.png">
@@ -98,6 +99,54 @@
                                     <img src="imagesVideos/">
                                 </div>
                             </div>
+                            <!-- 01-01-02b -->
+                            <div class="step">
+                                <div class="code-container">
+                                    <pre tabindex="1" class="copy-code ">
+"workbench.panel.defaultLocation": "bottom",
+"terminal.integrated.defaultProfile.windows": "Command Prompt",
+"terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+        "path": ["cmd.exe"],
+        "args": [],
+        "icon": "terminal-cmd",
+        "cwd": "${workspaceFolder}",
+        "hidden": false,
+        "name": "Command Prompt"
+    }
+},
+"debug.joyStickZoom": "on",
+"debug.console.openOnSessionStart": "never"        
+                                    </pre>
+                                </div>
+                                <div class="step-img">
+                                    <img src="imagesVideos/">
+                                </div>
+                            </div>
+                            <!-- 01-01-03 -->
+                            <div class="step-col">
+                                <div tabindex="1" class="step-txt">
+                                    <h4>03</h4>
+                                    <p>
+                                        3. <strong>Save and Restart:</strong>
+                                        Save the settings.json file.
+                                        Close and reopen Visual Studio Code.
+                                    </p>
+                                </div>
+                                
+                            </div>
+                            <!-- 01-01-04 -->
+                            <div class="step-col">
+                                <div tabindex="1" class="step-txt">
+                                    <h4>04</h4>
+                                    <p>
+                                        Now, when you open the terminal using ⌘ + J (Command + J), the debug console should remain closed by default. You can
+                                        manually open it when needed during debugging. Adjust the settings as necessary based on your preferences.
+
+                                    </p>
+                                </div>
+                                
+                            </div>
                             
                         </div>
                     </div>
@@ -110,8 +159,8 @@
                             <img class="fi logo" src="../../../images/ts-icon.png" alt="">
                         </div>
                         <div class="chatgpt-question-txt">
-                            <h5  class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
-                                TBD
+                            <h5 class="the-chatgpt-question lg-txt"><strong>question:</strong>
+                                <span class="copy-code">TBD</span>
                             </h5>
                         </div>
                     </div>
@@ -131,7 +180,31 @@
         </div>
         <div class="part">
             <a tabindex="1" href="#" class="dropPart"><h3>Part 2</h3></a>
-            <div class="steps-container"></div>
+            <div class="steps-container">
+                <div class="chatgpt-question-container ">
+                    <div tabindex="1" class="chatgpt-question step-txt">
+                        <h4>01</h4>
+                        <div class="ts-icon-container">
+                            <img class="fi logo" src="../../../images/ts-icon.png" alt="">
+                        </div>
+                        <div class="chatgpt-question-txt">
+                            <h5  class="the-chatgpt-question lg-txt"><strong>question:</strong>
+                                <span class="copy-code">TBD</span>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="logo-icon-container">
+                            <img class="fi logo" src="../../../images/logo-icon.png">
+                        </div>
+                        <div class="answer-txt">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

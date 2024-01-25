@@ -1,7 +1,34 @@
+import { addTabIndex } from "./partStepQuestionFocus.js"
 
+const allCopyCodes = document.querySelectorAll(' .copy-code')
+const questionCopyCodes = document.querySelectorAll('.the-chatgpt-question > .copy-code')
 const questionsChatGpt = document.querySelectorAll('.chatgpt-question')
+const answerStepTxts = document.querySelectorAll('.answer-txt > .step > .step-txt')
+const answerStepColTxts = document.querySelectorAll('.answer-txt > .step-col > .step-txt')
 const chatGptAnswers = document.querySelectorAll('.chatgpt-question-container > .answer')
 const allImgs = document.querySelectorAll('img')
+
+let questionsFocused = false
+let stepsFocused = false
+
+questionCopyCodes.forEach(el => {
+    el.addEventListener('click', e => {
+        e.preventDefault()
+    })
+    el.addEventListener('keydown', e => {
+        let key = e.keyCode
+        if(key === 13){
+            let parent = getChatQuestionContainer(e.target.parentElement) 
+            let answer = parent.querySelector('.answer')
+            if(answer.classList.contains('hide')){
+                answer.classList.remove('hide')
+                const answerStepTxts = answer.querySelectorAll('.answer-txt > .step > .step-txt')
+                addTabIndex(answerStepTxts)
+            }
+        }
+        
+    })
+})
 
 function hideAnswers(){
     chatGptAnswers.forEach(answer => {
@@ -12,13 +39,27 @@ function hideAnswers(){
 }
 hideAnswers()
 
-questionsChatGpt.forEach(question => {
-    const children = question.querySelectorAll('*')
-    children.forEach(child => {
-        child.addEventListener('click', e => {
-            getChatQuestion(e.target.parentElement)
-        })
+function removeAllCopyCodes(){
+    allCopyCodes.forEach(el => {
+        el.removeAttribute('tabindex')
     })
+}
+function removeQuestionCopyCodesTabs(){
+    questionCopyCodes.forEach(el => {
+        el.removeAttribute('tabindex')
+    })
+}
+function removeStepTxtTabs(){
+    answerStepTxts.forEach(el => {
+        el.removeAttribute('tabindex')
+        el.setAttribute('tabindex','-1')
+    })
+    answerStepColTxts.forEach(el => {
+        el.removeAttribute('tabindex')
+        el.setAttribute('tabindex','-1')
+    })
+}
+questionsChatGpt.forEach(question => {   
     question.addEventListener('click', e => {
         e.preventDefault()
         toggleAnswer(e)
@@ -33,45 +74,92 @@ questionsChatGpt.forEach(question => {
         allImgs.forEach(img => {
             img.classList.remove('enlarge')
         })
-
+    })
+    question.addEventListener('focus', e => {
+        removeQuestionCopyCodesTabs()
+        questionsFocused = true
     })
 })
 
-
-
+answerStepTxts.forEach(stepTxt => {
+    stepTxt.addEventListener('focus', e => {
+        stepsFocused = true
+        questionsFocused = false
+    })
+    stepTxt.addEventListener('keydown', e => {
+        let key = e.key.toLowerCase()
+        let questionContainer = getChatQuestionContainer(e.target.parentElement)
+        let parentQuestion = questionContainer.querySelector('.chatgpt-question')
+        if(key == 0){
+            parentQuestion.focus()
+        }
+    });
+})
+answerStepColTxts.forEach(stepTxt => {
+    stepTxt.addEventListener('focus', e => {
+        stepsFocused = true
+        questionsFocused = false
+    })
+    stepTxt.addEventListener('keydown', e => {
+        let key = e.key.toLowerCase()
+        let questionContainer = getChatQuestionContainer(e.target.parentElement)
+        let parentQuestion = questionContainer.querySelector('.chatgpt-question')
+        if(key == 0){
+            parentQuestion.focus()
+        }
+    });
+})
 function toggleAnswer(e){
-    const parent = e.target.parentElement
+    if(e.target.classList.contains('copy-code')){
+        return
+    }
+    const parent = getChatQuestionContainer(e.target.parentElement)
+    const questionCopyCode = parent.querySelector('.step-txt > .chatgpt-question-txt > h5 > .copy-code')
+    questionCopyCode.setAttribute('tabindex','1')
     const answer = parent.querySelector('.answer')
-    getChatQuestionContainer(e.target.parentElement)
-    if(answer.classList.contains('show') ){
-        answer.classList.remove('show')
-    } else if(answer.classList.contains('hide')){
-        answer.classList.remove('hide')   
-    } else {
-        answer.classList.add('hide')
-        
-    }    
+    const answerStepTxts = answer.querySelectorAll('.answer-txt > .step > .step-txt')
+        if(answer.classList.contains('hide')){
+            hideAnswers()
+            answer.classList.remove('hide')   
+            addTabIndex(answerStepTxts)
+        } else {
+            answer.classList.add('hide')
+        }    
 }
-
 function getChatQuestion(parent){
     if(parent.classList.contains('chatgpt-question')){
-        parent.click()
-        return
+        return parent
     } else if(parent.parentElement){
         return getChatQuestion(parent.parentElement)
+    } else { 
+        return null 
     }
 }
 function getChatQuestionContainer(parent){
     if(parent.classList.contains('chatgpt-question-container')){
-        parent.click()
-        let codes= parent.querySelectorAll('.answer > .answer-txt >  .code-container > .copy-code')
-        codes.forEach(code => {
-            code.setAttribute('tabindex','1')
-            console.log(code)
-        })
-        return
+        return parent
     } else if(parent.parentElement){
-        return getChatQuestion(parent.parentElement)
+        return getChatQuestionContainer(parent.parentElement)
+    } else {
+        return null
     }
-    
 }
+addEventListener('keydown', e => {
+    let key = e.key.toLowerCase()
+    if(stepsFocused){
+        answerStepTxts.forEach(el => {
+            if(key == 'p'){
+                let parent =  getChatQuestion(el.parentElement)
+                removeAllCopyCodes()
+                removeQuestionCopyCodesTabs()
+                removeStepTxtTabs()
+            }
+            let h4 = el.querySelector('h4')
+            if(h4){              
+                if(key == h4.innerText[h4.innerText.length - 1]){
+                    el.focus()
+                }
+            }          
+        })
+    }
+})

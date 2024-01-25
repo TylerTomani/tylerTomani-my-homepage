@@ -112,3 +112,8 @@
     max-height: 200px;
     width: 90%;
 }
+
+.the-chatgpt-question > span.copy-code {
+    display: inline-block;
+    padding: 1% 2.5%
+}

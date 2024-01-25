@@ -1,13 +1,19 @@
 const homelink = document.getElementById('homelink')
 const parts = document.querySelectorAll('.dropPart')
 const stepsContainers = document.querySelectorAll('.steps-container')
+const stepTxts = document.querySelectorAll('.step-txt')
 
-let partsFocused = true
+export let partsFocused = true
+export let stepsFocused = false
 
 function hideStepsContainers(){
     stepsContainers.forEach(el => {
-        if(!el.classList.contains('hide')){
+        if(!el.classList.contains('hide') && !el.classList.contains('show')){
             el.classList.add('hide')
+        }
+        if(el.classList.contains('show')){
+            const stepTxts = el.querySelectorAll('.chatgpt-question-container > .chatgpt-question')
+            addTabIndex(stepTxts)
         }
     })
 }
@@ -22,26 +28,28 @@ function getPartContainer(parent){
         return null
     }
 }
-addEventListener('keydown', e => {
-    let key = e.key.toLowerCase()
-    if(key === 'h'){
-        homelink.focus()
+
+function partsFocus(key){
+    if(key === 'p'){
+        part01.focus()
     }
-    if(partsFocused){
-        partFocus(key)
-        if(key === 'p'){
-            part01.focus()
-        }
-    } else if(!partsFocused){
-        const part = getPartContainer(e.target.parentElement)
-        if(key === 'p'){
-            part.focus()
-        }
-    }
-})
-function partFocus(key){
     parts.forEach(el => {
         if(key === el.innerText[5]){
+            el.focus()
+        }
+    })
+} 
+function stepsFocus(key,e){
+    const part = getPartContainer(e.target.parentElement)
+    const dropPart = part.querySelector('.dropPart')
+    const stepTxtx = part.querySelectorAll('.steps-container > .chatgpt-question-container > .step-txt')
+    if(key === 'p'){
+        dropPart.focus()
+    }
+
+    stepTxts.forEach(el => {
+        const h4 = el.querySelector('h4')
+        if(key === h4.innerText[h4.innerText.length - 1]){
             el.focus()
         }
     })
@@ -62,11 +70,15 @@ parts.forEach(el => {
         e.preventDefault()
         toggleStepsContainer(e.target)
     })
-    el.addEventListener('focusout', e => {
-        // console.log('focusout')
-    })
     el.addEventListener('focus', e => {
-        // console.log('focus')
+        partsFocused = true
+        stepsFocused = false
+    })
+})
+stepsContainers.forEach(el => {
+    el.addEventListener('focusin', e =>{
+        stepsFocused = true
+        partsFocused = false
     })
 })
 
@@ -76,16 +88,28 @@ function toggleStepsContainer(el){
     if(stepsContainer.classList.contains('hide')){
         hideStepsContainers()
         stepsContainer.classList.remove('hide')
-        addTabIndex(stepsContainer)
+        const stepTxt = stepsContainer.querySelectorAll('.chatgpt-question-container > .chatgpt-question')
+        addTabIndex(stepTxt)
     } else {
         stepsContainer.classList.add('hide')
     }
 }
 
-function addTabIndex(container){
-    console.log(container)
-    let els = container.querySelectorAll('.chatgpt-question-container > .chatgpt-question')
+export function addTabIndex(els){
     els.forEach(el => {
         el.setAttribute('tabindex','1')
     })
 }
+
+addEventListener('keydown', e => {
+    let key = e.key.toLowerCase()
+    if(key === 'h'){
+        homelink.focus()
+    }
+    if(partsFocused){
+        partsFocus(key)
+    } 
+    if(stepsFocused) {
+        stepsFocus(key,e)
+    }
+})
