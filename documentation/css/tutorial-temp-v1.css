@@ -204,6 +204,7 @@ footer {
     background: black;
     width: 80%;
     margin: 1% 0;
+    margin-bottom: 2%;
 }
 .code-container > pre.copy-code{
     border: 3px solid white;

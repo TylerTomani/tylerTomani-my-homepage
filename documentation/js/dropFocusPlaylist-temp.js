@@ -9,6 +9,13 @@ function hidePlaylistTutorialsContainers(){
     playlistTutorialContainers.forEach(playlistTutorialContainer => {
         if(!playlistTutorialContainer.classList.contains('show')){
             playlistTutorialContainer.classList.add('hide')
+            // currentPlistTutorials
+            
+        }else
+        if(playlistTutorialContainer.classList.contains('show')){
+            currentPlistTutorials = playlistTutorialContainer.querySelector('.tutorial-container > h3 > .tutorial')
+            console.log(playlistTutorialContainer)
+            playlistTutorialContainer.click()
         }
     })
 }
@@ -17,7 +24,7 @@ hidePlaylistTutorialsContainers()
 // numFocus in togglePlistTutorialContainer()
 function togglePlistTutorialContainer(container){
     if(container.classList.contains('show')){
-    container.classList.remove('show')
+        container.classList.remove('show')
     }
     if(container.classList.contains('hide')){
         hidePlaylistTutorialsContainers()

@@ -16,6 +16,7 @@ pre.online {
     color: red !important;
     box-shadow:0 0 3px 3px red !important;
 }
+.lb { color: cyan; font-style: bold; font-weight: 999;}
 .b { color: blue}
 .g { color: green}
 .gr { color: goldenrod}

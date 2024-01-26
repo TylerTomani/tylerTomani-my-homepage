@@ -44,9 +44,9 @@ main {
     padding-left: 1.5%;
     padding-top: .25%;
     padding: 1%;
-    /* max-width: 200px;
-    max-height: 125px; */
+    
     margin: 2% 0;
+    gap: 2.5%;
 }
 .sub-resource{
     /* flex-basis: 20%; */

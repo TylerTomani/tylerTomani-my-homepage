@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="../../../../../../../css/tutorial-temp-v1.css" />
     <link rel="stylesheet" href="../../../../../../../../css/copy-code.css">
     <link rel="stylesheet" href="../../../../../../../../css/imgAnimate-v2.css">
-    <script src="../../../../../../../js/header-letterFocus-docs.js" defer></script>
+    <script src="../../../../../../../js/letterFocus-tutorial.js" defer></script>
     <script src="../../../../../../../../js/copy-code.js" defer></script>
-    <script src="../../../../../../../js/addTabIndexImgEnlarge-v2.js" defer></script>
     <script src="../../../../../../../js/dropPartStepFocus-v2.js" defer></script>
+    <script src="../../../../../../../js/loadpageNewTab.js" defer></script>
+    <script type="module" src="../../../../../../../js/play-enlarge-video.js" defer></script>
+    <script type="module" src="../../../../../../../js/autofocusLoad.js" defer></script>
+    <script type="module" src="../../../../../../../js/img-enlarge-v1.js" defer></script>
+    <script type="module" src="../../../../../../../js/addRemoveTabs-v1.js" defer></script>
 </head>
 <body>
     <header>
@@ -55,25 +59,74 @@ and fix it so that hitting 'n' in this text area doesn't clear typed text
                         </div>
                     </div>
                 </div>                
-                <!-- 01-01 -->
+                <!-- 01-02 -->
                 <div class="step">
                     <div tabindex="1" class="step-txt step-vid playVid-click">
-                        <h3>01</h3>
+                        <h4>01</h4>
                         <p>
                             Go to RESTful Api page in the 'Documentation' tab
-                            <a target="_blank" href="https://hl7.org/fhir/http.html">https://hl7.org/fhir/http.html</a>                  
+                            <a target="_blank" href="https://hl7.org/fhir/http.html">https://hl7.org/fhir/http.html</a>
                         </p>
                     </div>
                     <div class="step-vid">
-                        <video src="imagesVideos/01-01.mp4"></video>
+                        <video src="imagesVideos/01-01.mov"></video>
                     </div>
-
                 </div>
-                <!-- 02 -->
+                <!-- 01-03 -->
                 <div class="step">
                     <div tabindex="1" class="step-txt">
-                        <h3>02</h3>
-                        <h4><code> VERB [base]/[type]/[id] {?_format=[mime-type]}</code></h4>
+                        <h4>03</h4>
+                        <p>
+                            The <strong>Whole System Interactions</strong> occur on the base url ex,
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code">
+GET https://hapi.fhir ... go back and find</pre>
+                        </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-03.png">
+                    </div>
+                </div>
+                <!-- 01-04 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>04</h4>
+                        <p>
+                            <strong>Type Level Interactions</strong> occur on the <span class="m">resource</span> returned from the whole system
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code">https://http.fhir/baseR4/<span class="m">Patient</span> ....
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-04.png">
+                    </div>
+                </div>
+                <!-- 01-04 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt rbshadow">
+                        <h4>04</h4>
+                        <p>
+                            <span class="r"> I don't get this yet</span> it think,
+                            <br>
+                            <strong class="gr">Instance Level Interactions</strong> act as methods to the resource that have an id on them
+                        </p>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code">https://hapi.fhir/baseR4/ {resource} ? params <span class="gr">instance</span> </pre>
+                        </div>
+                        
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/01-0.png">
+                    </div>
+                </div>
+                <!-- 01-05 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>05</h4>
+                        <h5><code> VERB [base]/[type]/[id] {?_format=[mime-type]}</code></h5>
                         <ul>
                             <li><code>VERB</code>
                                 <ul>
@@ -85,15 +138,46 @@ and fix it so that hitting 'n' in this text area doesn't clear typed text
                         </ul>
                     </div>
                     <div class="step-img">
-                        <img src="imagesVideos/01-02.png" alt="">
+                        <img src="imagesVideos/01-05.png" alt="">
                     </div>
-                </div>     
+                </div>
+                
             </div>
         </div>
         <!-- Part 2 - Confluence example data & OperationOutcome-->
         <div class="part">
-            <a id="" tabindex="1" href="#" class="dropPart"><h2>Part 2 - Confluence example data & OperationOutcome</h2></a>
+            <a id="" tabindex="1" href="#" class="dropPart"><h2>Part 2 - Perfered Header / Confluence example data & OperationOutcome</h2></a>
             <div class="steps-container ">  
+                <!-- 02-00 -->
+                <div class="step">
+                    <div tabindex="1" class="step-txt">
+                        <h4>00</h4>
+                        <p>
+                            I'm not sure if this applies to getting resources, it looks like this  header is only applicable to <code>CREATE</code>
+                            and <code>UPDATE</code>, the documentation is discussed here,
+                            <br>
+                            <a href="https://hl7.org/fhir/http.html#:~:text=These%20interactions%20are%20performed,Bundle.entry.resource%20values.">https://hl7.org/fhir/http.html</a>
+                            <br>
+                            and it is discussed at 6:30 in <a target="_blank" href="https://www.youtube.com/watch?v=eBAQYMT2KtM&list=PLsR-zcO--dypwthv7_QXwLMXKkdqsQvAm&index=2">
+                                tutorial
+                            </a>
+                        </p>
+                        <p>
+                            BUT, these are the mime types
+                        </p>
+                        <p class="smtxt">xml</p>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code">XML: application/fhir+xml</pre>
+                        </div>
+                        <p class="smtxt">json</p>
+                        <div class="code-container">
+                            <pre tabindex="1" class="copy-code">JSON: application/fhir+json</pre>
+                        </div>
+                    </div>
+                    <div class="step-img">
+                        <img src="imagesVideos/02-00.png">
+                    </div>
+                </div>
                 <!-- 02-01 -->
                 <div class="step">
                     <div tabindex="1" class="step-txt question">
@@ -394,7 +478,7 @@ curl --location --request GET http://hapi.fhir.org/baseR4/metadata --header 'Acc
                         </p>
                     </div>
                     <div class="step-vid">
-                        <video src="imagesVideos/05-04.mp4" >
+                        <!-- <video src="imagesVideos/0504.mp4" > -->
                     </div>
                 </div>
                 <!-- 05-04 -->
