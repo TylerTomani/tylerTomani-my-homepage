@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+    --asideMaxWith: 15vw;
+}
 body {
 }
 header {
@@ -50,24 +53,37 @@ main {
     transition: width 350ms;
 }
 .show-aside {
-    width: 25% ;
+    width: var(--asideMaxWith);
     opacity: 1;
     transition: all 500ms;
 }
-.aside-main > section > ul{
-    background-color: lightblue;
-    /* margin-left: 100%; */
-}
-.aside-main > section > ul {
-    margin-left: 25%;
-}
-.main-container>#asideMain {
+.main-container> .aside-main {
     border: 2px dashed black;
-    width: 20vw;
+    width: var(--asideMaxWith);
     display: flex;
     flex-direction: column;
 }
+.aside-main > section > ul{
+    /* background-color: lightblue; */
+    /* margin-left: 100%; */
+}
+.aside-main > section > ul {
+    margin-left: 5%;
+    list-style: none;
+}
 
+.aside-main > section ul li a{
+    text-decoration: none;
+}
+.aside-main > section > ul > li > ul{
+    margin-left: 7.5%;
+    list-style: square
+}
+
+.section {
+    margin: 1% 0;
+    margin-left: 2.5%;
+}
 
 .main-container>.target-div-container {
     border: 2px solid black;
@@ -75,4 +91,14 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width:900px) {
+    .aside-main section  {
+        font-size: 80% !important;
+    }
+    .aside-main > section > ul   {
+        font-size: 90% !important;
+    }
+    
 }
