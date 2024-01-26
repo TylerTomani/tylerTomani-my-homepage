@@ -41,7 +41,7 @@ export function addTabs(els){
     })
 }
 
-function getSection(parent){
+export function getSection(parent){
     if(parent.classList.contains('section')){
         return parent
     } else if (parent.parentElement){

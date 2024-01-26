@@ -1,6 +1,7 @@
 import { dropSections } from "./injectDrop-htmlSections.js"
 import { addTabs } from "./injectDrop-htmlSections.js";
 import { currentSection } from "./injectDrop-htmlSections.js";
+import { getSection } from "./injectDrop-htmlSections.js";
 const allLiAs = document.querySelectorAll('ul li a')
 
 const lessons = document.querySelectorAll('.section > ul > li > a')
@@ -29,9 +30,19 @@ addEventListener('keydown', e=> {
 // Go back add add section for sub-lessons when you encounter them when doing free code camp
     // let keyCode = e.keyCode
     // if(keyCode === 13){
-    //     console.log(e.target)
     //     if(e.target == currentSection){
-    //         console.log('yes')
+    //         lessonsFocused = true
+    //         sectionsFocused = false
+    //         let section = getSection(e.target.parentElement)
+    //         let sectionUl = section.querySelector('ul')
+    //         let lessons = section.querySelectorAll('ul li a')
+    //         console.log(sectionUl)
+    //             // sectionUl.classList.remove('hide')
+    //         // console.log('yes')
+    //         // if(sectionUl.classList.contains('hide')){
+    //         // }
+    //         // addTabs(lessons)
+            
     //     }
     // }
     if(sectionsFocused){
@@ -57,6 +68,8 @@ lessons.forEach(el => {
     })
     el.addEventListener('click', e => {
         e.preventDefault()
+        e.stopPropagation()
+            fetchLessonHref(e.target.href) 
     })
     el.addEventListener('keydown', e => {
         let key = e.keyCode
@@ -64,6 +77,17 @@ lessons.forEach(el => {
             e.stopPropagation()
             fetchLessonHref(e.target.href) 
         }      
+        if(lessonsFocused){
+            let letter = e.key.toLowerCase()
+            if(letter === 'p'){
+                const section = getSection(e.target.parentElement)
+                const dropSection = section.querySelector('.dropSection')
+                dropSection.focus()
+                lessonsFocused = true
+                sectionsFocused = false
+                // console.log(section)
+            }
+        }
     });
 })
 subLessons.forEach(el => {
@@ -73,12 +97,25 @@ subLessons.forEach(el => {
     })
     el.addEventListener('click', e => {
         e.preventDefault()
+        e.stopPropagation()
+            fetchLessonHref(e.target.href) 
     })
     el.addEventListener('keydown', e => {
         let key = e.keyCode
         if(key === 13){
             e.stopPropagation()
             fetchLessonHref(e.target.href) 
+        }
+        if(lessonsFocused){
+            let letter = e.key.toLowerCase()
+            if(letter === 'p'){
+                const section = getSection(e.target.parentElement)
+                const dropSection = section.querySelector('.dropSection')
+                dropSection.focus()
+                lessonsFocused = true
+                sectionsFocused = false
+                // console.log(section)
+            }
         }
     });
 })
