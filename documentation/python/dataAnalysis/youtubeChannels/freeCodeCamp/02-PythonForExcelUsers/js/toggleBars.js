@@ -17,7 +17,6 @@ function toggleAsideBar(el){
     let main = getMain(el.parentElement)
     let mainContainer = main.querySelector('.main-container')
     let targetDivContainer = mainContainer.querySelector('.target-div-container')
-    console.log(el)
     if(!asideMain.classList.contains('hide')){
         asideMain.classList.add('hide')
     } else {

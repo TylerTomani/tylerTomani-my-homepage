@@ -41,7 +41,7 @@ main {
 #homelink:active,#homelink:focus,
 #navMain:active,#navMain:focus,
 #asideMain:focus,
-#targetDivContainer:active,#targetDivContainer:focus{
+#targetDivContainer:active{
     box-shadow: 2px 0 8px 6px orange;
 }
 #mainTargetDivContainer:active,#mainTargetDivContainer:focus

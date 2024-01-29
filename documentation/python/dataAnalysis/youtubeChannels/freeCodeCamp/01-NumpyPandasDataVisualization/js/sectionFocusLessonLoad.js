@@ -1,22 +1,3 @@
-// first dropPart for focus when page opens
-const dropPart01 = document.querySelector('.dropPart')
-
-// Load PlaceHolder HTML
-
-
-function loadPlaceholderHtml() {
-    fetch('main-placeholder.htm')
-        .then(response => response.text())
-        .then(html => {
-            // Inject the retrieved HTML into the target div
-            document.getElementById('mainTargetDivContainer').innerHTML = html;
-
-            
-        })
-        .catch(error => console.error('Error fetching content.html:', error));
-}
-loadPlaceholderHtml()
-
 import { addEventListenersToInjectedContent } from "./lessonFocus.js"
 const homelink = document.getElementById('homelink')
 const jupyterlink = document.getElementById('jupyterLink')
@@ -38,8 +19,6 @@ let mainTargetFocused = false
 
 let lessonClicked = false
 let currentLesson
-const currentLessonDisplay = document.getElementById('currentLessonDisplay')
-const currentSectionDisplay = document.getElementById('currentSectionDisplay')
 
 const allElements = document.querySelectorAll('body  *')
 allElements.forEach(el => {
@@ -77,9 +56,9 @@ dropSections.forEach(el => {
     el.addEventListener('click', e => {
         e.preventDefault()
         e.stopPropagation()
-        currentSectionDisplay.innerText = e.target.innerText
         toggleSectionUl(e.target)
         addLessonTabIndexes(e)
+        
     } );
 })
 lessons.forEach(el => {
@@ -93,7 +72,6 @@ lessons.forEach(el => {
         e.preventDefault()
         e.stopPropagation()
         fetchLessonHref(e.target.href)
-        currentLessonDisplay.innerText = e.target.innerText
         if(currentLesson == e.target){
             mainTargetDivContainer.focus()
             window.scrollTo(0,0)
@@ -183,7 +161,8 @@ mainTargetDivContainer.addEventListener('focus', e => {
 });
 
 
-addEventListener('keydown', e => {  
+addEventListener('keydown', e => {
+    
     let key = e.key.toLocaleLowerCase()
     if(key == 'h'){
         homelink.focus()
@@ -245,11 +224,4 @@ addEventListener('keydown', e => {
             }
         }
     }
-    if(dropPart01){
-
-        if(key == 'p' && !lessonsFocused){
-            dropPart01.focus()
-        }
-    }
-
 })

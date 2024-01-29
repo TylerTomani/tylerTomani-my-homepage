@@ -7,14 +7,12 @@
     <link rel="stylesheet" href="../../../../../css/resource-header-temp.css">
     <link rel="stylesheet" href="css/sideBar-temp.css">
     <link rel="stylesheet" href="../../css/freeCodeCamp.css">
-    <!-- <script src="../../../../../js//letterFocus-docs.js" defer></script> -->
-    <!-- <script src="../../.././../../../js/letterFocus.js" defer></script> -->
-    <!-- the script below are specific to this template -->
-    <!-- <script type="module" src="js/script.js" defer></script> -->
-    <!-- <script type="module" src="js/injectDrop-htmlSections.js" defer></script> -->
-    <script src="../../.././../../../js/homeLinkFocus.js" defer></script>
+    <link rel="stylesheet" href="css/tutorial-temp-v2.css">
+    <link rel="stylesheet" href="css/imgAnimate-v2.css">
+    <link rel="stylesheet" href="css/copy-code.css">
     <script type="module"  src="js/sectionFocusLessonLoad.js" defer></script>
     <script type="module" src="js/toggleBars.js" dfefer></script>
+    <script type="module" src="js/lessonFocus.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,19 +28,15 @@
     </header>
     <main class="main">
         <nav tabindex="1" id="navMain" class="nav-main">
-            <p>
-                Add current selected section and lesson here
-            </p>
+            <p><span id="currentSectionDisplay">Section</span> &rarr; <span id="currentLessonDisplay"></span></p>
         </nav>
         <div class="main-container">
             <aside tabindex="1" id="asideMain" class="aside-main">                
                 <!-- Section 1 -->
                 <section class="section">
-                    <a tabindex="1" id="section01" href="sections/01-jupyter/01.htm" class="dropSection">
-                        <h4>Section 1 - jupyter shortcuts</h4>
-                    </a>
-                    <ul>
-                        <li><a href="#">1</a></li>
+                    <a tabindex="1" id="section01" href="#" class="dropSection"><h4>Section 1 - jupyter shortcuts</h4></a>
+                    <ul class="show">
+                        <li><a autofocus  href="sections/01-jupyter/01-01-findShortcuts/01-01-findShortcuts.htm">1. Find Shortcuts</a></li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                     </ul>
@@ -52,9 +46,9 @@
                     <a tabindex="1" href="sections/02/02.htm" class="dropSection">
                         <h4>Section 2</h4>
                     </a>
-                    <ul class="show">
-                        <li><a href="sections/02/02-01-helloWorld/02-01-helloWorld.htm">1. Hello World</a></li>
-                        <li><a autofocus    href="sections/02/02-02-dataType/02-02-dataType.htm">2. data types</a></li>
+                    <ul class="">
+                        <li><a   href="sections/02/02-01-helloWorld/02-01-helloWorld.htm">1. Hello World</a></li>
+                        <li><a href="sections/02/02-02-dataType/02-02-dataType.htm">2. data types</a></li>
                         <li><a href="sections/02/02-02/02-02.htm" class="dropSubSection">3. section-lesson</a>
                             <ul>
                                 <li><a href="sections/02/02-02-01/02-02-01.htm">sub-section-lesson</a></li>
@@ -77,7 +71,7 @@
                 </section>
             </aside>
             <div tabindex="1" id="mainTargetDivContainer" id="" class="target-div-container">
-                <code>&lt;div class="target-div-container"></code>
+                
     
             </div>
         </div>
