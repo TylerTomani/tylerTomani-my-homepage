@@ -71,11 +71,11 @@ function scrollToVid(vid){
         // if(parent.classList.contains('step-col')){   
     console.log(vidEnlarged)
             if(!vidEnlarged ){
-                vid.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+                vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
                 vidEnlarged  = true
                 
             } else {
-                vid.scrollIntoView({ behavior: "smooth", block: "end", inline: "start" });
+                vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
                 // vid.scrollIntoView({ behavior: "smooth", });
                 vidEnlarged  = false
                 
