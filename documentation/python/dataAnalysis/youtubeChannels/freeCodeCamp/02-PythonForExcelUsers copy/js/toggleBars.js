@@ -1,5 +1,5 @@
-import { navMain } from "./sectionFocusLessonLoad.js";
-import { asideMain } from "./sectionFocusLessonLoad.js";
+import { navMain } from "./script.js";
+import { asideMain } from "./script.js";
 
 navMain.addEventListener('click', e => {
     e.preventDefault()
@@ -18,27 +18,18 @@ function toggleAsideBar(el){
     let mainContainer = main.querySelector('.main-container')
     let targetDivContainer = mainContainer.querySelector('.target-div-container')
     console.log(el)
-    if(!asideMain.classList.contains('hide')){
-        asideMain.classList.add('hide')
+    if(!el.classList.contains('hide-aside')){
+        el.classList.add('hide-aside')
+    } else if(el.classList.contains('hide-aside') || el.classList.contains('show-aside')){
+        el.classList.remove('hide-aside')
+        el.classList.remove('show-aside')
     } else {
-        asideMain.classList.remove('hide')
-
+        el.classList.add('show-aside')
+        setTimeout(()=> {
+            el.classList.remove('hide-aside')
+            el.classList.add('show-aside')
+        },350)
     }
-    // if(!el.classList.contains('hide-aside')){
-    //     el.classList.add('hide-aside')
-    //     setTimeout(()=> {
-    //         asideMain.classList.add('hide')
-    //     },350)
-    // } else if(el.classList.contains('hide-aside') || el.classList.contains('show-aside')){
-    //     el.classList.remove('hide-aside')
-    //     el.classList.remove('show-aside')
-    // } else {
-    //     el.classList.add('show-aside')
-    //     setTimeout(()=> {
-    //         el.classList.remove('hide-aside')
-    //         el.classList.add('show-aside')
-    //     },350)
-    // }
 }   
 
 

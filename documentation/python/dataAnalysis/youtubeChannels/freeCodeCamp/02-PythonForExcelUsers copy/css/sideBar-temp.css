@@ -40,7 +40,7 @@ main {
 
 #homelink:active,#homelink:focus,
 #navMain:active,#navMain:focus,
-#asideMain:focus,
+#asideMain:active,#asideMain:focus,
 #targetDivContainer:active,#targetDivContainer:focus{
     box-shadow: 2px 0 8px 6px orange;
 }
@@ -49,7 +49,7 @@ main {
     box-shadow: 2px 0 8px 12px orange;
 }
 
-.hide {display: none !important;}
+.hide {display: none;}
 .show {display: inline-block;}
 
 .hide-aside {
@@ -83,8 +83,7 @@ main {
     text-decoration: none;
 }
 .aside-main > section > ul > li > ul{
-    margin-left: 15%;
-    text-wrap: nowrap;
+    margin-left: 7.5%;
     list-style: square
 }
 
