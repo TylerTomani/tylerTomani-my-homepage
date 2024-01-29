@@ -234,6 +234,15 @@ export function addEventListenersToInjectedContent() {
             return null
         }
     }
+    function getStepColContainer(parent){
+        if(parent.classList.contains('step-col')){
+            return parent
+        } else if (parent.parentElement){
+            return getStepColContainer(parent.parentElement)
+        } else {
+            return null
+        }
+    }
 
 // copy code //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const codeCopy = document.querySelectorAll('.copy-code')
@@ -316,7 +325,114 @@ export function addEventListenersToInjectedContent() {
         
     }
 // Play Enlarg videos ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const playVidClicks = document.querySelectorAll('.playVid-click')
+
+let currentVid 
+let playing = false
+let vidEnlarged = false
+
+playVidClicks.forEach(playVidClick => {
     
+    playVidClick.addEventListener('click', e => {
+        e.preventDefault()  
+        let parent = getStep(e.target)
+        let vid = playVidClick.querySelector('.step-vid > video')
+        currentVid = vid
+        console.log(vid)
+        if(vid){
+            playVid(vid)
+            vid.play()
+        }
+    })
+    playVidClick.addEventListener('keydown', e => {
+        let key = e.keyCode
+        if(key === 13){
+            let parent = getStep(e.target)
+            // console.log(e.target)
+            let vid = parent.querySelector('.step-vid > video')
+            currentVid = vid
+            if(vid){
+                playVid(vid)
+                scrollToVid(vid)
+                toggleStepVid(vid)
+                vid.play()
+            } else {
+                vid.pause()
+            }
+        }
+    })
+    playVidClick.addEventListener('focusout', e => {          
+            let parent = getStep(e.target)
+            let vid = parent.querySelector('.step-vid > video')            
+            vid.pause()
+            vid.currentTime = 0
+    })
+})
+ function playVid(vid){
+    if(!playing){
+        vid.play()
+        vid.currentTime = '0'
+    } else {
+        vid.pause()
+        // vid.currentTime = '0'
+    }
+    playing = !playing
+}
+    function toggleStepVid(img){
+        let currentClass = img.classList[0]
+        if(!imgEnlarged){
+            switch(currentClass){
+                case 'sm-enlarge':
+                    img.classList.add('sm-enlarged')
+                    break
+                case 'lg-enlarge':
+                    img.classList.add('lg-enlarged')
+                    break
+                case 'xlg-enlarge':
+                    img.classList.add('xlg-enlarged')
+                    break
+                default :
+                    img.classList.add('enlarge')
+                    break
+            }
+        } else {
+            img.classList.remove('sm-enlarged')
+            img.classList.remove('lg-enlarged')
+            img.classList.remove('xlg-enlarged')
+            img.classList.remove('enlarge')
+        }
+        imgEnlarged = !imgEnlarged
+    }
+// addEventListener('keydown', e => {
+//     let key = e.keyCode
+//     if(key === 32){
+//         e.preventDefault()
+//         console.log(currentVid)
+//         playVid(currentVid)
+//     }
+// })
+
+function scrollToVid(vid){
+    // let parent = vid.parentElement.parentElement
+    // let vid = parent.querySelector()
+    console.log(vid)
+    // if(parent){
+        // console.log(img)
+        // if(parent.classList.contains('step-col')){   
+    console.log(vidEnlarged)
+    if(!vidEnlarged ){
+        vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        vidEnlarged  = true
+        
+    } else {
+        vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+        // vid.scrollIntoView({ behavior: "smooth", });
+        vidEnlarged  = false
+        
+    }
+      
     
+}
+ 
 }
 
