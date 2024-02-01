@@ -181,7 +181,19 @@ mainTargetDivContainer.addEventListener('focus', e => {
 
     
 });
+let shiftTab =[]
+mainTargetDivContainer.addEventListener('keydown', e => {
+    let key = e.keyCode
+    shiftTab.push(key)
+    if(shiftTab.length > 2 ){
+        shiftTab.shift()
+    }
+    if(shiftTab[0] == 16 && shiftTab[1] == 9){
+        console.log(currentLesson)
+        currentLesson.focus()
+    }
 
+})
 
 addEventListener('keydown', e => {  
     let key = e.key.toLocaleLowerCase()

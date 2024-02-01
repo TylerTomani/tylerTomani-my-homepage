@@ -66,6 +66,10 @@ export function addEventListenersToInjectedContent() {
             stepsContainer.classList.remove('show')
         }
         if(stepsContainer.classList.contains('hide')){
+            hideStepContainers()
+            if(stepsContainer.classList.contains('show')){
+            stepsContainer.classList.remove('show')
+        }   
             stepsContainer.classList.remove('hide')
         } else {
             stepsContainer.classList.add('hide')
@@ -117,6 +121,11 @@ export function addEventListenersToInjectedContent() {
             let img = step.querySelector('.step-img > img')
             let as = step.querySelectorAll('.step-txt > a')
             let copyCodes = step.querySelectorAll('.copy-code')
+            as.forEach(a => {
+                a.addEventListener('click', e => {
+                    window.open(a.href,'_blank')
+                } );
+            })
             addStepTxtAsTabindex(copyCodes)
             addStepTxtAsTabindex(as)
             toggleStepImg()
@@ -133,6 +142,11 @@ export function addEventListenersToInjectedContent() {
                 if(img){
                     toggleStepImg(img)
                 }
+                as.forEach(a => {
+                a.addEventListener('click', e => {
+                    window.open(a.href,'_blank')
+                } );
+            })
             }
         })
         el.addEventListener('focus', e => {
@@ -158,29 +172,33 @@ export function addEventListenersToInjectedContent() {
     })
 
     function toggleStepImg(img){
-        let currentClass = img.classList[0]
-        if(!imgEnlarged){
-            switch(currentClass){
-                case 'sm-enlarge':
-                    img.classList.add('sm-enlarged')
-                    break
-                case 'lg-enlarge':
-                    img.classList.add('lg-enlarged')
-                    break
-                case 'xlg-enlarge':
-                    img.classList.add('xlg-enlarged')
-                    break
-                default :
-                    img.classList.add('enlarge')
-                    break
+        if(img){
+            let currentClass = img.classList[0]
+            if(!imgEnlarged){
+                switch(currentClass){
+                    case 'sm-enlarge':
+                        img.classList.add('sm-enlarged')
+                        break
+                        case 'lg-enlarge':
+                            img.classList.add('lg-enlarged')
+                            break
+                    case 'xlg-enlarge':
+                        img.classList.add('xlg-enlarged')
+                        break
+                    default :
+                        img.classList.add('enlarge')
+                        break
+                }
+                } else {
+                    if(img.classList.contains('sm-enlarged')){
+                        img.classList.remove('sm-enlarged')
+                    }
+                    img.classList.remove('lg-enlarged')
+                    img.classList.remove('xlg-enlarged')
+                    img.classList.remove('enlarge')
+                }
+                imgEnlarged = !imgEnlarged
             }
-        } else {
-            img.classList.remove('sm-enlarged')
-            img.classList.remove('lg-enlarged')
-            img.classList.remove('xlg-enlarged')
-            img.classList.remove('enlarge')
-        }
-        imgEnlarged = !imgEnlarged
     }
     function denlargeAllImgVids(){
         imgEnlarged = false
@@ -403,36 +421,17 @@ playVidClicks.forEach(playVidClick => {
         }
         imgEnlarged = !imgEnlarged
     }
-// addEventListener('keydown', e => {
-//     let key = e.keyCode
-//     if(key === 32){
-//         e.preventDefault()
-//         console.log(currentVid)
-//         playVid(currentVid)
-//     }
-// })
-
-function scrollToVid(vid){
-    // let parent = vid.parentElement.parentElement
-    // let vid = parent.querySelector()
-    console.log(vid)
-    // if(parent){
-        // console.log(img)
-        // if(parent.classList.contains('step-col')){   
-    console.log(vidEnlarged)
-    if(!vidEnlarged ){
-        vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-        vidEnlarged  = true
-        
-    } else {
-        vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
-        // vid.scrollIntoView({ behavior: "smooth", });
-        vidEnlarged  = false
-        
-    }
-      
-    
-}
- 
+    function scrollToVid(vid){    
+        if(!vidEnlarged ){
+            vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            vidEnlarged  = true
+            
+        } else {
+            vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+            // vid.scrollIntoView({ behavior: "smooth", });
+            vidEnlarged  = false
+            
+        }   
+    } 
 }
 
