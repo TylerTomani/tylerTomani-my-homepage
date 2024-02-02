@@ -15,8 +15,11 @@ main {
 
 .steps-container>.step {
     display: flex;
-    margin: 1.5% 0;
-    gap: 1rem;
+    margin: 1.5% 2.5%;
+}
+.steps-container>.step-col {
+    display: flex;
+    margin: 1.5% 2.5%;
 }
 
 /* .step-col>.step-txt, */
@@ -77,12 +80,16 @@ main {
 
 .part>.steps-container>.step-col>.img-2-container {
     display: flex;
+    margin: 0 2.5%;
     gap: 2rem;
 }
 .part>.steps-container>.step-col>.img-2-container > .step-img{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.part>.steps-container>.step-col>.img-2-container > .step-img > img{
+    width: 100%;
 }
 
 p> a:active,p>a:focus
@@ -131,7 +138,35 @@ img:active,img:focus,
 
 
 .code-container > .copy-code {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100% ;
     padding: 1% 1.5%;
+}
+@media screen and (max-width: 640px) {
+    .steps-container {
+        margin: 0;
+        padding:0;
+    }
+    .steps-container > .step-col{
+
+    }
+    .steps-container > .step{
+        margin: 0;
+        /* width: 90%; */
+        display: flex;
+
+    }
+    .steps-container > .step > .step-txt,
+    .steps-container > .step > .step-img{
+        /* flex-basis: 4; */
+        width: 50%;
+        border: 2px solid red;
+    }
+    .steps-container > .step > .step-txt > .code-container {
+        width: 100%;
+        font-size: 89% !important;
+    }
+    .steps-container > .step > .step-img > img {
+        width: 100%;
+    }
 }

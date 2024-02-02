@@ -1,7 +1,7 @@
 import { loadPlaceholderHtml } from "./fetch-lesson.js"
 
 const dropSections = document.querySelectorAll('.dropSection')
-const sectionUls = document.querySelectorAll('.section > ul ')
+const sectionUls = document.querySelectorAll('.section ul ')
 const allLessons = document.querySelectorAll('ul li a')
 let shiftTab = []
 const allElements = document.querySelectorAll('body > *')
@@ -12,12 +12,6 @@ addEventListener('DOMContentLoaded',()=>{
             let section = getSection(el.parentElement)
             let lessons = section.querySelectorAll('ul > li a')
             addTabIndex(lessons)
-        }
-    })
-    allLessons.forEach(el => {
-        if(el.hasAttribute('autofocus')){
-            loadPlaceholderHtml(el.href)
-            // el.focus()
         }
     })
 })
@@ -156,7 +150,7 @@ allLessons.forEach(el => {
 })
 addEventListener('keydown', e => {
     let letter = e.key.toLowerCase()
-    if(!sectionsFocused && !lessonsShowing && !mainTargetDivContainerFocusIn){
+    if(!sectionsFocused && !lessonsShowing){
         if(letter == 's'){
             let dropSection01 = asideMain.querySelector('.section > .dropSection')
             dropSection01.focus()

@@ -92,3 +92,26 @@
 .answer-txt > .code-container > .copy-code:active,.answer-txt>.code-container>.copy-code:focus{
     box-shadow: 0 0 5px 5px blue;
 }
+
+@media screen and (max-width: 640px){
+    .chatgpt-question-container {
+        margin: 0;
+        padding:0;
+    }
+    .logo {
+        display: none;
+    }
+    .answer-txt{
+
+    }
+    .answer-txt > .code-container {
+        /* max-width: 200px !important ; */
+        max-width: 500px;
+    }
+    .asnwer-txt >   .code-container > .copy-code {
+        width: 100%;
+        /* border: 30px solid red !important; */
+        /* padding: 1% 1.5%; */
+    }
+
+}

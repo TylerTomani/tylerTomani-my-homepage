@@ -1,6 +1,67 @@
-import { asideMain } from "./sectionFocusLessonLoad.js" 
-import { navMain } from "./sectionFocusLessonLoad.js"
-export function addEventListenersToInjectedContent() {
+const lessonsAs = document.querySelectorAll('li a')
+let lessonsClicked = false
+const allImages = document.querySelectorAll('img')
+import { currentLesson, mainTargetDivContainerFocusIn } from "./sectionDrop-focus-temp.js";
+
+let shiftTab = []
+lessonsAs.forEach(el => {
+    el.addEventListener('click', e => {
+        e.preventDefault()
+        e.stopPropagation()
+        if(!lessonsClicked){
+            loadPlaceholderHtml(e.target.href)
+        } 
+        lessonsClicked  = !lessonsClicked
+    });
+})
+
+
+export function loadPlaceholderHtml(href = 'main-placeholder.htm' ) {
+    fetch(href)
+        .then(response => response.text())
+        .then(html => {
+            // Inject the retrieved HTML into the target div
+            document.getElementById('mainTargetDivContainer').innerHTML = html;
+            addEventListenersToInjectedContent()
+            addLessonEventListeners()
+            
+        })
+        .catch(error => console.error('Error fetching content.html:', error));
+}
+loadPlaceholderHtml()
+
+function addEventListenersToInjectedContent() {
+    // Add your event listeners here
+    // For example:
+    const part01 = document.getElementById('part01') ? document.getElementById('part01') : null
+    if(part01){
+
+        part01.addEventListener('keydown', (e) => {
+            let letter = e.key.toLowerCase()
+            shiftTab.unshift(letter)
+            if(shiftTab.length > 2){
+                shiftTab.pop()
+            }
+            if(shiftTab[0] == 'tab' && shiftTab[1]== 'shift'){
+                setTimeout(() => {
+                    // 5ur code that uses currentLesson
+                    currentLesson.click()
+                    currentLesson.focus()
+                    console.log(shiftTab)
+                    scrollTo(0,0)
+                    if(mainTargetDivContainerFocusIn){
+                        if(letter == 'p'){
+                            part01.focus()
+                        }
+                    }
+                }, 90); // Adjust the timeout value as needed
+            }
+        });
+    }
+}
+
+
+function addLessonEventListeners() {
     const dropParts = document.querySelectorAll('.dropPart')
     const stepsContainers = document.querySelectorAll('.steps-container')
     const part01 = document.getElementById('part01')
@@ -98,7 +159,7 @@ export function addEventListenersToInjectedContent() {
                 if(key === 'p'){
                     dropPart.focus()
                 }
-                let stepsTxt = stepsContainer.querySelectorAll('.step > .step-txt') ? stepsContainer.querySelectorAll('.step > .step-txt') : stepsContainer.querySelectorAll('.step-col > .step-txt')
+                let stepsTxts = stepsContainer.querySelectorAll('.step > .step-txt') ? stepsContainer.querySelectorAll('.step > .step-txt') : stepsContainer.querySelectorAll('.step-col > .step-txt')
                 if(stepTxts){
                     stepTxts.forEach(el => {
                         let h4 = el.querySelector('h4')
@@ -121,14 +182,23 @@ export function addEventListenersToInjectedContent() {
             let img = step.querySelector('.step-img > img')
             let as = step.querySelectorAll('.step-txt > a')
             let copyCodes = step.querySelectorAll('.copy-code')
-            as.forEach(a => {
-                a.addEventListener('click', e => {
-                    window.open(a.href,'_blank')
-                } );
-            })
-            addStepTxtAsTabindex(copyCodes)
-            addStepTxtAsTabindex(as)
-            toggleStepImg()
+            if(!step.classList.contains('.step-col')){
+
+                as.forEach(a => {
+                    a.addEventListener('click', e => {
+                        window.open(a.href,'_blank')
+                    } );
+                })
+                addStepTxtAsTabindex(copyCodes)
+                addStepTxtAsTabindex(as)
+                toggleStepImg()
+            } else {
+                images = step.querySelectorAll('.img-2-container > .step-img > img')
+                images.forEach(el =>{
+                    el.setAttribute('tabindex','1')
+                } )
+            }
+            console.log(step)
         })
         el.addEventListener('keydown', e => {
             let key = e.keyCode
@@ -141,6 +211,26 @@ export function addEventListenersToInjectedContent() {
                 addStepTxtAsTabindex(as)
                 if(img){
                     toggleStepImg(img)
+                    if(!step.classList.contains('.step-col')){
+                        as.forEach(a => {
+                            a.addEventListener('click', e => {
+                                window.open(a.href,'_blank')
+                            } );
+                        })
+                        addStepTxtAsTabindex(copyCodes)
+                        addStepTxtAsTabindex(as)
+                        toggleStepImg()
+                    }
+                }
+                let images = step.querySelectorAll('.img-2-container > .step-img > img')
+                if(images){
+
+                    addStepTxtAsTabindex(copyCodes)
+                    addStepTxtAsTabindex(as)
+                    toggleStepImg()
+                    images.forEach(el =>{
+                        el.setAttribute('tabindex','1')
+                    } )
                 }
                 as.forEach(a => {
                 a.addEventListener('click', e => {
@@ -340,6 +430,10 @@ export function addEventListenersToInjectedContent() {
         allCopyCodes.forEach(el => {
             el.removeAttribute('tabindex')
         })
+        allImages.forEach(el => {
+            el.removeAttribute('tabindex')
+        })
+        
         
     }
 // Play Enlarg videos ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -433,5 +527,34 @@ playVidClicks.forEach(playVidClick => {
             
         }   
     } 
+    allImages.forEach(el => {
+        el.addEventListener('click', e =>  {
+            console.log(e.target)
+            e.preventDefault()
+            toggleAllImgsSize(e.target) 
+        });
+        el.addEventListener('keydown', e =>  {
+            let key = e.keyCode
+            if(key === 13){
+                toggleAllImgsSize(e.target) 
+            }
+        });
+        el.addEventListener('focus', e  => {
+            el.style.position = 'relative'
+            el.style.zIndex = '1'
+        });
+        el.addEventListener('focusout', e  => {
+            el.style.position = 'static'
+            el.style.zIndex = '0'
+        });
+    })
+    function toggleAllImgsSize(img){
+        if(img.classList.contains('enlarge')){
+            img.classList.remove('enlarge')
+        } else {
+            img.classList.add('enlarge')
+        }
+    }
 }
-
+// Initial event listeners setup
+// addEventListenersToInjectedContent();
