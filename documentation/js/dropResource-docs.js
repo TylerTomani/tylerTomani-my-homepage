@@ -18,6 +18,8 @@ resources.forEach(resource => {
         e.preventDefault()
         let resourceContainer = getResourceContainer(e.target.parentElement)
         console.log(resourceContainer)
+        window.open(e.target.href,'_self')
+
         const subResourcesContainer = resourceContainer.querySelector('.sub-resources-container')            
         toggleSubResourcesContainer(subResourcesContainer)
     })
