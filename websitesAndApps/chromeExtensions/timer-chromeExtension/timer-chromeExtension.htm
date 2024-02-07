@@ -35,7 +35,25 @@
         <!-- Part 1 Usage Summary source 1 -->
         <div class="part">
             <h3><a id="part01" tabindex="1" href="#" class="dropPart">Part 1 - Project Code </a></h3>
-            <div class="steps-container show">
+            <div class="steps-container hide">
+                <div class="step-col">
+                    <div tabindex="1" class="step-txt xxmd-txt-p">
+                        <h4>00</h4>
+                        <p class="r">
+                            So many changes had to made to get this to work, see the project in <code>my_google-extensions</code>
+                            directory in the home directory
+                        </p>
+                    </div>
+                    <div class="img-2-container">
+                        <div class="code-container asc">
+                            <pre tabindex="1" class="copy-code">
+                                </pre>
+                            </div>
+                        <div class="step-img">
+                            <img src="imagesVideos">
+                        </div>
+                    </div>
+                </div>
                 <!-- 01-01 -->
                 <div class="step-col">
                     <div tabindex="1" class="step-txt">
@@ -194,7 +212,7 @@ chrome://extensions/</pre>
                     <div tabindex="1" class="question step-txt">
                         <h4 class="">07</h4>
                         <p>
-                            If you get this error, place an images with the name <strong><code>icon.png</code></strong>
+                            If you get this error, place an image with the name <strong><code>icon.png</code></strong>
                             in the same directory and see if if works
                         </p>
                     </div>
@@ -239,6 +257,32 @@ chrome://extensions/</pre>
         <div class="part">
             <a id="" tabindex="1" href="#" class="dropPart"><h3>Part 2 - Chat Gpt Question</h3></a>
             <div class="steps-container show">
+                <!-- 02-00 -->
+                <div class="chatgpt-question-container step-txt">
+                    <div tabindex="1" class="chatgpt-question step-txt">
+                        <h4>00</h4>
+                        <div class="ts-icon-container">
+                            <img class="fi logo" src="imagesVideos/ts-icon.png" alt="">
+                        </div>
+                        <div class="chatgpt-question-txt">
+                            <h5  class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
+                                Don't manually enter the code anymore!!, have python script scrape answer and place it into html.
+                
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="logo-icon-container">
+                            <img class="fi logo" src="imagesVideos/logo-icon.png" alt="">
+                        </div>
+                        <div class="answer-txt">
+                            <p class="r0">
+                                Go back after scraping more, to write a script that scrapes the answer and creates the html for this,
+                                NO MORE TYPING THIS
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <!-- 02-01 -->
                 <div class="chatgpt-question-container step-txt">
                     <div  tabindex="1" class="chatgpt-question step-txt">
@@ -382,6 +426,244 @@ document.getElementById("stopButton").addEventListener("click", function () {
                                 This is a basic example, and you can customize it further based on your requirements.
 
                             </p>                
+                        </div>
+                    </div>
+                </div>
+                <!-- 02-02 -->
+                <div class="chatgpt-question-container step-txt">
+                    <div tabindex="1" class="chatgpt-question step-txt">
+                        <h4>02</h4>
+                        <div class="ts-icon-container">
+                            <img class="fi logo" src="imagesVideos/ts-icon.png" alt="">
+                        </div>
+                        <div class="chatgpt-question-txt">
+                            <h5 tabindex="1" class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
+                                make html javascript timer to enter time and have count down after time has been put in and a start button has been
+                                pressed
+
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="logo-icon-container">
+                            <img class="fi logo" src="imagesVideos/logo-icon.png" alt="">
+                        </div>
+                        <div class="answer-txt ">
+                            <p class="r0">
+                                Certainly! Below is a simple example of an HTML and JavaScript code for a countdown timer where the user can enter the
+                                desired time and start the countdown by pressing a button:
+        
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+&lt;h2>Countdown Timer&lt;/h2>
+
+&lt;label for="timeInput">Enter time (in seconds): &lt;/label>
+&lt;input type="number" id="timeInput" min="1" placeholder="Enter time">
+
+&lt;button onclick="startCountdown()">Start Countdown&lt;/button>
+
+&lt;p id="timerDisplay">&lt;/p>
+
+                                </pre>
+                            </div>                                
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+let countdown;
+
+function startCountdown() {
+    const timeInput = document.getElementById("timeInput").value;
+
+    if (isNaN(timeInput) || timeInput &lt;= 0) {
+        alert("Please enter a valid positive number for the time.");
+        return;
+    }
+
+    const timerDisplay = document.getElementById("timerDisplay");
+    let seconds = parseInt(timeInput, 10);
+
+    countdown = setInterval(function () {
+        timerDisplay.textContent = formatTime(seconds);
+
+        if (seconds &lt;= 0) {
+            clearInterval(countdown);
+            timerDisplay.textContent = "Countdown completed!";
+        } else {
+            seconds--;
+        }
+    }, 1000);
+}
+
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+
+    return `${minutes}:${remainingSeconds &lt; 10 ? '0' : ''}${remainingSeconds}`;
+}
+                                </pre>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 02-03 -->
+                <div class="chatgpt-question-container step-txt">
+                    <div tabindex="1" class="chatgpt-question step-txt">
+                        <h4>03</h4>
+                        <div class="ts-icon-container">
+                            <img class="fi logo" src="imagesVideos/ts-icon.png" alt="">
+                        </div>
+                        <div class="chatgpt-question-txt">
+                            <h5 tabindex="1" class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
+                                make chrome extension open in new tab
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="logo-icon-container">
+                            <img class="fi logo" src="imagesVideos/logo-icon.png" alt="">
+                        </div>
+                        <div class="answer-txt ">
+                            <p class="r0">
+                                To make a Chrome extension open in a new tab, you need to modify the manifest file and specify the "tabs" permission.
+                                Here are the steps:
+                            </p>
+                            <p>
+                                1. <strong>Create a manifest file:</strong>
+                                Create a file named <code>'manifest.json'</code> in the root directory of your extension.
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+{
+  "manifest_version": 2,
+  "name": "Your Extension Name",
+  "version": "1.0",
+  "description": "Description of your extension",
+  "permissions": [
+    "tabs"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png"
+  }
+}</pre>
+                            </div>                                
+                            <p>
+                                2. <strong>Create HTML files:</strong>
+                                Create an HTML file for your popup (e.g., popup.html) and any other necessary HTML files.
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+    &lt;title>Your Extension Popup&lt;/title>
+&lt;/head>
+
+&lt;body>
+    &lt;h1>Hello, this is your extension!&lt;/h1>
+&lt;/body>
+
+&lt;/html>
+
+                                </pre>
+                            </div>
+                            <p>
+                                3. <strong>Load popup in a new tab:</strong>
+                                In your background script or popup script, you can use the chrome.tabs.create method to open a new tab.
+                            </p>
+                            <div class="code-container">
+                                <pre tabindex="1" class="copy-code">
+// background.js or popup.js
+chrome.tabs.create({url: "popup.html", active: true});</pre>
+                            </div>
+                            <p>
+                                4.  <strong>Load the extension:</strong>
+                                Load the extension:
+                                Load your extension in Chrome by navigating to <a class="copy-code" tabindex="1" target="_blank" href="chrome://extensions/">chrome://extensions/</a>, enabling "Developer mode," and clicking "Load
+                                unpacked." Select the directory containing your extension files.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- 02-04 -->
+                <div class="chatgpt-question-container step-txt">
+                    <div tabindex="1" class="chatgpt-question step-txt">
+                        <h4>04</h4>
+                        <div class="ts-icon-container">
+                            <img class="fi logo" src="imagesVideos/ts-icon.png" alt="">
+                        </div>
+                        <div class="chatgpt-question-txt">
+                            <h5 tabindex="1" class="copy-code the-chatgpt-question lg-txt"><strong>question:</strong>
+                                keep chrome extensions visible and see changes from css and js script alterations
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="logo-icon-container">
+                            <img class="fi logo" src="imagesVideos/logo-icon.png" alt="">
+                        </div>
+                        <div class="answer-txt ">
+                            <p class="r0">
+                                If you want to keep Chrome extensions visible while making changes to CSS and JS scripts, you can use the following
+                                steps:
+
+                                
+                            </p>
+                            <!-- 1. -->
+                            <p tabindex="1" >
+                                1. <strong> Open Developer Tools:</strong>
+                                Right-click on the page and select "Inspect" or press <strong>Ctrl+Shift+I</strong> (Windows/Linux) or <strong>Cmd+Opt+I
+                                    (Mac)</strong> to open Chrome
+                                Developer Tools.
+                            </p>
+                            <!-- 2. -->
+                            <p tabindex="1" >
+                                2. <strong>Undock Developer Tools:</strong>                            
+                                Click on the three vertical dots in the top-right corner of the Developer Tools panel.
+                                Select "Undock into separate window" to open Developer Tools in a separate window.
+                            </p>
+                            <!-- 3. -->
+                            <p tabindex="1" >
+                                3. <strong>Dock Extensions Sidebar:</strong>
+                                In the undocked Developer Tools window, you can resize the window as needed.
+                                On the left side of the window, you'll see the "Sources" tab. Right-click on it and choose "Show Extensions sidebar."
+                            </p>
+                            <!-- 4. -->
+                            <p tabindex="1" >
+                                4. <strong>Enable Device Mode:</strong>
+                                
+                                Click on the "Toggle Device Toolbar" icon or press Ctrl+Shift+M (Windows/Linux) or Cmd+Opt+M (Mac) to enable Device
+                                Mode.
+                                This helps you simulate different devices and view responsive design changes.
+                            </p>
+                            <!-- 5. -->
+                            <p tabindex="1" >
+                                5. <strong>Work with Elements Panel:</strong>
+                                In the "Elements" panel, you can inspect and modify HTML and CSS in real-time.
+                                Make your changes and see them applied instantly.
+                            </p>
+                            <!-- 6. -->
+                            <p tabindex="1" >
+                                6. <strong>Console for JavaScript:</strong>
+                                Switch to the "Console" tab to interact with JavaScript. You can execute scripts directly in the console.
+                            </p>
+                            <!-- 7. -->
+                            <p tabindex="1" >
+                                7. <strong>View Extensions in "chrome://extensions":</strong>
+                                If you're making changes specifically to a Chrome extension, you might want to visit chrome://extensions in a separate
+                                tab.
+                                Here you can reload the extension or inspect background pages if necessary.
+                                By following these steps, you can keep Chrome extensions visible while making changes to CSS and JS scripts, and see the
+                                updates in real-time. Remember that some changes might require a page refresh or extension reload to take effect.
+                            </p>
+                            
+                
                         </div>
                     </div>
                 </div>

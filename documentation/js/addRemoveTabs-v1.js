@@ -1,7 +1,7 @@
 import { allImages, stepTxts } from "./img-enlarge-v1.js";
 import { denlargeAllImgVids } from "./img-enlarge-v1.js";
 import { getStepColContainer } from "./img-enlarge-v1.js";
-
+import { img2StepTxts } from "./img-enlarge-v1.js";
 const asStepTxt = document.querySelectorAll('.step-txt > p > a')
 const copyCodes = document.querySelectorAll('.copy-code')
 let tabsAdded = false 
@@ -22,6 +22,46 @@ img4Containers.forEach(el => {
             tabsAdded = true
             let parent = e.target.parentElement
             let images = parent.querySelectorAll('.img-4-container > .step-img > img')
+            images.forEach(img => {
+                img.addEventListener('focus', e => {
+                    denlargeAllImgVids()
+                })
+            })
+            addTabs(images)
+        } else if(key === 13 && tabsAdded){
+            let parent = e.target.parentElement
+            let images = parent.querySelectorAll('.img-4-container > .step-img > img')
+            images.forEach(img => {
+                console.log(imgs)
+                img.setAttribute('tabindex','-1')
+            })
+            removeAllTabIndexes()
+        }
+        tabsAdded = !tabsAdded
+    })
+    stepTxt.addEventListener('focus' , e => {
+        tabsAdded = false
+        let parent = e.target.parentElement
+        let images = parent.querySelectorAll('.img-4-container > .step-img > img')
+        images.forEach(img => {
+            console.log(img)
+            
+            img.setAttribute('tabindex','-1')
+        })
+        removeAllTabIndexes()
+    })
+    
+})
+img2StepTxts.forEach(el => {
+    let parent = el.parentElement
+    let stepTxt = parent.querySelector('.step-txt')
+    stepTxt.addEventListener('keydown', e => {
+        let key = e.keyCode
+        console.log(tabsAdded)
+        if(key === 13 && !tabsAdded){   
+            tabsAdded = true
+            let parent = e.target.parentElement
+            let images = parent.querySelectorAll('.img-2-container > .step-img > img') && parent.querySelectorAll('.img-2-container > .step-vid > video')
             images.forEach(img => {
                 img.addEventListener('focus', e => {
                     denlargeAllImgVids()

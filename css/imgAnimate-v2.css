@@ -4,6 +4,12 @@
 :root {
     --img-scale: 1.9;
 }
+.sm-img {
+    width: 50% !important;
+}
+.md-img {
+    width: 75% !important;
+}
 .animate {
     position: relative;
     margin-right: 50%;

@@ -1,0 +1,156 @@
+.chatgpt-question-container {
+    margin: 0 1.5%;
+    padding-top: 0%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatgpt-question-container>.chatgpt-question {
+    display: flex !important;
+    flex-direction: row !important;
+    /* max-height: 200px; */
+    border: 2px solid olive;
+    
+}
+
+.chatgpt-question-container>.chatgpt-question>.chatgpt-question-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2% 1%;
+    margin: 1% 0;
+    margin-bottom: 2%;
+    /* padding-top: 2.5%; */
+}
+.chatgpt-question-container>.chatgpt-question > .question-img{
+    max-height: 250px;
+    min-width: 350px;
+}
+
+.chatgpt-question-container>.answer {
+    display: flex;
+    flex: 90%;
+    width: 90%;
+    padding: 1% 2.5%;
+}
+
+.chatgpt-question-container>.answer>.answer-txt {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    text-overflow: hidden;
+    /* border: 1px solid blue; */
+    width: 100%;
+    padding: 2%;
+}
+
+.chatgpt-question-container>.answer>.answer-txt>ol,
+.chatgpt-question-container>.answer>.answer-txt>ul {
+    padding: 1%;
+    padding-left: 4%;
+}
+
+
+.chatgpt-question>.ts-icon-container,
+.answer>.logo-icon-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 10%;
+    margin-top: 1%;
+    margin-right: 2.5%;
+}
+
+.chatgpt-question>.ts-icon-container>img,
+.answer>.logo-icon-container>img {
+    max-height: 60px;
+    max-height: 60px;
+    min-width: 60px;
+    min-width: 60px;
+    /* margin-right: 15%; */
+}
+
+
+.question-code {
+    background-color: white !important; 
+    color: black !important; 
+    border: 1px solid black; 
+    white-space: wrap;
+    padding: 1%;
+    margin: 0 1%;
+}
+
+.chatgpt-question-container>.answer>.answer-txt>.code-container {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    align-self: center;
+    background-color: black;
+    color:white;
+    /* padding: 1% */
+}
+
+
+.chatgpt-question-container>.answer>.answer-txt>.step {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-self: space-around;
+}
+
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-txt {
+    flex-basis: 50%;
+    max-width: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-txt,
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-img,
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-vid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1% 2.5%;
+    margin: 1% 2.5%;
+    flex-basis: 50%;
+}
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-img,
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-vid {
+    border: 1px solid black;
+    
+}
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-img > img,
+.chatgpt-question-container>.answer>.answer-txt>.step>.step-vid > video {
+    width: 100%;
+    /* width: 50% !important; */
+    /* max-height: 200px !important; */
+    /* max-height: 30px !important; */
+}
+
+
+.answer-txt > .code-container > .copy-code:active,.answer-txt>.code-container>.copy-code:focus{
+    box-shadow: 0 0 5px 5px blue;
+}
+@media screen and (max-width: 640px){
+    .chatgpt-question-container {
+        margin: 0;
+        padding:0;
+    }
+    .logo {
+        display: none;
+    }
+    .answer-txt{
+
+    }
+    .answer-txt > .code-container {
+        /* max-width: 200px !important ; */
+        max-width: 500px;
+    }
+    .asnwer-txt >   .code-container > .copy-code {
+        width: 100%;
+        /* border: 30px solid red !important; */
+        /* padding: 1% 1.5%; */
+    }
+
+}

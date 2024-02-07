@@ -87,7 +87,10 @@ addEventListener('keydown', e => {
         
     } else {
         if(key === 'p' || key === 'P'){
-            // part01.focus()
+            if(part01){
+
+                part01.focus()
+            }
         }
     }
 })

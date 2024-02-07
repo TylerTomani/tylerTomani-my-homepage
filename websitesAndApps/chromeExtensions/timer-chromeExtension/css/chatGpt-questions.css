@@ -92,7 +92,6 @@
 .answer-txt > .code-container > .copy-code:active,.answer-txt>.code-container>.copy-code:focus{
     box-shadow: 0 0 5px 5px blue;
 }
-
 @media screen and (max-width: 640px){
     .chatgpt-question-container {
         margin: 0;

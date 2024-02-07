@@ -18,7 +18,7 @@ let imgEnlarged = false
 //     } )
 // })
 
-let img2StepTxts = document.querySelectorAll('.step-col > .step-txt')
+export let img2StepTxts = document.querySelectorAll('.step-col > .step-txt')
 img2StepTxts.forEach(el => {
     el.addEventListener('click', e => {
         let parent = e.target.parentElement

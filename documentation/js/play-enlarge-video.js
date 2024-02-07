@@ -4,7 +4,7 @@ import { getStepColContainer } from "./img-enlarge-v1.js"
 let currentVid 
 let playing = false
 let vidEnlarged = false
-
+const allVids = document.querySelectorAll('video')
 playVidClicks.forEach(playVidClick => {
     
     playVidClick.addEventListener('click', e => {
@@ -41,6 +41,47 @@ playVidClicks.forEach(playVidClick => {
             vid.currentTime = 0
     })
 })
+allVids.forEach(playVidClick => {
+    
+    playVidClick.addEventListener('click', e => {
+        e.preventDefault()  
+        let parent = getStepContainer(e.target)
+        let vid = playVidClick.querySelector('.step-vid > video')
+        currentVid = vid
+        console.log(vid)
+        if(vid){
+            playVid(vid)
+            vid.play()
+        }
+    })
+    playVidClick.addEventListener('keydown', e => {
+        let key = e.keyCode
+        if(key === 13){
+            
+            let vid = e.target
+            if(vid){
+                playVid(vid)
+                scrollToVid(vid)
+                toggleEnlarge(vid)
+                vid.play()
+            } else {
+                vid.pause()
+            }
+        }
+    })
+    playVidClick.addEventListener('focusout', e => {          
+            let parent = getStepContainer(e.target)
+            let vid = parent.querySelector('.step-vid > video')            
+            vid.pause()
+            vid.currentTime = 0
+    })
+})
+function toggleEnlarge(vid){
+    if(!vid.classList.contains('enlarge')){
+        vid.classList.add('enlarge')
+    } else
+    vid.classList.remove('enlarge')
+}
 export function playVid(vid){
     if(!playing){
         vid.play()
@@ -71,11 +112,11 @@ function scrollToVid(vid){
         // if(parent.classList.contains('step-col')){   
     console.log(vidEnlarged)
             if(!vidEnlarged ){
-                vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+                // vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
                 vidEnlarged  = true
                 
             } else {
-                vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+                // vid.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
                 // vid.scrollIntoView({ behavior: "smooth", });
                 vidEnlarged  = false
                 

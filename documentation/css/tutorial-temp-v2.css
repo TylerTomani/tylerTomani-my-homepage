@@ -1,10 +1,15 @@
 .w-80 {
     width: 80% !important;
+    min-width: 500px;
+}
+.w-100 {
+    width: 100% !important;
+    min-width: 500px;
 }
 
 .code-container {
     background-color: lightyellow;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     max-width: 550px;
     width: 98%;
     margin-right: 2.5%;
@@ -16,6 +21,7 @@
 
 .code-container>pre.copy-code {
     background-color: black;
+    border:1px solid black;
     color: white;
     display: block;
     font-size: 1rem;
@@ -29,7 +35,27 @@
     display: inline-block;
     font-size: .78rem;
 }
-
+.step-txt > .step {
+    margin: 1% 0;
+    display: flex;
+    width: 80%;
+    /* justify-content: space-between; */
+    border: 1px solid blue;
+}
+.step-txt > .step > .step-txt,
+.step-txt > .step > .step-img{
+    width: 50%;
+}
+.step-txt > .step > .step-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2.5%
+}
+.step-txt > .step > .step-img img {
+    width: 50%;
+}
 .img-2-container > .code-container > .copy-code:active,
 .img-2-container > .code-container > .copy-code:focus{
     box-shadow: 0 0 4px 4px blue;
@@ -126,8 +152,10 @@
     /* border: 2px solid red; */
     /* width: 98%; */
 }
-.img-2-container>.step-img>img {
+.img-2-container>.step-img>img,
+.img-2-container>.step-vid>video {
     width: 80%;
+    max-height: 300px;
 }
 .part > .dropPart{
     margin: .75% 0;
@@ -158,9 +186,7 @@
     display: flex;
     justify-content: center;
 }
-.img-2-container>.step-img>img {
-    width: 80%;
-}
+
 img:active,img:focus,
 img:hover,
 .step-txt:active,.step-txt:focus,

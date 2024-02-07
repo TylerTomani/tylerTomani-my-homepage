@@ -2,6 +2,7 @@
     const allEls =document.querySelectorAll('body *')
     const changeFlexBtnId = document.getElementById('changeFlexBtn')
     const jupyterShortcuts = document.getElementById('jupyterShortcuts')
+    const selenium = document.getElementById('selenium')
     const homeLink = document.getElementById('homeLink')
     const tutorialLink = document.getElementById('tutorialLink')
     const parts = document.querySelectorAll('.dropPart')
@@ -35,10 +36,17 @@
             tutorialLink.focus()
         }
         if(key === 'j'){
-            jupyterShortcuts.focus()
+            if(jupyterShortcuts){
+                jupyterShortcuts.focus()
+            }
         }
         if(key === 'f'){
             fullScript.focus()
+        }
+        if(key == 's'){
+            if(selenium){
+                selenium.focus()
+            }
         }
 
 

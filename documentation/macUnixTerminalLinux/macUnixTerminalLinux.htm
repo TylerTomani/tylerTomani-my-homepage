@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macUnixTerminal</title>
+    <script src="../.././js/letterFocus.js" defer></script>
+</head>
+<body>
+    <a tabindex="1" id="homelink" href="../documentation.html">home-documentation</a>
+    <h1>macUnixTerminal</h1>
+    <h2>Make this page like the others, a mix between Part drop downs & steps, with  chatgpt question answer dropdowns</h2>
+    <h4>Do this tutorial </h4>
+    <a target="_blank" href="https://www.youtube.com/watch?v=ROjZy1WbCIA">freecode camps linux</a>
+    <div class="part">
+        <a tabindex="1" href="#" class="dropPart"><h3>Part 1 - Sleep, Shut Down, Restart,</h3></a>
+        <div class="steps-container">
+            <!-- 01-01 -->
+            <div class="step">
+                <div tabindex="1" class="step-txt">
+                    <h4>01</h4>
+                    <h5>sleep</h5>
+                    <p>
+                        to sleep now
+                    </p>
+                    <div class="code-container">
+                        <pre tabindex="1" class="copy-code">
+pmset sleepnow</pre>
+                    </div>
+                    <p>
+                        another way i don't understand the difference yet
+                    </p>
+                    <div class="code-container">
+                        <pre tabindex="1" class="copy-code">
+osascript -e 'tell application "Finder" to sleep'</pre>
+                    </div>
+                    
+                </div>
+                <div class="step-img">
+                    <img src="imagesVideos/">
+                </div>
+            </div>
+            <!-- 01-02 -->
+            <div class="step">
+                <div tabindex="1" class="step-txt">
+                    <h4>02</h4>
+                    <p>
+                        Command for shutting down computer
+                    </p>
+                    <h5>shut down immediate</h5>
+                    <div class="code-container">
+                        <pre tabindex="1" class="copy-code">
+sudo shutdown -h now</pre>
+                    </div>
+                    <h5>shut down in minutes</h5>
+                    <sup>example, 30 mins</sup>
+                    <div class="code-container">
+                        <pre tabindex="1" class="copy-code">
+sudo shutdown -h +30</pre>
+                    </div>
+                    
+                    
+                </div>
+                <div class="step-img">
+                    <img src="imagesVideos/">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
