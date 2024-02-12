@@ -22,6 +22,8 @@ pre.online {
 }
 .lb { color: cyan; font-style: bold; font-weight: 999;}
 .b { color: blue}
+.c { color:cyan}
+.dc { color:darkcyan}
 .g { color: green}
 .gr { color: goldenrod}
 .m { color: rgb(233, 88, 233);font-weight: 999; }

@@ -153,10 +153,7 @@
 .img-2-container>.code-container,
 .img-2-container>.step-img {
     flex-basis: 40%;
-    /* border: 2px solid blue; */
-    /* justify-self: flex-start; */
-    /* border: 2px solid red; */
-    /* width: 98%; */
+    
 }
 
 .img-2-container>.step-img>img {

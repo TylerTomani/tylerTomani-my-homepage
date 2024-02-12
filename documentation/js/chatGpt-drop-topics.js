@@ -26,6 +26,7 @@
         question.addEventListener('keydown', e => {
             let key = e.keyCode 
             if(e.keyCode === 13){
+                console.log(e.target)
                 toggleAnswer(e)
             }
         })
@@ -76,7 +77,7 @@
 
     addEventListener('keydown', e => {
         let letter = e.key.toLowerCase()
-        console.log(letter)
+        // console.log(letter)
         if(letter == 's'){
             const parent = getChatQuestionContainer(e.target.parentElement)
             const question = parent.querySelector('.chatgpt-question')
