@@ -169,7 +169,7 @@ img:active,img:focus,img:hover,
     width: 98%;
     margin-right: 2.5%;
     max-height: 450px;
-    margin: 2.5% 2.5%;
+    margin: .5% 2.5%;
     width: 95%;
 
 }
@@ -180,7 +180,7 @@ img:active,img:focus,img:hover,
     display: block;
     padding: .5% 1%;
     padding-left: 2%;
-    margin: .5% 1%;
+    /* margin: .5% 1%; */
     margin-left: 0;
     width: 100%;
     height: 100%;
@@ -190,6 +190,22 @@ img:active,img:focus,img:hover,
 .w-80 {
     width: 80% !important;
     min-width: 500px !important;
+}
+.h-15 {
+    height: 15% !important;
+    /* min-height: 150px !important; */
+}
+.h-25 {
+    height: 25% !important;
+    min-height: 250px !important;
+}
+.h-50 {
+    height: 50% !important;
+    min-height: 380px !important;
+}
+.h-80 {
+    height: 80% !important;
+    min-height: 500px !important;
 }
 footer {
     padding: 0 2.5%;

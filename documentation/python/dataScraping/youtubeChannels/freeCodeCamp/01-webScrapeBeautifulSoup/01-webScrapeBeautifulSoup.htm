@@ -46,38 +46,51 @@
                     <a tabindex="1" id="section01" href="sections/01-basicHtmlScrapeOpen/01-basicHtmlScrapeOpen.htm" class="dropSection">
                         <h4>Section 1 - Scrape Basic Html with <code>open()</code></h4>
                     </a>
-                    <ul class="show">
+                    <ul class="">
                         <li><a href="sections/01-basicHtmlScrapeOpen/01-01-downloadHomeHtml/01-01-downloadHomeHtml.htm">1. download <code>home.html</code></a></li>
                         <li><a href="sections/01-basicHtmlScrapeOpen/01-02-pipInstallMods/01-02-pipInstallMods.htm">2. <code>pip install bs4 and lxml</code>, start script  </a></li>
-                        <li><a autofocus  href="sections/01-basicHtmlScrapeOpen/01-03-findMethod-Bs4/01-03-findMethod-Bs4.htm">3. <code>find()</code> and <code>find_all()</code> bs4  </a></li>
+                        <li><a   href="sections/01-basicHtmlScrapeOpen/01-03-findMethod-Bs4/01-03-findMethod-Bs4.htm">3. <code>find()</code> and <code>find_all()</code> bs4  </a></li>
+                        <li><a  href="sections/01-basicHtmlScrapeOpen/01-04-findWithElAndClass/01-04-findWithElAndClass.htm">4. <code>find </code> by <code>'div': class_</code></a></li>
                     </ul>
                 </section>
-                <!-- Section 2 -->
+                <!-- Section 2 - scrape timesjobs.com part 1-->
                 <section class="section">
-                    <a tabindex="1" href="sections/02/02.htm" class="dropSection">
-                        <h4>Section 2</h4>
+                    <a tabindex="1" href="sections/02-scrapeTimeJobs/02-scrapeTimeJobs.htm" class="dropSection">
+                        <h4>Section 2 - scrape timesjobs.com part 1</span></h4>
                     </a>
                     <ul class="">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="sections/02/02-02/02-02.htm" class="dropSubSection">3. section-lesson</a>
-                            <ul>
-                                <li><a href="sections/02/02-02-01/02-02-01.htm">sub-section-lesson</a></li>
-                                <li><a href="sections/02/02-02/02-02-02/02-02-02.htm">sub-section-lesson</a></li>
-                                <li><a href="sections/02/02-02/02-02-03/02-02-03.htm"> sub-section-lesson</a></li>
-                            </ul>
+                        <li><a href="sections/02-scrapeTimeJobs/02-01-importRequest/02-01-importRequest.htm">1. Import <code>requests</code>
+                            <br>
+                            <span class="mdtxt"><code>jobs = soup.find('li',class_=)</code></a>
                         </li>
+                        <li><a href="sections/02-scrapeTimeJobs/02-02-findAllJobs/02-02-findAllJobs.htm">2. find_all jobs</code>
+                            <br>
+                            <span class="mdtxt"><code>jobs = soup.find_all('li',class_=)</code></a>
+                        </li>
+                        <li><a  href="sections/02-scrapeTimeJobs/02-03-ifFewInDate/02-03-ifFewInDate.htm">3. <code>if data_published</code> condition
+                            <br>
+                            <span class="mdtxt"><code>if 'few' in data_published</code></a>
+                        </li>
+                        
                     </ul>
                 </section>
                 <!-- Section 3 -->
                 <section class="section">
                     <a tabindex="1" href="#" class="dropSection">
-                        <h4>Section 3</h4>
+                        <h4>Section 3 - scrape timesjobs.com part 2</h4>
                     </a>
-                    <ul>
-                        <li><a href="#">1. sub-section</a></li>
+                    <ul class="show">
+                        <li><a href="sections/03-scrapeTimeJobs-Pt2/03-01-splitRmvWhitespace/03-01-splitRmvWhitespace.htm">1. use <code class="dc">strip()</code> remove extra white space</a></li>
+                        <li><a href="sections/03-scrapeTimeJobs-Pt2/03-02-inputFilterSkill/03-02-inputFilterSkill.htm">2. <code>filtered_skill = input('>')</code></a></li>
+                        <li><a autofocus  href="sections/03-scrapeTimeJobs-Pt2/03-03-importTimeRun10mins/03-03-importTimeRun10mins.htm">3. <code>import time</code> run every 10 mins</a></li>
                         <li><a href="#">2. sub-section</a></li>
-                        <li><a href="#">3. sub-section</a></li>
+                    <!-- <li><a href="sections/02/02-02/02-02.htm" class="dropSubSection">3. section-lesson</a>
+                                                <ul>
+                                                    <li><a href="sections/02/02-02-01/02-02-01.htm">sub-section-lesson</a></li>
+                                                    <li><a href="sections/02/02-02/02-02-02/02-02-02.htm">sub-section-lesson</a></li>
+                                                    <li><a href="sections/02/02-02/02-02-03/02-02-03.htm"> sub-section-lesson</a></li>
+                                                </ul>
+                                            </li> -->
                     </ul>
                 </section>
             </aside>

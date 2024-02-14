@@ -1,18 +1,37 @@
 <!-- <link rel="stylesheet" href="css/lesson-temp.css"> -->
-<h1>01-01</h1>
-<div class="step">
-    <div tabindex="1" class="step-txt">
-        <div class="code-container">
-            <pre tabindex="1" class="copy-code">
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
- Unde consectetur adipisci non quod natus iste labore fuga
-  iusto! At repellendus nemo quidem cum consectetur adipisci
-   ipsum quam quibusdam obcaecati soluta!
-            </pre>
+<h1>Section 1 - Scrape Basic Html with <code>open()</code></h1>
+<div class="steps-container show">
+
+    <div class="step-col">
+        <div  class="step-txt">
+            <div style="border:none" class="step">
+                <div class="code-container w-80">
+                    <pre tabindex="1" class="copy-code lgtxt">
+    from bs4 import BeautifulSoup
+    with open('home.htm','r') as f:
+        content = f.read()
+        soup = BeautifulSoup(content,'html.parser')
+        course_cards = soup.find_all('div',class_='card')
+        for card in course_cards:
+            course_title = card.h5.text
+            course_price = card.a.text.split()[-1]
+            print(f'{course_title} cost {course_price}')</pre>
+                </div>
+
+                <div class="step-img">
+                    <img class="lg-enlarge"
+                        src="/documentation/python/dataScraping/youtubeChannels/freeCodeCamp/01-webScrapeBeautifulSoup/sections/01-basicHtmlScrapeOpen/01-04-findWithElAndClass/images/01-03.png">
+                </div>
+            </div>
         </div>
-                
+        <div class="img-2-container">
+            <div class="step-img">
+            <img tabindex="1"
+                src="/documentation/python/dataScraping/youtubeChannels/freeCodeCamp/01-webScrapeBeautifulSoup/sections/01-basicHtmlScrapeOpen/01-04-findWithElAndClass/images/01-01.png">
+            </div>
+        </div>
     </div>
-    <div class="step-img">
-        <img src="https://d3f1iyfxxz8i1e.cloudfront.net/courses/course_image/5d7fb9fda4e9.jpg" alt="placeholder image">
-    </div>
+    
+
+    
 </div>
